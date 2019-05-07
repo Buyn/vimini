@@ -1,0 +1,266 @@
+""""""""""""""""""""""""""""
+" Start of Vundle
+""""""""""""""""""""""""""""
+set nocompatible              " required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'gmarik/Vundle.vim'
+
+" Add all your plugins here (note older versions of Vundle used Bundle instead of Plugin)
+
+"properly folding Python code
+Plugin 'tmhedberg/SimpylFold'
+"This indentation script for python tries to match more closely what is suggested in PEP 8
+Plugin 'vim-scripts/indentpython.vim'
+" The best plugin for Python auto-complete is YouCompleteMe. 
+Bundle 'Valloric/YouCompleteMe'
+"let g:ycm_autoclose_preview_window_after_completion=1
+"map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
+
+"Syntax Checking/Highlighting
+"You can have VIM check your syntax on each save with the syntastic extension:
+Plugin 'scrooloose/syntastic'
+"Also add PEP8 checking with this nifty little plugin:
+Plugin 'nvie/vim-flake8'
+
+"Color Schemes
+Plugin 'jnurmine/Zenburn'
+Plugin 'altercation/vim-colors-solarized'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+":PluginInstall
+"This command tells Vundle to work its magic – downloading all the plugins and installing/updating them for you.
+
+""""""""""""""""""""""""""""""""""""""""
+"+++++===--   End of Vandle   --===+++++
+""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""
+" Start of My setings
+""""""""""""""""""""""""""""""""""""""""
+" set for russin keys
+""""""""""""""""""""""""""""
+set keymap=russian-jcukenwin 
+set iminsert=0
+function! MyKeyMapHighlight()
+	if &iminsert == 0
+		hi StatusLine ctermfg=DarkBlue guifg=DarkBlue
+	else
+		hi StatusLine ctermfg=DarkGreen guifg=DarkGreen
+	endif
+endfunction
+" Вызываем функцию, чтобы она установила цвета при запуске Vim'a
+call MyKeyMapHighlight()
+
+" При изменении активного окна будет выполняться обновление
+" индикации текущей раскладки
+au WinEnter * :call MyKeyMapHighlight()
+
+":map <C-K> i
+"cmap <silent> <C-f> <C-^>
+imap <silent> <C-f> <C-^>X<Esc>:call MyKeyMapHighlight()<CR>a<C-H>
+"nmap <silent> <C-f> a<C-^><Esc>:call MyKeyMapHighlight()<CR>
+"vmap <silent> <C-f> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
+
+""""""""""""""""""""""""""""
+" *** Other setings *** 
+""""""""""""""""""""""""""""
+" Precede each line with its line number.
+set number
+set relativenumber
+set mouse=a
+"display the current cursor position
+set ruler
+"Display an incomplete command
+set showcmd
+"1.Filetype detection.  2.Using filetype plugin files 3.Using indent files
+filetype plugin indent on
+"break text to 78 characters plain text.  
+autocmd FileType text setlocal textwidth=240
+"char showe 
+"set list
+"set listchars=tab:\|\<Space>
+" > is shown at the beginning, - throughout
+set listchars=tab:>-     
+syntax enable
+"Spell cheking enabling for ru and eng by default
+"]s — Перейти к следующей ошбке
+"[s — К предыдущей ошибке
+"z= — Выдать список возможных замен
+"zG — Добавить слово в словарь
+"zW — Пометить слово как ошибочное
+set nospell
+"setlocal spell spelllang=ru
+" Allow keys to move to the previous/next line on the first/last character
+set whichwrap=b,<,>,[,],l,h
+set backspace=indent,eol
+"" Список кодировок файлов для автоопределения
+set fileencodings=utf-8,cp1251,koi8-r,cp866
+" Включает виртуальный звонок (моргает, а не бибикает при ошибках)
+set visualbell
+""""""""""""""""""""""""""""
+"Python Indentation
+""""""""""""""""""""""""""""
+au BufNewFile,BufRead *.py
+    \ set tabstop=4     " a hard TAB displays as 4 columns
+    \ set softtabstop=4 "insert/delete 4spaces when hitting a TAB/BACKSPACE
+    \ set shiftwidth=4  "operation>>indents 4 columns;<<unindents 4 columns
+    \ set textwidth=79  " lines longer than 79 columns will be broken
+    \ set expandtab     " insert spaces when hitting TABs
+    \ set autoindent    " align the new line indent with the previous line
+    \ set fileformat=unix
+    \ set shiftround    " round indent to multiple of 'shiftwidth'
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2
+
+"Flagging Unnecessary Whitespace
+au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+
+let python_highlight_all=1
+syntax on
+""""""""""""""""""""""""""""
+" Setting colors and theme 
+""""""""""""""""""""""""""""
+set background=dark
+"colorscheme solarized
+colorscheme zenburn
+""""""""""""""""""""""""""""
+" Просмотр нетекстовых файлов в Vim -->
+au BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
+au BufReadPost *.doc silent %!antiword "%"
+au BufReadPost *.odt silent %!odt2txt "%"
+""""""""""""""""""""""""""""
+"kind of folding used Possible values :
+"  manual indent expr  marker syntax diff  
+"setlocal foldmethod=manual,indent,marker
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+"Want to see the docstrings for folded code?
+"let g:SimpylFold_docstring_preview=1
+""""""""""""""""""""""""""""
+" *** Menu block *** 
+""""""""""""""""""""""""""""
+" Settings menu
+""""""""""""""""""""""""""""
+fu! SeeTab01()
+  if !exists("g:SeeTabEnabled")
+    let g:SeeTabEnabled = 1
+    let g:SeeTab_list = &list
+    let g:SeeTab_listchars = &listchars
+    let regA = @a
+    redir @a
+    hi SpecialKey
+    redir END
+    let g:SeeTabSpecialKey = @a
+    let @a = regA
+    silent! hi SpecialKey guifg=black guibg=magenta ctermfg=black ctermbg=magenta
+    set list
+    set listchars=tab:\|\
+  else
+    let &list = g:SeeTab_list
+    let &listchars = &listchars
+    silent! exe "hi ".substitute(g:SeeTabSpecialKey,'xxx','','e')
+    unlet g:SeeTabEnabled g:SeeTab_list g:SeeTab_listchars
+  endif
+endfunc
+
+fu! SeeTab02()
+  if !exists("g:SeeTabEnabled")
+    let g:SeeTabEnabled = 0
+  end
+  if g:SeeTabEnabled==0
+    syn match leadspace /^\s\+/ contains=syntab
+    exe "syn match syntab /\\s\\{" . &sw . "}/hs=s,he=s+1 contained"
+    hi syntab guibg=Grey
+    let g:SeeTabEnabled=1
+  else
+    syn clear leadspace
+    syn clear syntab
+    let g:SeeTabEnabled=0
+  end
+endfunc
+""""""""""""""""""""""""""""
+set wildmenu
+set wcm=<Tab>
+menu Mset.Simbols.SeeTab01  :call SeeTab01()
+menu Mset.Simbols.SeeTab02  :call SeeTab02()
+menu Mset.Paste.on     :set paste<CR>
+menu Mset.Paste.off    :set nopaste<CR>
+menu Mset.Folding.manual    :setlocal foldmethod=manual<CR>
+menu Mset.Folding.indent    :setlocal foldmethod=indent<CR>
+menu Mset.Folding.syntax    :setlocal foldmethod=syntax<CR>
+menu Mset.Folding.marker    :setlocal foldmethod=marker<CR>
+"menu Mset.Spell.ru     :set spell spelllang=<CR>:set enc=koi8-r<CR>:set spell spelllang=ru<CR>
+menu Mset.Spell.ru     :set spell spelllang=<CR>:set spell spelllang=ru<CR>
+"menu Mset.Spell.ru,en  :set spell spelllang=<CR>:set enc=koi8-r<CR>:set spell spelllang=ru,en<CR>
+menu Mset.Spell.ru,en  :set spell spelllang=<CR>:set spell spelllang=ru,en<CR>
+menu Mset.Spell.en     :set spell spelllang=<CR>:set spell spelllang=en<CR>
+menu Mset.Spell.off    :set nospell<CR>
+map <F9> :emenu Mset.<Tab>
+""""""""""""""""""""""""""""
+" *** Mapings block *** 
+""""""""""""""""""""""""""""
+" Mapings for clipbord
+""""""""""""""""""""""""""""
+map cp "*p
+map cP "*P
+map cy "*y
+map cv "*yy
+map cx "*yydd
+""""""""""""""""""""""""""""
+"Insert a single character
+""""""""""""""""""""""""""""
+"  nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR> 
+":nnoremap ,i i_<Esc>r
+":nnoremap ,a a_<Esc>r
+":nnoremap s :exec "normal i".nr2char(getchar())."\e"<CR>
+":nnoremap S :exec "normal a".nr2char(getchar())."\e"<CR>
+function! RepeatChar(char, count)
+  return repeat(a:char, a:count)
+endfunction
+nnoremap <silent> <Space> :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <silent> <S-Space> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+""""""""""""""""""""""""""""
+"Savind file keys
+""""""""""""""""""""""""""""
+imap <F2> <Esc>:w!<CR>
+map <F2> :w!<CR>
+map <C-F2> :mkview<CR>
+""""""""""""""""""""""""""""
+" Loding File keys
+""""""""""""""""""""""""""""
+map <C-F5> :loadview<CR>
+""""""""""""""""""""""""""""
+" Movement keys
+""""""""""""""""""""""""""""
+map gh g$
+map gl g^
+"Ctrl+a: Go to beginning of the line [Normal Mode && Insert Mode]
+"Ctrl+e: Go to end of line [Normal Mode && Insert Mode]
+"Alt+f: Backward a word [Insert Mode]
+"Alt+b: Forward a word [Insert Mode]
+"Alt+d: Delete a word (backward) [Insert Mode]
+map <C-a> ^
+imap <C-a> <ESC>I
+map <C-e> $
+imap <C-e> <ESC>A
+inoremap <M-f> <ESC><Space>Wi
+inoremap <M-b> <Esc>Bi
+inoremap <M-d> <ESC>cW
+""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
+" End of My setings
+""""""""""""""""""""""""""""
+    

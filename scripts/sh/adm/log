@@ -1,0 +1,9 @@
+echo Start ip bans
+start addIpBanList.cmd  106.240.241.242 administrator
+start addIpBanList.cmd  13.12.2016 NULL
+start addIpBanList.cmd  125.93.86.4 Administrator
+start addIpBanList.cmd  13.12.2016 NULL
+start addIpBanList.cmd  124.225.116.79 administrator
+start addIpBanList.cmd  46.218.19.162 administrator
+start addIpBanList.cmd  12.12.2016 NULL
+start addIpBanList.cmd  220.163.86.82 administrator

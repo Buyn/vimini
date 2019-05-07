@@ -1,0 +1,3153 @@
+# Этот файл viminfo автоматически создан Vim 8.0.
+# Его можно (осторожно!) редактировать.
+
+# Viminfo version
+|1,4
+
+# Значение опции 'encoding' в момент записи файла
+*encoding=utf-8
+
+
+# hlsearch on (H) or off (h):
+~h
+# Последний Шаблон поиска:
+~Msle0~/\<def_delay\>
+
+# Последний Замена Шаблон поиска:
+~MSle0&debugmode = 
+
+# Последняя строка для замены:
+$dp(
+
+# Командная строка, история (начиная от свежего к старому):
+:h M
+|2,0,1557148190,,"h M"
+:h n
+|2,0,1557148150,,"h n"
+:emenu Mset.export.emacs(em)
+|2,0,1555196478,,"emenu Mset.export.emacs(em)"
+:emenu Mset.
+|2,0,1555196462,,"emenu Mset."
+:%s/bagin/begin/gc
+|2,0,1554897081,,"%s/bagin/begin/gc"
+:'<,'>emenu Mset.
+|2,0,1554806858,,"'<,'>emenu Mset."
+:emenu Mset.а
+|2,0,1554725334,,"emenu Mset.а"
+:emenu Mset.f
+|2,0,1554539228,,"emenu Mset.f"
+:emenu Mset.ао
+|2,0,1554482069,,"emenu Mset.ао"
+:%s/ShiftIn/ShiftOut/gc
+|2,0,1554368405,,"%s/ShiftIn/ShiftOut/gc"
+:%s/SHIFTIN/SHIFTOUT/gc
+|2,0,1554364434,,"%s/SHIFTIN/SHIFTOUT/gc"
+:%s/SHIFTIN_h/SHIFTOUT_H/gc
+|2,0,1554364164,,"%s/SHIFTIN_h/SHIFTOUT_H/gc"
+:emenu Mset.syntax.c
+|2,0,1554375526,,"emenu Mset.syntax.c"
+:tab h lowercase
+|2,0,1554263135,,"tab h lowercase"
+:tab h uppercase
+|2,0,1554263091,,"tab h uppercase"
+:tab h upper
+|2,0,1554263052,,"tab h upper"
+:tab h <shift-u>
+|2,0,1554263042,,"tab h <shift-u>"
+:tab h <s-u>
+|2,0,1554263030,,"tab h <s-u>"
+:tab h <s+u>
+|2,0,1554263022,,"tab h <s+u>"
+:tab h shift+u
+|2,0,1554263003,,"tab h shift+u"
+:tab h s+u
+|2,0,1554262985,,"tab h s+u"
+:emenu Mset.Folding.indent
+|2,0,1554087877,,"emenu Mset.Folding.indent"
+:%s/.ledstm./.spi./gc
+|2,0,1554086947,,"%s/.ledstm./.spi./gc"
+:%s/isInt/self.isInt/gc
+|2,0,1554086705,,"%s/isInt/self.isInt/gc"
+:%s/isCommandList/self.terMenu.isCommandList/gc
+|2,0,1554085503,,"%s/isCommandList/self.terMenu.isCommandList/gc"
+:%s/pull/pop/gc
+|2,0,1553735592,,"%s/pull/pop/gc"
+:%s/staksize/count/gc
+|2,0,1553735474,,"%s/staksize/count/gc"
+:%s/uint16/UINT/gc
+|2,0,1553735035,,"%s/uint16/UINT/gc"
+:%s/Stak/Stack/gc
+|2,0,1553720673,,"%s/Stak/Stack/gc"
+:%s/StackArray/Stack/gc
+|2,0,1553646466,,"%s/StackArray/Stack/gc"
+:%s/_STACKARRAY_/STACK_/gc
+|2,0,1553620347,,"%s/_STACKARRAY_/STACK_/gc"
+:%s/_STACKARRAY_/STACK/gc
+|2,0,1553620317,,"%s/_STACKARRAY_/STACK/gc"
+:'<,'>emenu Mset.f
+|2,0,1553611641,,"'<,'>emenu Mset.f"
+:nnoremap <S-F10> yymp:r !<C-R>"<backspace><cr>'p
+|2,0,1553493260,,"nnoremap <S-F10> yymp:r !<C-R>\"<backspace><cr>'p"
+:nnoremap <S-F10> yymm:r !<C-R>"<backspace><cr>'m
+|2,0,1553492955,,"nnoremap <S-F10> yymm:r !<C-R>\"<backspace><cr>'m"
+:nnoremap <S-F10> yy:r !<C-R>"<backspace><cr>
+|2,0,1553492908,,"nnoremap <S-F10> yy:r !<C-R>\"<backspace><cr>"
+:r !ping 192.168.0.1
+|2,0,1553492749,,"r !ping 192.168.0.1"
+:r !ls
+|2,0,1553492724,,"r !ls"
+:nnoremap <S-F10> yy:r !<C-R>"<backspace>
+|2,0,1553492705,,"nnoremap <S-F10> yy:r !<C-R>\"<backspace>"
+:nnoremap <S-F10> :r !<C-R>"<backspace>
+|2,0,1553492632,,"nnoremap <S-F10> :r !<C-R>\"<backspace>"
+:r !bash ls
+|2,0,1553492572,,"r !bash ls"
+:nnoremap <S-F10> :r !bash <C-R>"<backspace>
+|2,0,1553492564,,"nnoremap <S-F10> :r !bash <C-R>\"<backspace>"
+:nnoremap <S-F10> :r !bash <C-R>" <backspace><CR>
+|2,0,1553492521,,"nnoremap <S-F10> :r !bash <C-R>\" <backspace><CR>"
+:nnoremap <S-F10> :r !bash <C-R>" <CR>
+|2,0,1553492386,,"nnoremap <S-F10> :r !bash <C-R>\" <CR>"
+:nnoremap <S-F10> :r !bash<C-R>"<CR>
+|2,0,1553492369,,"nnoremap <S-F10> :r !bash<C-R>\"<CR>"
+:nnoremap <S-F10> :r !<C-R>"<CR><CR>
+|2,0,1553492238,,"nnoremap <S-F10> :r !<C-R>\"<CR><CR>"
+:r <c-R>"
+|2,0,1553491972,,"r <c-R>\""
+:r <c-r>"
+|2,0,1553491943,,"r <c-r>\""
+:r !echo | w. !bash
+|2,0,1553491384,,"r !echo | w. !bash"
+:r | w. !bash
+|2,0,1553491114,,"r | w. !bash"
+
+# Строка поиска, история (начиная от свежего к старому):
+? \<def_delay\>
+|2,1,1555851460,,"\\<def_delay\\>"
+? \<potenz_on\>
+|2,1,1555851425,,"\\<potenz_on\\>"
+? \<ANALOG_R\>
+|2,1,1555849394,,"\\<ANALOG_R\\>"
+? \<ANALOG_P\>
+|2,1,1555849392,,"\\<ANALOG_P\\>"
+? \<X_MAX_PIN\>
+|2,1,1555849306,,"\\<X_MAX_PIN\\>"
+? \<step\>
+|2,1,1555848753,,"\\<step\\>"
+? \<step_pin\>
+|2,1,1555848703,,"\\<step_pin\\>"
+? \<sensor_multip\>
+|2,1,1555848665,,"\\<sensor_multip\\>"
+? \<step_signsl_duration\>
+|2,1,1555848542,,"\\<step_signsl_duration\\>"
+? @$
+|2,1,1555845872,,"@$"
+??emac
+|2,1,1555195981,63,"emac"
+? bagin
+|2,1,1554897081,,"bagin"
+? \<counter3\>
+|2,1,1554572072,,"\\<counter3\\>"
+? ShiftIn
+|2,1,1554368405,,"ShiftIn"
+? SHIFTIN
+|2,1,1554364434,,"SHIFTIN"
+? SHIFTIN_h
+|2,1,1554364164,,"SHIFTIN_h"
+?/shift
+|2,1,1554366646,47,"shift"
+? \<printer\>
+|2,1,1554298915,,"\\<printer\\>"
+? \<enc_pin3\>
+|2,1,1554298055,,"\\<enc_pin3\\>"
+? \<Names\>
+|2,1,1554107955,,"\\<Names\\>"
+?/dir
+|2,1,1554256933,47,"dir"
+?/der
+|2,1,1554256924,47,"der"
+? .ledstm.
+|2,1,1554086947,,".ledstm."
+? isInt
+|2,1,1554086705,,"isInt"
+??isI
+|2,1,1554086690,63,"isI"
+? isCommandList
+|2,1,1554085503,,"isCommandList"
+? \<execute_command\>
+|2,1,1554008742,,"\\<execute_command\\>"
+? \<back_msg\>
+|2,1,1554007879,,"\\<back_msg\\>"
+? \<setSPIbackmsg\>
+|2,1,1554007101,,"\\<setSPIbackmsg\\>"
+? \<spirutine\>
+|2,1,1554006744,,"\\<spirutine\\>"
+?/fun
+|2,1,1554000227,47,"fun"
+?/#if
+|2,1,1554000210,47,"#if"
+? \<setmsg\>
+|2,1,1553994523,,"\\<setmsg\\>"
+? \<readyTransfer\>
+|2,1,1553992691,,"\\<readyTransfer\\>"
+? \<print\>
+|2,1,1553977146,,"\\<print\\>"
+? \<DEBUGMSG_INFO\>
+|2,1,1553976599,,"\\<DEBUGMSG_INFO\\>"
+? \<DEBUGMSG_MSGSTASK\>
+|2,1,1553976477,,"\\<DEBUGMSG_MSGSTASK\\>"
+?/reset
+|2,1,1553915617,47,"reset"
+??rest
+|2,1,1553915602,63,"rest"
+? \<msg_stak\>
+|2,1,1553914996,,"\\<msg_stak\\>"
+? \<size\>
+|2,1,1553915219,,"\\<size\\>"
+? \<ledstate01\>
+|2,1,1553759494,,"\\<ledstate01\\>"
+? \<sspi\>
+|2,1,1553747488,,"\\<sspi\\>"
+? pull
+|2,1,1553735592,,"pull"
+? staksize
+|2,1,1553735474,,"staksize"
+? uint16
+|2,1,1553735035,,"uint16"
+? Stak
+|2,1,1553720673,,"Stak"
+? StackArray
+|2,1,1553646466,,"StackArray"
+? \<isEmpty\>
+|2,1,1553643758,,"\\<isEmpty\\>"
+? \<endif\>
+|2,1,1553620963,,"\\<endif\\>"
+
+# Выражение, история (начиная от свежего к старому):
+
+# Строка ввода, история (начиная от свежего к старому):
+@j
+|2,3,1547676245,,"j"
+
+# Debug Line, история (начиная от свежего к старому):
+
+# Регистры:
+"0	LINE	0
+	ControlSend, Edit1, This is a line of text in the notepad window.{enter}, ahk_class Notepad
+|3,0,0,1,1,0,1556999819,"ControlSend, Edit1, This is a line of text in the notepad window.{enter}, ahk_class Notepad"
+"1	LINE	0
+	Q
+|3,0,1,1,1,0,1555852085,"Q"
+"2	LINE	0
+	
+|3,0,2,1,1,0,1555850979,""
+"3	LINE	0
+	   attachInterrupt(digitalPinToInterrupt(COUNT_PIN), encounter, RISING);
+|3,0,3,1,1,0,1555846230,"   attachInterrupt(digitalPinToInterrupt(COUNT_PIN), encounter, RISING);"
+"4	LINE	0
+	bool potenz_on				=true;
+	bool DIR_pin_X				=false;
+	bool test_mod				=false;
+	bool is_se_counter		=false;
+	bool is_step_counter		=false;
+	bool is_min_counter		=false;
+	bool is_midlerange_counter	=false;
+|3,0,4,1,7,0,1555846186,"bool potenz_on				=true;","bool DIR_pin_X				=false;","bool test_mod				=false;","bool is_se_counter		=false;","bool is_step_counter		=false;","bool is_min_counter		=false;","bool is_midlerange_counter	=false;"
+"5	LINE	0
+	bool dirbutton_down;
+	bool dirbutton_up;
+	bool potenzbutton_down;
+	bool potenzbutton_up;
+|3,0,5,1,4,0,1555846165,"bool dirbutton_down;","bool dirbutton_up;","bool potenzbutton_down;","bool potenzbutton_up;"
+"6	LINE	0
+	#define MENU_DELAY			200
+|3,0,6,1,1,0,1555846147,"#define MENU_DELAY			200"
+"7	LINE	0
+	bool dirbutton_down;
+	bool dirbutton_up;
+|3,0,7,1,2,0,1555846136,"bool dirbutton_down;","bool dirbutton_up;"
+"8	LINE	0
+	int sensor_multip	=100;
+|3,0,8,1,1,0,1555846133,"int sensor_multip	=100;"
+"9	LINE	0
+	#define MENU_DELAY			200
+	#define SENSOR_DELAY			100
+|3,0,9,1,2,0,1555846125,"#define MENU_DELAY			200","#define SENSOR_DELAY			100"
+"a	CHAR	0
+	By
+|3,0,10,0,1,0,1543113395,"By"
+"b	LINE	0
+	{{{2
+	""""""""""""""""""""""""}}}2
+|3,0,11,1,2,0,1535291177,"{{{2","\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"}}}2"
+"c	CHAR	0
+	XzazacYY
+|3,0,12,0,1,0,1546550399,"XzazacYY"
+"d	CHAR	0
+	spi.dev()
+|3,0,13,0,1,0,1553303524,"spi.dev()"
+"e	CHAR	0
+	command_stak
+|3,0,14,0,1,0,1549945906,"command_stak"
+"f	CHAR	0
+	RGB_LED::
+|3,0,15,0,1,0,1544331658,"RGB_LED::"
+"h	LINE	0
+	""""""""""""""""""""""""""""""""""""""""
+|3,0,17,1,1,0,1491042389,"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+"i	CHAR	0
+	distance
+|3,0,18,0,1,0,1486911406,"distance"
+"j	CHAR	0
+	vehdj
+|3,0,19,0,1,0,1554265308,"vehdj"
+"l	CHAR	0
+	LED::
+|3,0,21,0,1,0,1544503903,"LED::"
+"m	CHAR	0
+	marker
+|3,0,22,0,1,0,1486694758,"marker"
+"n	CHAR	0
+	n
+|3,0,23,0,1,0,1505806322,"n"
+"o	CHAR	0
+	jkQe�kbvisual@jk
+|3,0,24,0,1,0,1549925690,"jkQe�kbvisual@jk"
+"p	CHAR	0
+	sspi.pull()
+|3,0,25,0,1,0,1550329061,"sspi.pull()"
+"q	CHAR	0
+	SlaveSPI::
+|3,0,26,0,1,0,1550325819,"SlaveSPI::"
+"r	CHAR	0
+	if  var 
+|3,0,27,0,1,0,1550502131,"if  var "
+"s	CHAR	0
+	self.
+|3,0,28,0,1,0,1554482197,"self."
+"t	LINE	0
+	        print("End setUp")
+	
+	        print("start setUp")
+|3,0,29,1,3,0,1508143667,"        print(\"End setUp\")","","        print(\"start setUp\")"
+"u	CHAR	0
+	uration
+|3,0,30,0,1,0,1486911381,"uration"
+"v@	CHAR	0
+	viw"Ey
+|3,2,31,0,1,0,1486695301,"viw\"Ey"
+"w	CHAR	0
+	wlan0
+|3,0,32,0,1,0,1546685759,"wlan0"
+"-	BLOCK	0
+	 
+|3,0,36,2,1,0,1555855941," "
+
+# Глобальные отметки:
+'P  131  10  /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
+|4,80,131,10,1546628411,"/cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt"
+'0  19  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,48,19,0,1557219362,"/cygdrive/c/Users/BuYn/.bashrc"
+'1  1  0  /cygdrive/d/scripts/ahk/exmpl/send_beck.ahk
+|4,49,1,0,1557052890,"/cygdrive/d/scripts/ahk/exmpl/send_beck.ahk"
+'2  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,50,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+'3  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,51,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+'4  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,52,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+'5  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,53,3,0,1556032958,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+'6  1  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/mplife.txt
+|4,54,1,0,1556032933,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/mplife.txt"
+'7  5  49  /cygdrive/d/tools.win/Fast/Actual_fast/Progects/Sony/SonyPresent.txt
+|4,55,5,49,1555921320,"/cygdrive/d/tools.win/Fast/Actual_fast/Progects/Sony/SonyPresent.txt"
+'8  58  28  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stepmotor_Driver/stepmotor_Driver.ino
+|4,56,58,28,1555867559,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stepmotor_Driver/stepmotor_Driver.ino"
+'9  10  4  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/ledsMenu.py
+|4,57,10,4,1555846906,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/ledsMenu.py"
+
+# Список прыжков (сначала более свежие):
+-'  19  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,19,0,1557219362,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  2  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,2,0,1557219348,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  1  0  /cygdrive/d/scripts/ahk/exmpl/send_beck.ahk
+|4,39,1,0,1557052890,"/cygdrive/d/scripts/ahk/exmpl/send_beck.ahk"
+-'  1  0  /cygdrive/d/scripts/ahk/exmpl/send_beck.ahk
+|4,39,1,0,1557052890,"/cygdrive/d/scripts/ahk/exmpl/send_beck.ahk"
+-'  1  0  /cygdrive/d/scripts/ahk/exmpl/send_beck.ahk
+|4,39,1,0,1557052890,"/cygdrive/d/scripts/ahk/exmpl/send_beck.ahk"
+-'  1  0  /cygdrive/d/scripts/ahk/exmpl/send_beck.ahk
+|4,39,1,0,1557052890,"/cygdrive/d/scripts/ahk/exmpl/send_beck.ahk"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  3  0  /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+|4,39,3,0,1556414190,"/cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  4  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,4,0,1556035981,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/.emacs
+|4,39,1,0,1556035962,"/cygdrive/d/Development/lisp/HOME/.emacs"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  126  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,126,0,1556033942,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  111  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,111,0,1556033791,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+
+# История местных отметок (от более свежих к старым):
+
+> /cygdrive/c/Users/BuYn/.bashrc
+	*	1557219361	0
+	"	19	0
+	^	2	9
+	.	2	29
+	+	5	7
+	+	22	16
+	+	14	17
+	+	16	18
+	+	16	0
+	+	5	7
+	+	30	0
+	+	21	33
+	+	22	0
+	+	21	33
+	+	20	21
+	+	21	0
+	+	20	21
+	+	19	0
+	+	20	0
+	+	19	25
+	+	23	0
+	+	26	0
+	+	23	37
+	+	19	0
+	+	20	0
+	+	19	8
+	+	20	6
+	+	16	6
+	+	16	19
+	+	26	0
+	+	23	55
+	+	5	0
+	+	1	28
+	+	14	21
+	+	8	35
+	+	9	28
+	+	8	8
+	+	9	8
+	+	10	55
+	+	10	31
+	+	14	0
+	+	10	34
+	+	14	0
+	+	9	32
+	+	8	38
+	+	10	35
+	+	9	31
+	+	8	37
+	+	16	0
+	+	11	11
+	+	11	12
+	+	11	11
+	+	11	34
+	+	14	0
+	+	11	38
+	+	13	31
+	+	16	20
+	+	26	20
+	+	12	0
+	+	11	9
+	+	5	0
+	+	3	7
+	+	4	7
+	+	15	11
+	+	15	40
+	+	15	39
+	+	16	0
+	+	15	39
+	+	18	22
+	+	1	32
+	+	23	54
+	+	26	20
+	+	24	8
+	+	22	8
+	+	25	0
+	+	24	9
+	+	25	11
+	+	23	0
+	+	22	29
+	+	27	10
+	+	28	10
+	+	29	13
+	+	17	9
+	+	6	11
+	+	7	21
+	+	2	29
+
+> /usr/share/vim/vim80/doc/motion.txt
+	*	1557208628	0
+	"	1333	3
+
+> /usr/share/vim/vim80/doc/pattern.txt
+	*	1557148156	0
+	"	60	7
+
+> /cygdrive/d/scripts/ahk/exmpl/send_beck.ahk
+	*	1557052889	0
+	"	1	0
+	^	2	1
+	.	2	0
+	+	4	22
+	+	2	0
+
+> /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+	*	1556414181	0
+	"	3	0
+
+> /cygdrive/d/Development/lisp/HOME/.emacs
+	*	1556035979	0
+	"	4	0
+
+> /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+	*	1556033851	0
+	"	126	0
+	.	110	0
+	+	98	146
+	+	95	0
+	+	98	0
+	+	95	0
+	+	96	0
+	+	109	0
+	+	110	0
+
+> /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/mplife.txt
+	*	1556032931	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Actual_fast/Progects/Sony/SonyPresent.txt
+	*	1555921318	0
+	"	5	49
+	^	5	51
+	.	5	49
+	+	7	0
+	+	6	11
+	+	4	16
+	+	5	49
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stepmotor_Driver/stepmotor_Driver.ino
+	*	1555867557	0
+	"	58	28
+	^	58	29
+	.	54	33
+	+	8	0
+	+	24	0
+	+	7	0
+	+	24	0
+	+	51	0
+	+	22	37
+	+	25	16
+	+	64	20
+	+	295	76
+	+	24	21
+	+	25	17
+	+	18	0
+	+	24	19
+	+	23	29
+	+	24	19
+	+	23	29
+	+	25	16
+	+	23	29
+	+	25	17
+	+	25	0
+	+	23	30
+	+	25	17
+	+	23	30
+	+	25	16
+	+	68	0
+	+	65	2
+	+	66	3
+	+	67	3
+	+	54	33
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stepmotor_Driver/stm32_Toch_Driver.ino
+	*	1555846412	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/RAMPS_driver/Source/stm32_Toch_Driver/stm32_Toch_Driver.ino
+	*	1555845910	0
+	"	185	0
+	^	15	30
+	.	15	29
+	+	12	27
+	+	13	29
+	+	14	28
+	+	15	29
+
+> /cygdrive/d/Development/lisp/HOME/INI/org_agend_cfg.el
+	*	1555775846	0
+	"	45	9
+
+> /cygdrive/d/Development/lisp/HOME/INI/evil_frame_cfg.el
+	*	1555775823	0
+	"	25	4
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/buttons.py
+	*	1555677529	0
+	"	37	4
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
+	*	1555675795	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/commanditem.py
+	*	1555675650	0
+	"	22	12
+	^	34	22
+	.	34	10
+	+	17	0
+	+	18	0
+	+	22	0
+	+	35	0
+	+	40	0
+	+	45	0
+	+	50	0
+	+	55	0
+	+	60	0
+	+	64	0
+	+	65	0
+	+	34	0
+	+	33	0
+	+	34	10
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_menucommannds.py
+	*	1555673757	0
+	"	14	0
+	^	45	17
+	.	21	0
+	+	45	16
+	+	57	0
+	+	56	0
+	+	55	0
+	+	21	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/ledsMenu.py
+	*	1555673334	0
+	"	10	4
+	^	163	9
+	.	163	8
+	+	17	15
+	+	17	16
+	+	17	15
+	+	17	22
+	+	17	15
+	+	17	11
+	+	17	0
+	+	17	3
+	+	17	0
+	+	17	3
+	+	17	12
+	+	17	14
+	+	17	8
+	+	17	13
+	+	17	12
+	+	17	16
+	+	17	13
+	+	17	15
+	+	17	26
+	+	17	0
+	+	17	30
+	+	17	28
+	+	17	17
+	+	17	7
+	+	17	10
+	+	17	7
+	+	17	8
+	+	17	9
+	+	17	31
+	+	17	0
+	+	3	0
+	+	14	3
+	+	25	0
+	+	4	0
+	+	13	0
+	+	17	0
+	+	15	0
+	+	22	0
+	+	17	6
+	+	16	0
+	+	17	13
+	+	18	10
+	+	19	10
+	+	20	8
+	+	19	11
+	+	21	0
+	+	87	20
+	+	90	0
+	+	93	0
+	+	98	19
+	+	90	20
+	+	93	20
+	+	103	0
+	+	106	0
+	+	109	0
+	+	127	0
+	+	116	0
+	+	119	0
+	+	122	0
+	+	145	0
+	+	149	0
+	+	154	0
+	+	162	8
+	+	163	8
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_commandmenuitem.py
+	*	1555651587	0
+	"	4	0
+
+> /cygdrive/d/games/No Mans Sky The Abyss/Binaries/SETTINGS/TKGRAPHICSSETTINGS.MXML
+	*	1555644002	0
+	"	4	40
+	^	4	36
+	.	4	36
+	+	5	40
+	+	4	0
+	+	5	36
+	+	4	36
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/SPI_ShiftIN.ino
+	*	1555428712	0
+	"	39	0
+	^	45	34
+	.	45	33
+	+	47	0
+	+	48	0
+	+	49	0
+	+	47	22
+	+	48	22
+	+	49	22
+	+	47	30
+	+	48	30
+	+	49	30
+	+	164	17
+	+	165	22
+	+	167	0
+	+	168	0
+	+	166	23
+	+	169	14
+	+	170	20
+	+	171	23
+	+	174	19
+	+	179	16
+	+	175	23
+	+	180	22
+	+	179	18
+	+	73	24
+	+	45	32
+	+	296	7
+	+	300	0
+	+	298	22
+	+	45	30
+	+	298	22
+	+	45	32
+	+	296	19
+	+	297	0
+	+	296	26
+	+	300	0
+	+	298	22
+	+	297	33
+	+	296	18
+	+	45	31
+	+	258	0
+	+	259	0
+	+	260	0
+	+	261	0
+	+	262	0
+	+	260	25
+	+	261	25
+	+	262	25
+	+	298	3
+	+	297	7
+	+	296	7
+	+	45	33
+	+	73	25
+	+	309	0
+	+	304	0
+	+	309	0
+	+	306	0
+	+	304	0
+	+	306	0
+	+	304	11
+	+	74	15
+	+	304	19
+	+	305	3
+	+	305	18
+	+	306	0
+	+	269	0
+	+	263	0
+	+	267	2
+	+	268	2
+	+	76	0
+	+	75	0
+	+	53	0
+	+	56	0
+	+	176	11
+	+	181	13
+	+	74	22
+	+	15	0
+	+	14	0
+	+	176	13
+	+	56	0
+	+	57	0
+	+	50	0
+	+	42	0
+	+	32	0
+	+	23	0
+	+	23	9
+	+	22	9
+	+	23	27
+	+	142	0
+	+	143	0
+	+	142	23
+	+	143	25
+	+	142	7
+	+	143	0
+	+	145	0
+	+	309	0
+	+	305	37
+	+	74	23
+	+	73	24
+	+	299	21
+	+	298	0
+	+	45	33
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/main.py
+	*	1555370297	0
+	"	65	26
+	^	108	11
+	.	110	0
+	+	39	12
+	+	39	21
+	+	39	15
+	+	39	24
+	+	39	18
+	+	39	11
+	+	39	0
+	+	39	24
+	+	39	0
+	+	39	53
+	+	39	0
+	+	49	0
+	+	49	27
+	+	49	26
+	+	49	27
+	+	49	26
+	+	49	36
+	+	49	42
+	+	49	0
+	+	49	30
+	+	49	0
+	+	49	42
+	+	49	39
+	+	49	44
+	+	49	33
+	+	49	0
+	+	49	44
+	+	49	0
+	+	49	45
+	+	49	0
+	+	49	17
+	+	49	0
+	+	49	16
+	+	58	0
+	+	49	7
+	+	49	41
+	+	49	15
+	+	49	20
+	+	49	14
+	+	49	36
+	+	49	18
+	+	49	16
+	+	49	15
+	+	49	20
+	+	49	29
+	+	49	11
+	+	39	0
+	+	39	13
+	+	41	0
+	+	39	35
+	+	39	38
+	+	39	19
+	+	39	20
+	+	3	44
+	+	16	0
+	+	23	0
+	+	39	0
+	+	49	0
+	+	78	16
+	+	36	24
+	+	76	10
+	+	82	13
+	+	78	24
+	+	48	0
+	+	55	0
+	+	84	0
+	+	96	0
+	+	87	0
+	+	90	0
+	+	92	92
+	+	90	29
+	+	87	29
+	+	86	61
+	+	89	38
+	+	90	0
+	+	89	30
+	+	92	34
+	+	92	91
+	+	92	34
+	+	52	18
+	+	57	0
+	+	63	0
+	+	58	0
+	+	67	17
+	+	68	12
+	+	69	0
+	+	68	12
+	+	109	0
+	+	110	0
+	+	109	0
+	+	108	21
+	+	108	10
+	+	108	22
+	+	109	0
+	+	108	11
+	+	110	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/termenu.py
+	*	1555368583	0
+	"	104	8
+	^	107	35
+	.	104	0
+	+	25	0
+	+	24	20
+	+	33	0
+	+	32	12
+	+	36	19
+	+	47	19
+	+	62	14
+	+	74	21
+	+	83	18
+	+	102	23
+	+	114	21
+	+	167	21
+	+	172	22
+	+	182	22
+	+	102	27
+	+	83	22
+	+	74	25
+	+	34	0
+	+	40	0
+	+	41	0
+	+	42	0
+	+	43	0
+	+	169	0
+	+	27	0
+	+	169	0
+	+	52	0
+	+	56	0
+	+	60	0
+	+	118	0
+	+	122	0
+	+	126	0
+	+	130	0
+	+	134	0
+	+	138	0
+	+	142	0
+	+	146	0
+	+	156	0
+	+	159	0
+	+	169	0
+	+	108	0
+	+	104	0
+	+	104	37
+	+	104	30
+	+	104	18
+	+	104	30
+	+	104	38
+	+	105	24
+	+	104	30
+	+	105	39
+	+	105	20
+	+	105	31
+	+	105	40
+	+	106	28
+	+	105	31
+	+	106	45
+	+	106	26
+	+	106	35
+	+	106	46
+	+	107	28
+	+	106	35
+	+	107	43
+	+	107	34
+	+	107	35
+	+	107	0
+	+	107	34
+	+	107	43
+	+	107	44
+	+	107	34
+	+	108	0
+	+	104	0
+
+> /cygdrive/d/Development/lisp/HOME/emacs_client.cmd
+	*	1555280123	0
+	"	3	0
+
+> /cygdrive/d/Development/lisp/HOME/emacs_debug.cmd
+	*	1555277001	0
+	"	2	55
+	^	2	56
+	.	2	55
+	+	3	0
+	+	2	55
+
+> /cygdrive/d/Development/lisp/HOME/emacs_Run.cmd
+	*	1555276884	0
+	"	1	0
+
+> ~/.vim/vimrc
+	*	1555197210	0
+	"	248	26
+	^	225	42
+	.	248	22
+	+	246	0
+	+	246	11
+	+	246	9
+	+	229	19
+	+	222	22
+	+	222	0
+	+	222	23
+	+	222	58
+	+	222	23
+	+	222	31
+	+	247	12
+	+	247	26
+	+	222	23
+	+	246	0
+	+	247	31
+	+	251	0
+	+	247	31
+	+	248	74
+	+	251	0
+	+	248	74
+	+	223	25
+	+	223	94
+	+	223	25
+	+	223	93
+	+	225	0
+	+	223	86
+	+	248	19
+	+	1	0
+	+	3	0
+	+	1	7
+	+	3	0
+	+	1	33
+	+	3	0
+	+	1	7
+	+	3	0
+	+	1	0
+	+	2	0
+	+	303	10
+	+	249	10
+	+	334	0
+	+	333	0
+	+	332	0
+	+	330	0
+	+	331	0
+	+	332	0
+	+	330	0
+	+	331	0
+	+	293	0
+	+	296	0
+	+	295	7
+	+	270	0
+	+	295	13
+	+	295	11
+	+	295	10
+	+	296	0
+	+	295	10
+	+	293	0
+	+	295	0
+	+	296	0
+	+	295	0
+	+	296	0
+	+	295	25
+	+	296	0
+	+	297	0
+	+	295	35
+	+	297	0
+	+	261	18
+	+	54	0
+	+	262	7
+	+	250	15
+	+	251	0
+	+	224	26
+	+	225	0
+	+	224	26
+	+	222	21
+	+	236	26
+	+	223	22
+	+	229	22
+	+	312	0
+	+	311	2
+	+	312	0
+	+	224	47
+	+	276	0
+	+	277	45
+	+	278	47
+	+	279	31
+	+	278	19
+	+	347	0
+	+	346	21
+	+	347	0
+	+	346	45
+	+	347	0
+	+	346	0
+	+	346	49
+	+	347	0
+	+	346	47
+	+	225	37
+	+	249	0
+	+	248	22
+
+> ~/.bash_aliases
+	*	1555197199	0
+	"	7	72
+	^	7	73
+	.	7	72
+	+	7	22
+	+	7	40
+	+	8	20
+	+	7	41
+	+	7	72
+	+	8	1
+	+	7	21
+	+	8	0
+	+	7	43
+	+	7	21
+	+	7	22
+	+	7	73
+	+	8	0
+	+	7	72
+
+> /cygdrive/d/shell/Far/FarMenu.Ini
+	*	1555197182	0
+	"	92	16
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+	*	1555185284	0
+	"	8	0
+	.	14	0
+	+	14	0
+	e	5	13
+
+> /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_wifi_router.txt
+	*	1555185121	0
+	"	1	0
+
+> /cygdrive/c/Users/BuYn/Desktop/Edit.rkp
+	*	1555145559	0
+	"	1	0
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/presenter/gstodo.py
+	*	1555096083	0
+	"	172	36
+	^	172	37
+	.	172	36
+	+	9	0
+	+	28	0
+	+	6	0
+	+	11	0
+	+	16	0
+	+	24	0
+	+	22	0
+	+	24	0
+	+	18	0
+	+	22	0
+	+	23	0
+	+	21	0
+	+	26	0
+	+	37	0
+	+	39	0
+	+	38	18
+	+	38	0
+	+	38	36
+	+	38	26
+	+	39	0
+	+	38	48
+	+	39	0
+	+	83	40
+	+	84	44
+	+	83	64
+	+	84	81
+	+	83	0
+	+	84	0
+	+	98	0
+	+	63	0
+	+	17	0
+	+	28	0
+	+	27	0
+	+	25	0
+	+	27	0
+	+	18	0
+	+	24	0
+	+	23	0
+	+	36	0
+	+	47	0
+	+	60	0
+	+	62	0
+	+	63	0
+	+	64	0
+	+	72	0
+	+	74	0
+	+	80	0
+	+	93	0
+	+	92	0
+	+	93	0
+	+	82	0
+	+	92	0
+	+	99	0
+	+	91	0
+	+	94	0
+	+	97	0
+	+	95	0
+	+	161	0
+	+	162	0
+	+	164	0
+	+	175	0
+	+	177	0
+	+	180	0
+	+	182	0
+	+	189	0
+	+	191	0
+	+	194	0
+	+	196	0
+	+	198	0
+	+	200	0
+	+	212	0
+	+	112	12
+	+	113	24
+	+	106	12
+	+	113	41
+	+	108	12
+	+	107	31
+	+	161	0
+	+	174	0
+	+	176	0
+	+	179	0
+	+	181	0
+	+	188	0
+	+	190	0
+	+	194	0
+	+	196	0
+	+	202	0
+	+	204	0
+	+	209	0
+	+	213	0
+	+	225	0
+	+	161	0
+	+	167	40
+	+	169	22
+	+	173	0
+	+	172	18
+	+	170	0
+	+	171	0
+	+	170	37
+	+	172	36
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/model/globalsvar.py
+	*	1555014101	0
+	"	8	0
+	^	6	1
+	.	7	0
+	+	21	0
+	+	31	32
+	+	27	30
+	+	6	0
+	+	7	0
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_lightGoggleToDo.py
+	*	1554999667	0
+	"	62	17
+	^	53	69
+	.	53	59
+	+	21	8
+	+	64	0
+	+	63	0
+	+	53	0
+	+	49	16
+	+	50	0
+	+	52	21
+	+	53	84
+	+	53	0
+	+	53	45
+	+	50	48
+	+	53	40
+	+	54	38
+	+	55	8
+	+	64	0
+	+	55	15
+	+	56	30
+	+	57	29
+	+	58	29
+	+	60	81
+	+	59	8
+	+	57	0
+	+	59	17
+	+	62	18
+	+	60	17
+	+	57	0
+	+	62	8
+	+	60	0
+	+	59	0
+	+	61	13
+	+	59	0
+	+	58	10
+	+	53	40
+	+	50	77
+	+	53	83
+	+	54	0
+	+	53	94
+	+	53	0
+	+	53	109
+	+	54	0
+	+	53	59
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_window_create.py
+	*	1554912710	0
+	"	101	56
+	^	101	13
+	.	101	56
+	+	17	0
+	+	22	0
+	+	26	0
+	+	33	0
+	+	39	0
+	+	45	0
+	+	57	0
+	+	109	0
+	+	106	0
+	+	15	0
+	+	6	0
+	+	1	0
+	+	17	0
+	+	105	0
+	+	93	0
+	+	106	0
+	+	94	0
+	+	104	0
+	+	94	27
+	+	96	0
+	+	98	0
+	+	103	8
+	+	103	0
+	+	99	0
+	+	100	69
+	+	102	68
+	+	101	56
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+	*	1554846044	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/typsconvert.py
+	*	1554822278	0
+	"	17	7
+	.	22	10
+	+	22	10
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_GoggleToDo.py
+	*	1554821050	0
+	"	127	0
+	^	22	9
+	.	21	0
+	+	1	0
+	+	6	0
+	+	12	0
+	+	13	0
+	+	26	0
+	+	33	0
+	+	38	0
+	+	48	0
+	+	59	0
+	+	67	0
+	+	76	0
+	+	84	0
+	+	93	0
+	+	11	0
+	+	108	4
+	+	105	0
+	+	21	0
+	+	22	26
+	+	23	21
+	+	22	8
+	+	23	8
+	+	43	16
+	+	44	42
+	+	46	0
+	+	46	26
+	+	44	26
+	+	44	0
+	+	44	18
+	+	46	0
+	+	44	27
+	+	46	0
+	+	44	29
+	+	46	0
+	+	45	41
+	+	46	0
+	+	24	0
+	+	21	8
+	+	22	8
+	+	23	16
+	+	22	0
+	+	23	0
+	+	22	8
+	+	21	0
+
+> /usr/share/vim/vim80/doc/help.txt
+	*	1554806871	0
+	"	2	0
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_offlinegspread.py
+	*	1554805593	0
+	"	41	8
+	^	27	40
+	.	27	41
+	+	1	0
+	+	6	0
+	+	13	0
+	+	11	0
+	+	59	0
+	+	62	0
+	+	59	0
+	+	13	0
+	+	31	0
+	+	48	0
+	+	57	0
+	+	58	0
+	+	13	17
+	+	31	31
+	+	46	0
+	+	36	0
+	+	38	0
+	+	41	0
+	+	43	0
+	+	46	0
+	+	47	0
+	+	48	16
+	+	58	0
+	+	49	0
+	+	41	12
+	+	41	23
+	+	41	0
+	+	24	0
+	+	26	0
+	+	41	0
+	+	17	0
+	+	18	68
+	+	27	17
+	+	28	0
+	+	27	41
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/testGoggleToDo.py
+	*	1554804424	0
+	"	30	0
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/Main.py
+	*	1554730117	0
+	"	2	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/simplencoder.cpp
+	*	1554714084	0
+	"	63	17
+	^	64	3
+	.	64	0
+	+	63	28
+	+	64	30
+	+	65	2
+	+	66	0
+	+	70	15
+	+	66	2
+	+	64	0
+
+> /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
+	*	1554711209	0
+	"	605	37
+	^	591	5
+	.	591	4
+	+	167	0
+	+	166	8
+	+	167	59
+	+	168	10
+	+	169	0
+	+	167	0
+	+	135	0
+	+	133	119
+	+	134	0
+	+	133	34
+	+	450	0
+	+	448	0
+	+	450	0
+	+	451	0
+	+	450	36
+	+	450	0
+	+	445	0
+	+	449	0
+	+	460	0
+	+	449	0
+	+	446	0
+	+	451	81
+	+	441	7
+	+	442	25
+	+	443	0
+	+	443	57
+	+	445	0
+	+	443	75
+	+	445	0
+	+	461	0
+	+	61	55
+	+	332	24
+	+	444	0
+	+	178	0
+	+	332	24
+	+	329	0
+	+	330	0
+	+	332	0
+	+	332	24
+	+	332	23
+	+	331	21
+	+	74	0
+	+	333	0
+	+	458	0
+	+	452	29
+	+	453	0
+	+	456	70
+	+	454	0
+	+	444	39
+	+	443	56
+	+	585	56
+	+	599	27
+	+	601	27
+	+	601	48
+	+	601	0
+	+	601	47
+	+	601	0
+	+	597	0
+	+	598	0
+	+	589	0
+	+	593	25
+	+	586	31
+	+	589	0
+	+	586	0
+	+	586	18
+	+	589	12
+	+	589	0
+	+	586	0
+	+	601	0
+	+	607	0
+	+	605	38
+	+	602	78
+	+	602	17
+	+	605	38
+	+	602	27
+	+	605	38
+	+	603	107
+	+	605	33
+	+	594	58
+	+	606	0
+	+	592	121
+	+	602	84
+	+	592	0
+	+	603	70
+	+	603	79
+	+	600	76
+	+	592	0
+	+	588	66
+	+	587	13
+	+	590	49
+	+	590	0
+	+	591	0
+	+	590	88
+	+	591	0
+	+	590	0
+	+	591	4
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/simplencoder.h
+	*	1554572799	0
+	"	13	3
+	^	24	13
+	.	24	12
+	+	24	12
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/EncoderSTM32.ino
+	*	1554571497	0
+	"	9	0
+	^	13	22
+	.	14	21
+	+	12	22
+	+	13	21
+	+	14	21
+	+	15	28
+	+	10	1
+	+	12	21
+	+	13	22
+	+	22	0
+	+	10	0
+	+	47	0
+	+	22	0
+	+	21	0
+	+	39	0
+	+	27	0
+	+	39	0
+	+	31	0
+	+	12	22
+	+	13	21
+	+	14	21
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/shiftout.cpp
+	*	1554570617	0
+	"	9	0
+	^	61	23
+	.	60	0
+	+	33	0
+	+	32	16
+	+	33	16
+	+	34	16
+	+	30	14
+	+	37	14
+	+	10	0
+	+	12	0
+	+	13	18
+	+	9	11
+	+	11	11
+	+	13	11
+	+	47	0
+	+	49	0
+	+	47	11
+	+	49	0
+	+	61	0
+	+	47	0
+	+	61	22
+	+	47	0
+	+	60	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/slavespi.cpp
+	*	1554563031	0
+	"	230	0
+	^	226	1
+	.	231	0
+	+	16	83
+	+	118	17
+	+	115	0
+	+	118	0
+	+	121	0
+	+	118	0
+	+	115	19
+	+	121	8
+	+	118	0
+	+	79	0
+	+	80	0
+	+	78	0
+	+	23	0
+	+	118	53
+	+	115	2
+	+	120	2
+	+	118	14
+	+	127	17
+	+	63	197
+	+	63	171
+	+	33	0
+	+	63	178
+	+	63	198
+	+	63	188
+	+	63	171
+	+	63	178
+	+	63	191
+	+	63	197
+	+	63	273
+	+	63	171
+	+	63	197
+	+	75	0
+	+	77	0
+	+	75	0
+	+	76	0
+	+	82	0
+	+	84	0
+	+	82	0
+	+	83	0
+	+	63	276
+	+	63	256
+	+	63	273
+	+	227	3
+	+	228	0
+	+	230	0
+	+	232	0
+	+	230	0
+	+	230	21
+	+	232	0
+	+	230	50
+	+	230	3
+	+	232	3
+	+	52	0
+	+	53	0
+	+	54	8
+	+	60	0
+	+	61	34
+	+	120	0
+	+	118	32
+	+	120	16
+	+	63	236
+	+	63	254
+	+	63	0
+	+	61	34
+	+	63	18
+	+	230	0
+	+	229	0
+	+	230	15
+	+	118	0
+	+	120	0
+	+	118	0
+	+	118	41
+	+	118	1
+	+	115	1
+	+	63	21
+	+	50	17
+	+	51	0
+	+	194	0
+	+	173	0
+	+	241	2
+	+	246	0
+	+	242	0
+	+	242	12
+	+	241	3
+	+	256	0
+	+	260	0
+	+	264	0
+	+	275	0
+	+	241	2
+	+	242	0
+	+	274	0
+	+	261	0
+	+	263	0
+	+	260	0
+	+	259	0
+	+	255	0
+	+	226	0
+	+	232	0
+	+	238	0
+	+	231	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/slavespi.h
+	*	1554562977	0
+	"	29	0
+	^	33	2
+	.	33	1
+	+	57	16
+	+	57	0
+	+	49	7
+	+	57	24
+	+	32	20
+	+	22	22
+	+	32	29
+	+	14	16
+	+	53	30
+	+	15	0
+	+	53	0
+	+	54	16
+	+	57	30
+	+	57	27
+	+	54	26
+	+	53	30
+	+	57	0
+	+	68	0
+	+	54	5
+	+	53	0
+	+	50	7
+	+	57	0
+	+	59	13
+	+	60	16
+	+	31	0
+	+	28	25
+	+	56	24
+	+	31	0
+	+	45	19
+	+	28	24
+	+	64	0
+	+	63	15
+	+	67	31
+	+	17	5
+	+	17	7
+	+	17	0
+	+	17	7
+	+	20	0
+	+	16	13
+	+	19	0
+	+	16	0
+	+	20	12
+	+	17	1
+	+	16	18
+	+	18	9
+	+	19	0
+	+	18	10
+	+	19	0
+	+	18	29
+	+	17	1
+	+	14	13
+	+	23	8
+	+	20	0
+	+	24	20
+	+	23	0
+	+	24	0
+	+	22	0
+	+	14	0
+	+	53	0
+	+	53	16
+	+	54	0
+	+	53	19
+	+	71	2
+	+	52	0
+	+	18	14
+	+	19	0
+	+	21	8
+	+	23	3
+	+	24	0
+	+	96	6
+	+	4	0
+	+	6	0
+	+	96	18
+	+	71	1
+	+	30	0
+	+	32	0
+	+	33	0
+	+	76	16
+	+	74	6
+	+	30	1
+	+	32	1
+	+	31	0
+	+	33	1
+	+	31	0
+	+	30	0
+	+	33	0
+	+	32	0
+	+	30	1
+	+	31	1
+	+	32	1
+	+	33	1
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/globalsvar.py
+	*	1554559754	0
+	"	63	12
+	^	67	18
+	.	68	0
+	+	21	12
+	+	13	23
+	+	14	0
+	+	15	27
+	+	16	31
+	+	17	31
+	+	18	27
+	+	20	31
+	+	21	29
+	+	20	29
+	+	17	29
+	+	16	29
+	+	15	29
+	+	14	28
+	+	13	28
+	+	14	28
+	+	12	11
+	+	13	0
+	+	22	4
+	+	13	15
+	+	14	13
+	+	15	9
+	+	16	13
+	+	17	12
+	+	18	16
+	+	20	13
+	+	21	15
+	+	13	27
+	+	14	27
+	+	15	23
+	+	16	27
+	+	17	27
+	+	18	31
+	+	20	27
+	+	21	27
+	+	19	28
+	+	18	28
+	+	15	27
+	+	13	28
+	+	21	30
+	+	23	14
+	+	24	12
+	+	25	8
+	+	26	12
+	+	27	11
+	+	28	15
+	+	30	12
+	+	31	14
+	+	29	25
+	+	23	28
+	+	19	18
+	+	18	11
+	+	20	8
+	+	21	10
+	+	16	9
+	+	17	8
+	+	13	0
+	+	23	0
+	+	32	0
+	+	23	0
+	+	13	27
+	+	16	28
+	+	23	0
+	+	70	0
+	+	61	16
+	+	62	24
+	+	23	28
+	+	24	28
+	+	25	28
+	+	26	28
+	+	27	28
+	+	28	28
+	+	29	28
+	+	30	28
+	+	31	28
+	+	24	28
+	+	25	28
+	+	26	28
+	+	27	28
+	+	28	28
+	+	29	27
+	+	30	27
+	+	31	27
+	+	29	27
+	+	30	27
+	+	31	27
+	+	13	34
+	+	14	0
+	+	13	3
+	+	61	0
+	+	60	24
+	+	61	0
+	+	37	28
+	+	68	30
+	+	64	0
+	+	67	0
+	+	63	0
+	+	66	0
+	+	65	0
+	+	68	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Shiftin.h
+	*	1554559750	0
+	"	24	0
+	^	52	27
+	.	52	26
+	+	47	0
+	+	61	0
+	+	52	0
+	+	52	26
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Shiftin.cpp
+	*	1554558585	0
+	"	42	0
+	^	30	11
+	.	30	10
+	+	30	10
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Viktor/Source/stepper_switch_STM32/stepper_switch_STM32.ino
+	*	1554556025	0
+	"	3	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Stack.h
+	*	1554535054	0
+	"	261	0
+	^	217	21
+	.	217	20
+	+	1	11
+	+	222	0
+	+	134	21
+	+	217	20
+
+> scp://R_Pi_Magus/rspspi.sh
+	*	1554526301	0
+	"	2	2
+	^	1	3
+	.	1	2
+	+	1	42
+	+	2	12
+	+	3	0
+	+	2	0
+	+	1	2
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_ledsmenu.py
+	*	1554494337	0
+	"	77	4
+	^	25	0
+	.	25	0
+	+	65	0
+	+	51	30
+	+	52	35
+	+	52	38
+	+	53	24
+	+	52	23
+	+	51	23
+	+	53	25
+	+	51	25
+	+	53	25
+	+	51	0
+	+	65	0
+	+	64	0
+	+	64	16
+	+	64	34
+	+	64	0
+	+	64	28
+	+	64	0
+	+	17	0
+	+	25	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_leds.py
+	*	1554481881	0
+	"	37	0
+	^	75	8
+	.	74	29
+	+	14	0
+	+	1	0
+	+	11	30
+	+	47	0
+	+	18	0
+	+	48	0
+	+	62	0
+	+	65	0
+	+	62	0
+	+	48	0
+	+	46	0
+	+	24	0
+	+	39	0
+	+	38	33
+	+	48	20
+	+	51	0
+	+	52	27
+	+	53	14
+	+	56	0
+	+	74	29
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ShiftOut_exe/shiftout.cpp
+	*	1554480812	0
+	"	29	1
+	^	24	27
+	.	24	26
+	+	13	0
+	+	41	0
+	+	44	0
+	+	21	0
+	+	12	0
+	+	9	0
+	+	12	0
+	+	13	0
+	+	41	0
+	+	21	0
+	+	14	0
+	+	40	0
+	+	14	15
+	+	15	15
+	+	39	11
+	+	15	38
+	+	39	0
+	+	50	23
+	+	45	0
+	+	58	0
+	+	57	0
+	+	56	0
+	+	47	7
+	+	47	0
+	+	50	0
+	+	46	0
+	+	29	0
+	+	29	26
+	+	30	31
+	+	30	0
+	+	31	0
+	+	39	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	30	0
+	+	29	10
+	+	30	0
+	+	34	2
+	+	35	2
+	+	30	0
+	+	27	0
+	+	28	0
+	+	34	0
+	+	35	0
+	+	39	0
+	+	33	0
+	+	30	34
+	+	5	0
+	+	36	21
+	+	27	0
+	+	17	0
+	+	25	0
+	+	21	0
+	+	17	3
+	+	21	0
+	+	25	0
+	+	21	0
+	+	25	0
+	+	21	25
+	+	26	0
+	+	27	0
+	+	38	0
+	+	27	0
+	+	15	3
+	+	38	0
+	+	37	12
+	+	16	40
+	+	14	18
+	+	15	18
+	+	21	0
+	+	20	0
+	+	19	0
+	+	21	1
+	+	20	24
+	+	21	14
+	+	20	16
+	+	25	0
+	+	22	0
+	+	18	34
+	+	23	23
+	+	21	9
+	+	20	34
+	+	21	7
+	+	24	0
+	+	23	0
+	+	24	26
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/shiftout.h
+	*	1554480478	0
+	"	30	4
+	.	49	0
+	+	43	11
+	+	45	11
+	+	47	11
+	+	45	0
+	+	49	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/fest.sh
+	*	1554384031	0
+	"	6	14
+	^	6	15
+	.	6	14
+	+	7	4
+	+	7	3
+	+	7	5
+	+	7	0
+	+	7	2
+	+	7	4
+	+	7	3
+	+	7	0
+	+	7	1
+	+	7	0
+	+	7	3
+	+	7	0
+	+	7	3
+	+	7	0
+	+	7	4
+	+	7	3
+	+	7	6
+	+	7	0
+	+	7	5
+	+	7	0
+	+	7	12
+	+	7	0
+	+	1	0
+	+	6	14
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ShiftOut_exe/shiftout.h
+	*	1554380278	0
+	"	59	2
+	^	55	5
+	.	55	9
+	+	24	0
+	+	25	0
+	+	24	0
+	+	26	0
+	+	24	0
+	+	64	17
+	+	48	0
+	+	61	0
+	+	48	0
+	+	49	0
+	+	51	0
+	+	49	0
+	+	42	0
+	+	50	0
+	+	51	0
+	+	52	0
+	+	54	0
+	+	56	0
+	+	61	0
+	+	56	0
+	+	55	23
+	+	56	0
+	+	55	0
+	+	60	0
+	+	57	0
+	+	56	0
+	+	42	0
+	+	35	0
+	+	38	22
+	+	61	0
+	+	55	4
+	+	42	0
+	+	41	0
+	+	56	0
+	+	57	0
+	+	61	0
+	+	55	9
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Shift/Source/stm32_shift_two/stm32_shift_two.ino
+	*	1554376453	0
+	"	1	2
+	^	40	0
+	.	41	0
+	+	13	19
+	+	15	6
+	+	17	0
+	+	15	10
+	+	17	10
+	+	13	21
+	+	15	21
+	+	13	21
+	+	17	23
+	+	15	24
+	+	13	23
+	+	17	0
+	+	15	21
+	+	13	21
+	+	26	2
+	+	26	0
+	+	25	2
+	+	24	2
+	+	23	2
+	+	27	0
+	+	26	27
+	+	30	0
+	+	32	0
+	+	33	0
+	+	43	2
+	+	45	0
+	+	30	43
+	+	44	19
+	+	14	0
+	+	13	23
+	+	15	23
+	+	17	24
+	+	13	25
+	+	38	41
+	+	15	24
+	+	13	24
+	+	17	23
+	+	15	24
+	+	41	0
+
+> ~/.vim/UltiSnips/c.snippets
+	*	1554375638	0
+	"	90	11
+	^	84	26
+	.	87	13
+	+	94	0
+	+	90	0
+	+	94	0
+	+	95	0
+	+	83	0
+	+	89	0
+	+	82	0
+	+	91	0
+	+	92	0
+	+	90	11
+	+	91	19
+	+	94	0
+	+	91	28
+	+	93	15
+	+	92	0
+	+	94	0
+	+	84	25
+	+	87	13
+
+> /cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/cores/arduino/wiring_shift.c
+	*	1554373917	0
+	"	51	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Shiftout/Source/Shift_out/shift_out.ino
+	*	1554366109	0
+	"	20	0
+	^	45	46
+	.	45	45
+	+	43	36
+	+	46	31
+	+	44	36
+	+	46	31
+	+	44	31
+	+	45	45
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Viktor/Source/stepper_switch_STM32/stepper_switch_button.ino
+	*	1554303419	0
+	"	9	28
+	^	9	29
+	.	9	28
+	+	3	12
+	+	4	12
+	+	5	13
+	+	6	13
+	+	10	21
+	+	8	30
+	+	9	28
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/simplencoder.h
+	*	1554299989	0
+	"	20	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/SerialPrinter.cpp
+	*	1554299987	0
+	"	32	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/Encoder/Encoder.ino
+	*	1554299227	0
+	"	21	0
+	.	10	0
+	+	10	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/SerialPrinter.h
+	*	1554299098	0
+	"	15	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/Encoder/simplencoder.cpp
+	*	1554298655	0
+	"	7	1
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_spimsg.py
+	*	1554278411	0
+	"	16	0
+	^	6	0
+	.	16	0
+	+	8	0
+	+	10	0
+	+	14	0
+	+	20	0
+	+	27	0
+	+	34	0
+	+	41	18
+	+	59	0
+	+	54	0
+	+	59	0
+	+	11	0
+	+	6	0
+	+	1	0
+	+	18	0
+	+	16	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_termenu.py
+	*	1554268724	0
+	"	49	0
+	^	57	25
+	.	84	0
+	+	11	0
+	+	14	0
+	+	6	0
+	+	1	0
+	+	7	0
+	+	14	0
+	+	22	0
+	+	29	0
+	+	37	0
+	+	44	0
+	+	61	0
+	+	84	0
+	+	87	0
+	+	84	0
+	+	88	0
+	+	12	0
+	+	20	0
+	+	17	13
+	+	35	0
+	+	42	0
+	+	59	0
+	+	42	0
+	+	35	0
+	+	27	0
+	+	20	0
+	+	35	8
+	+	35	0
+	+	19	0
+	+	34	33
+	+	14	1
+	+	19	15
+	+	34	29
+	+	46	24
+	+	49	24
+	+	54	24
+	+	57	24
+	+	65	0
+	+	70	0
+	+	75	0
+	+	80	0
+	+	84	0
+
+> /usr/share/vim/vim80/doc/change.txt
+	*	1554265628	0
+	"	301	0
+
+> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/fest.sh
+	*	1554257536	0
+	"	1	0
+
+> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/model/spimsg.py
+	*	1554204268	0
+	"	52	16
+	.	51	0
+	+	50	39
+	+	51	0
+
+> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/presenter/buttons.py
+	*	1554200678	0
+	"	25	25
+	^	24	26
+	.	24	25
+	+	24	25
+
+> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/presenterbuttons.py
+	*	1554200622	0
+	"	1	0
+
+> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/presenter/spicom.py
+	*	1554200182	0
+	"	166	8
+
+> scp://R_Pi_Magus/1spirsp.sh
+	*	1554197489	0
+	"	1	0
+
+> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/main.py
+	*	1554197489	0
+	"	1	0
+
+> scp://R_Pi_Magus/python/spi_proba.py
+	*	1554197489	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/spimsg.py
+	*	1554102043	0
+	"	2	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/testMain.py
+	*	1554096139	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/main.py
+	*	1554083910	0
+	"	78	12
+	^	17	13
+	.	17	12
+	+	3	16
+	+	4	0
+	+	10	0
+	+	15	0
+	+	16	0
+	+	17	0
+	+	23	0
+	+	24	0
+	+	32	0
+	+	186	0
+	+	18	0
+	+	19	0
+	+	22	0
+	+	19	25
+	+	21	21
+	+	20	0
+	+	24	0
+	+	30	0
+	+	32	0
+	+	34	0
+	+	36	0
+	+	60	7
+	+	47	0
+	+	73	0
+	+	62	0
+	+	72	0
+	+	82	0
+	+	74	0
+	+	81	0
+	+	83	0
+	+	100	0
+	+	102	0
+	+	109	0
+	+	111	0
+	+	162	0
+	+	164	0
+	+	167	0
+	+	169	0
+	+	177	0
+	+	171	0
+	+	175	0
+	+	179	0
+	+	180	0
+	+	76	0
+	+	80	17
+	+	75	14
+	+	76	0
+	+	180	14
+	+	180	33
+	+	181	0
+	+	179	13
+	+	181	35
+	+	182	47
+	+	185	0
+	+	183	13
+	+	184	7
+	+	179	0
+	+	17	0
+	+	9	0
+	+	16	0
+	+	9	14
+	+	17	12
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SSPI/slavespi.h
+	*	1554004905	0
+	"	23	0
+	^	93	5
+	.	93	4
+	+	73	0
+	+	69	10
+	+	65	0
+	+	64	11
+	+	66	28
+	+	85	0
+	+	70	0
+	+	57	1
+	+	66	0
+	+	64	0
+	+	68	0
+	+	67	0
+	+	68	0
+	+	72	0
+	+	74	3
+	+	68	0
+	+	75	0
+	+	38	0
+	+	86	0
+	+	77	0
+	+	71	0
+	+	4	0
+	+	38	0
+	+	35	1
+	+	36	1
+	+	34	1
+	+	35	1
+	+	32	1
+	+	92	30
+	+	27	0
+	+	25	0
+	+	17	0
+	+	25	0
+	+	26	0
+	+	17	3
+	+	91	0
+	+	90	18
+	+	25	0
+	+	25	8
+	+	25	0
+	+	18	0
+	+	20	0
+	+	21	0
+	+	22	0
+	+	23	0
+	+	18	13
+	+	25	1
+	+	76	0
+	+	82	0
+	+	81	22
+	+	93	4
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SSPI/slavespi.cpp
+	*	1554004901	0
+	"	210	0
+	^	177	28
+	.	182	0
+	+	201	0
+	+	188	0
+	+	189	0
+	+	202	0
+	+	47	0
+	+	45	0
+	+	65	0
+	+	147	0
+	+	60	0
+	+	96	0
+	+	129	0
+	+	142	0
+	+	129	18
+	+	169	0
+	+	170	0
+	+	173	0
+	+	160	0
+	+	159	0
+	+	160	18
+	+	161	18
+	+	162	1
+	+	163	9
+	+	208	19
+	+	163	12
+	+	187	0
+	+	164	2
+	+	203	0
+	+	205	0
+	+	203	3
+	+	204	16
+	+	104	16
+	+	97	2
+	+	98	1
+	+	227	0
+	+	252	0
+	+	78	0
+	+	75	4
+	+	71	4
+	+	75	3
+	+	71	3
+	+	70	0
+	+	220	0
+	+	218	0
+	+	196	0
+	+	201	52
+	+	202	16
+	+	209	29
+	+	211	4
+	+	217	27
+	+	215	0
+	+	215	33
+	+	214	20
+	+	216	5
+	+	214	0
+	+	216	7
+	+	214	3
+	+	215	24
+	+	213	0
+	+	212	28
+	+	228	25
+	+	229	25
+	+	223	15
+	+	229	0
+	+	228	34
+	+	229	30
+	+	188	2
+	+	229	21
+	+	188	1
+	+	185	14
+	+	191	0
+	+	192	0
+	+	191	5
+	+	185	0
+	+	191	7
+	+	184	0
+	+	191	0
+	+	190	0
+	+	197	0
+	+	196	4
+	+	197	3
+	+	204	6
+	+	198	0
+	+	204	0
+	+	213	0
+	+	199	15
+	+	176	0
+	+	175	0
+	+	176	27
+	+	177	29
+	+	178	0
+	+	179	0
+	+	181	0
+	+	180	0
+	+	179	0
+	+	181	0
+	+	182	0
+	m	201	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/spicom.py
+	*	1553992564	0
+	"	37	0
+	.	38	0
+	+	14	0
+	+	4	0
+	+	12	0
+	+	19	0
+	+	27	0
+	+	33	0
+	+	38	0
+	+	43	0
+	+	47	0
+	+	50	0
+	+	51	0
+	+	74	0
+	+	75	0
+	+	77	0
+	+	79	0
+	+	81	0
+	+	82	0
+	+	84	0
+	+	88	0
+	+	90	0
+	+	92	0
+	+	94	0
+	+	95	0
+	+	96	0
+	+	97	0
+	+	4	0
+	+	12	0
+	+	18	0
+	+	26	0
+	+	49	0
+	+	50	0
+	+	47	0
+	+	32	0
+	+	37	0
+	+	42	0
+	+	73	0
+	+	78	0
+	+	80	0
+	+	81	0
+	+	87	0
+	+	91	0
+	+	93	0
+	+	94	0
+	+	95	0
+	+	96	0
+	+	97	0
+	+	102	0
+	+	107	0
+	+	112	0
+	+	119	0
+	+	122	0
+	+	128	0
+	+	134	0
+	+	74	0
+	+	82	0
+	+	88	0
+	+	113	0
+	+	135	0
+	+	146	0
+	+	146	19
+	+	147	0
+	+	82	19
+	+	83	0
+	+	89	0
+	+	113	18
+	+	114	0
+	+	113	18
+	+	135	18
+	+	136	0
+	+	135	18
+	+	23	0
+	+	22	0
+	+	38	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/pinsRedefine.h
+	*	1553922596	0
+	"	23	20
+	^	26	2
+	.	24	8
+	+	14	0
+	+	15	0
+	+	14	10
+	+	9	1
+	+	10	1
+	+	9	0
+	+	20	0
+	+	24	8
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/.gitignore
+	*	1553917174	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Actual_fast/Progects/Programing/Grimuar/Grimuar.txt
+	*	1553870252	0
+	"	15	0
+
+> /cygdrive/d/tools.win/Fast/Actual_fast/Progects/Programing/Grimuar/ToDoGrimuar.txt
+	*	1553870230	0
+	"	6	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SSPI/Stack.h
+	*	1553759133	0
+	"	23	0
+	.	23	0
+	+	61	0
+	+	63	0
+	+	65	0
+	+	67	0
+	+	69	0
+	+	56	0
+	+	210	0
+	+	216	0
+	+	221	0
+	+	218	19
+	+	219	2
+	+	216	24
+	+	56	13
+	+	218	24
+	+	56	16
+	+	218	3
+	+	61	0
+	+	57	0
+	+	23	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SSPI/gtest.cpp
+	*	1553755657	0
+	"	50	0
+	^	48	28
+	.	51	26
+	+	17	0
+	+	8	0
+	+	33	0
+	+	32	0
+	+	33	19
+	+	52	0
+	+	35	0
+	+	41	0
+	+	40	0
+	+	45	0
+	+	39	0
+	+	38	26
+	+	39	27
+	+	40	26
+	+	44	0
+	+	42	0
+	+	44	26
+	+	46	0
+	+	48	0
+	+	47	0
+	+	46	13
+	+	47	29
+	+	48	27
+	+	52	0
+	+	49	0
+	+	48	26
+	+	51	26
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Stak.cpp
+	*	1553734654	0
+	"	26	0
+	^	9	25
+	.	14	0
+	+	1	0
+	+	3	0
+	+	5	0
+	+	7	0
+	+	11	0
+	+	12	0
+	+	17	0
+	+	19	0
+	+	4	0
+	+	5	0
+	+	7	0
+	+	10	0
+	+	11	0
+	+	8	34
+	+	10	0
+	+	10	25
+	+	10	21
+	+	15	45
+	+	17	0
+	+	19	0
+	+	42	0
+	+	7	0
+	+	8	2
+	+	16	27
+	+	24	0
+	+	26	23
+	+	28	0
+	+	23	0
+	+	10	27
+	+	34	0
+	+	9	24
+	+	10	0
+	+	13	0
+	+	10	0
+	+	14	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Stak.h
+	*	1553734561	0
+	"	17	0
+	^	15	2
+	.	16	0
+	+	8	0
+	+	9	0
+	+	16	0
+	+	2	6
+	+	3	18
+	+	16	0
+	+	1	12
+	+	2	0
+	+	12	0
+	+	14	0
+	+	16	0
+	+	17	0
+	+	18	0
+	+	20	0
+	+	24	0
+	+	26	0
+	+	29	0
+	+	30	0
+	+	31	0
+	+	4	0
+	+	5	0
+	+	14	0
+	+	28	0
+	+	30	0
+	+	23	14
+	+	25	10
+	+	15	8
+	+	16	0
+	+	15	1
+	+	16	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SPIslave/slavespi.cpp
+	*	1553726802	0
+	"	34	0
+	^	6	34
+	.	5	40
+	+	88	0
+	+	89	0
+	+	202	0
+	+	8	0
+	+	5	38
+	+	6	25
+	+	15	15
+	+	17	17
+	+	15	0
+	+	17	0
+	+	15	8
+	+	17	15
+	+	5	41
+	+	6	32
+	+	5	40
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SPIslave/slavespi.h
+	*	1553726799	0
+	"	74	25
+	.	21	0
+	+	14	1
+	+	31	0
+	+	60	0
+	+	61	0
+	+	70	0
+	+	60	31
+	+	61	27
+	+	60	10
+	+	61	10
+	+	60	26
+	+	61	22
+	+	60	6
+	+	61	6
+	+	60	27
+	+	61	23
+	+	22	0
+	+	17	9
+	+	18	8
+	+	21	0
+	+	18	13
+	+	74	25
+	+	21	0
+	+	20	0
+	+	21	0
+	+	19	28
+	+	20	25
+	+	21	0

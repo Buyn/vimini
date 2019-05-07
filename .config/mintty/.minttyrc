@@ -1,0 +1,13 @@
+BoldAsFont=-1
+Transparency=high
+CursorType=block
+CursorBlinks=no
+Locale=en
+Charset=UTF-8
+Term=xterm-256color
+OpaqueWhenFocused=yes
+RightClickAction=extend
+ClicksTargetApp=no
+CtrlShiftShortcuts=yes
+ClipShortcuts=no
+ComposeKey=off

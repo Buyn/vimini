@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =6
+let g:netrw_dirhist_1='/home/BuYn'
+let g:netrw_dirhist_2='/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ShiftIn/Source/arduino/Shift_in_lib'
+let g:netrw_dirhist_3='/'
+let g:netrw_dirhist_4='/home/BuYn'
+let g:netrw_dirhist_5='/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ShiftIn/Source/arduino/Shift_in_lib'
+let g:netrw_dirhist_6='/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/RAMPS_driver/Source/stm32_Toch_Driver'

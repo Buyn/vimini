@@ -1,0 +1,2 @@
+echo Start ip bans
+call addIpBanList.cmd  125.45.157.231 SQL

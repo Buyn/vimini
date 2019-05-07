@@ -1,0 +1,283 @@
+""""""""""""""""""""""""""""
+" Start of Vim-plug
+""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+
+
+""""""""""""""""""""""""""""
+" Plug list block
+""""""""""""""""""""""""""""
+" Make sure you use single quotes
+" rovides an asynchronous keyword completion system in the current buffer
+" https://github.com/Shougo/deoplete.nvim/blob/master/doc%2Fdeoplete.txt
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+"UltiSnips comes without snippets. The default snippets can be found here:
+"https://github.com/honza/vim-snippets
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Group dependencies, vim-snippets depends on ultisnips
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-master branch
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Unmanaged plugin (manually installed and updated)
+Plug '~/my-prototype-plugin'
+
+" :colorscheme wombat256 or :colorscheme wombat256mod
+" version of Wombat256mod vim theme
+Plug 'wombat256.vim' 
+""""""""""""""""""""""""""""
+
+" Add plugins   to &runtimepath
+call plug#end()
+""""""""""""""""""""""""""""
+" End of Vim-plug
+"""""""""""""""""""""""""""
+"Reload .vimrc and :PlugInstall to install plugins.
+""""""""""""""""""""""""""""
+" Start of My setings
+""""""""""""""""""""""""""""
+" set for russin keys
+""""""""""""""""""""""""""""
+set keymap=russian-jcukenwin 
+set iminsert=0
+function! MyKeyMapHighlight()
+	if &iminsert == 0
+		hi StatusLine ctermfg=DarkBlue guifg=DarkBlue
+	else
+		hi StatusLine ctermfg=DarkGreen guifg=DarkGreen
+	endif
+endfunction
+" Вызываем функцию, чтобы она установила цвета при запуске Vim'a
+call MyKeyMapHighlight()
+
+" При изменении активного окна будет выполняться обновление
+" индикации текущей раскладки
+au WinEnter * :call MyKeyMapHighlight()
+
+":map <C-K> i
+"cmap <silent> <C-f> <C-^>
+imap <silent> <C-f> <C-^>X<Esc>:call MyKeyMapHighlight()<CR>a<C-H>
+"nmap <silent> <C-f> a<C-^><Esc>:call MyKeyMapHighlight()<CR>
+"vmap <silent> <C-f> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
+
+""""""""""""""""""""""""""""
+" *** Other setings *** 
+""""""""""""""""""""""""""""
+" Precede each line with its line number.
+set number
+set relativenumber
+set nocompatible
+set mouse=a
+"display the current cursor position
+set ruler
+"Display an incomplete command
+set showcmd
+"1.Filetype detection.  2.Using filetype plugin files 3.Using indent files
+filetype plugin indent on
+"break text to 78 characters plain text.  
+autocmd FileType text setlocal textwidth=240
+"char showe 
+"set list
+"set listchars=tab:\|\<Space>
+" > is shown at the beginning, - throughout
+set listchars=tab:>-     
+syntax enable
+"Spell cheking enabling for ru and eng by default
+"]s — Перейти к следующей ошбке
+"[s — К предыдущей ошибке
+"z= — Выдать список возможных замен
+"zG — Добавить слово в словарь
+"zW — Пометить слово как ошибочное
+set nospell
+"setlocal spell spelllang=ru
+" Allow keys to move to the previous/next line on the first/last character
+set whichwrap=b,<,>,[,],l,h
+set backspace=indent,eol
+"" Список кодировок файлов для автоопределения
+set fileencodings=utf-8,cp1251,koi8-r,cp866
+" Включает виртуальный звонок (моргает, а не бибикает при ошибках)
+set visualbell
+""""""""""""""""""""""""""""
+" Setting colors and theme 
+""""""""""""""""""""""""""""
+colorscheme wombat256mod
+""""""""""""""""""""""""""""
+" Просмотр нетекстовых файлов в Vim -->
+au BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
+au BufReadPost *.doc silent %!antiword "%"
+au BufReadPost *.odt silent %!odt2txt "%"
+""""""""""""""""""""""""""""
+" Tabs Setings
+""""""""""""""""""""""""""""
+"filetype plugin indent on
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+" On pressing tab, insert 4 spaces
+"set expandtab
+""""""""""""""""""""""""""""
+"kind of folding used Possible values :
+"  manual indent expr  marker syntax diff  
+"setlocal foldmethod=manual,indent,marker
+""""""""""""""""""""""""""""
+" *** Menu block *** 
+""""""""""""""""""""""""""""
+" Settings menu
+""""""""""""""""""""""""""""
+fu! SeeTab01()
+  if !exists("g:SeeTabEnabled")
+    let g:SeeTabEnabled = 1
+    let g:SeeTab_list = &list
+    let g:SeeTab_listchars = &listchars
+    let regA = @a
+    redir @a
+    hi SpecialKey
+    redir END
+    let g:SeeTabSpecialKey = @a
+    let @a = regA
+    silent! hi SpecialKey guifg=black guibg=magenta ctermfg=black ctermbg=magenta
+    set list
+    set listchars=tab:\|\
+  else
+    let &list = g:SeeTab_list
+    let &listchars = &listchars
+    silent! exe "hi ".substitute(g:SeeTabSpecialKey,'xxx','','e')
+    unlet g:SeeTabEnabled g:SeeTab_list g:SeeTab_listchars
+  endif
+endfunc
+
+fu! SeeTab02()
+  if !exists("g:SeeTabEnabled")
+    let g:SeeTabEnabled = 0
+  end
+  if g:SeeTabEnabled==0
+    syn match leadspace /^\s\+/ contains=syntab
+    exe "syn match syntab /\\s\\{" . &sw . "}/hs=s,he=s+1 contained"
+    hi syntab guibg=Grey
+    let g:SeeTabEnabled=1
+  else
+    syn clear leadspace
+    syn clear syntab
+    let g:SeeTabEnabled=0
+  end
+endfunc
+""""""""""""""""""""""""""""
+set wildmenu
+set wcm=<Tab>
+menu Mset.Simbols.SeeTab01  :call SeeTab01()
+menu Mset.Simbols.SeeTab02  :call SeeTab02()
+menu Mset.Paste.on     :set paste<CR>
+menu Mset.Paste.off    :set nopaste<CR>
+menu Mset.Folding.manual    :setlocal foldmethod=manual<CR>
+menu Mset.Folding.indent    :setlocal foldmethod=indent<CR>
+menu Mset.Folding.syntax    :setlocal foldmethod=syntax<CR>
+menu Mset.Folding.marker    :setlocal foldmethod=marker<CR>
+"menu Mset.Spell.ru     :set spell spelllang=<CR>:set enc=koi8-r<CR>:set spell spelllang=ru<CR>
+menu Mset.Spell.ru     :set spell spelllang=<CR>:set spell spelllang=ru<CR>
+"menu Mset.Spell.ru,en  :set spell spelllang=<CR>:set enc=koi8-r<CR>:set spell spelllang=ru,en<CR>
+menu Mset.Spell.ru,en  :set spell spelllang=<CR>:set spell spelllang=ru,en<CR>
+menu Mset.Spell.en     :set spell spelllang=<CR>:set spell spelllang=en<CR>
+menu Mset.Spell.off    :set nospell<CR>
+map <F9> :emenu Mset.<Tab>
+""""""""""""""""""""""""""""
+" *** Mapings block *** 
+""""""""""""""""""""""""""""
+" Mapings for UltiSnips
+""""""""""""""""""""""""""""
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+"let g:UltiSnipsExpandTrigger="<tab>"
+"let g:UltiSnipsListSnippets=<c-tab>
+let g:UltiSnipsJumpForwardTrigger="<c-l>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+"let g:UltiSnipsSnippetDirectories=[".vim/UltiSnips"]
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.vim/UltiSnips']
+
+" Deoplete is the abbreviation of "dark powered neo-completion"
+let g:deoplete#enable_at_startup = 1
+""""""""""""""""""""""""""""
+" Mapings for clipbord
+""""""""""""""""""""""""""""
+map cp "*p
+map cP "*P
+map cy "*y
+map cY "*yy
+map cX "*yydd
+""""""""""""""""""""""""""""
+"Insert a single character
+""""""""""""""""""""""""""""
+"  nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR> 
+":nnoremap ,i i_<Esc>r
+":nnoremap ,a a_<Esc>r
+":nnoremap s :exec "normal i".nr2char(getchar())."\e"<CR>
+":nnoremap S :exec "normal a".nr2char(getchar())."\e"<CR>
+function! RepeatChar(char, count)
+  return repeat(a:char, a:count)
+endfunction
+nnoremap <silent> <Space> :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <silent> <S-Space> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+""""""""""""""""""""""""""""
+"Savind file keys
+""""""""""""""""""""""""""""
+imap <F2> <Esc>:w!<CR>
+map <F2> :w!<CR>
+map <S-F2> :mkview<CR>
+map <F3> :mkview<CR>
+""""""""""""""""""""""""""""
+" Loding File keys
+""""""""""""""""""""""""""""
+map <C-F5> :loadview<CR>
+map <F5> :edit<CR>
+map <S-F5> :!edit<CR>
+""""""""""""""""""""""""""""
+" Movement keys
+""""""""""""""""""""""""""""
+map gl g$
+map gh g^
+map gWW :tabf ~/.vim/commanots.txt<CR>
+map gWT :tabe %<CR>
+"Ctrl+a: Go to beginning of the line [Normal Mode && Insert Mode]
+"Ctrl+e: Go to end of line [Normal Mode && Insert Mode]
+"Alt+f: Backward a word [Insert Mode]
+"Alt+b: Forward a word [Insert Mode]
+"Alt+d: Delete a word (backward) [Insert Mode]
+imap <C-a> <ESC>I
+imap <C-e> <ESC>A
+inoremap <M-f> <ESC><Space>Wi
+inoremap <M-b> <Esc>Bi
+inoremap <M-d> <ESC>cW
+""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
+" End of My setings
+""""""""""""""""""""""""""""
+    

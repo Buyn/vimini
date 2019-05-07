@@ -1,0 +1,8 @@
+#!/usr/bin/sh
+#path="/foo/bar";
+path="res/txt.txt";
+echo file path : "$path"
+for p in `cat "$path"`;
+	do echo line "$p"
+ done
+

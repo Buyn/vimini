@@ -1,0 +1,8 @@
+ENTRY "scripts/sh" URL "/home/BuYn/scripts/sh"
+ENTRY "/etc/mc" URL "/etc/mc"
+ENTRY ".config/mc" URL "/home/BuYn/.config/mc"
+ENTRY "distrib/CygWin" URL "/cygdrive/f/distrib/Shells/CygWin"
+ENTRY "CMD/IP_BLOCK" URL "/cygdrive/d/scripts/CMD/IP_BLOCK"
+ENTRY "/My Doc's//Quest/NY2016" URL "/cygdrive/d/My Doc's/Ofice/Бумаго оборот/Proj/Quest/NY2016"
+ENTRY "vim" URL "/home/BuYn/.vim"
+ENTRY "/cygdrive/d/Development" URL "/cygdrive/d/Development"

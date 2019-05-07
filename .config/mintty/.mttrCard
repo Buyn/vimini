@@ -1,0 +1,15 @@
+BoldAsFont=-1
+Transparency=medium
+CursorType=block
+Columns=43
+Rows=24
+CursorBlinks=no
+Locale=ru_RU
+Charset=UTF-8
+Term=xterm-256color
+OpaqueWhenFocused=no
+RightClickAction=extend
+ClicksTargetApp=no
+CtrlShiftShortcuts=yes
+ClipShortcuts=no
+ComposeKey=off

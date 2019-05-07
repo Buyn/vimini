@@ -1,0 +1,30 @@
+#!/usr/bin/sh
+#path="/foo/bar";
+usrS="1";
+ipS="4";
+ipV="NULL";
+usrV="NULL";
+path="res/txt.txt";
+echo "echo Start ip bans" > res/ipbans.cmd; 
+for p in `cat "$path"`; do 
+	if [  "$usrV" =  "T" ] ; then
+		echo "True! $p"
+		usrV="$p"
+	fi
+	if [  "$ipV" =  "T" ] ; then
+		echo "True! $p"
+		ipV="$p"
+		echo "ban.cmd $ipV $usrV" >> res/ipbans.cmd; 
+		ipV="NULL"
+		usrV="NULL"
+	fi
+	if [ "$p" = "$usrS" ] ; then
+		echo "It's there! $p"
+		usrV="T"
+	fi
+	if [[ "$p" = "$ipS" ]] ; then
+		echo "It's there! $p"
+		ipV="T"
+	fi
+done
+

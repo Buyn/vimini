@@ -1,0 +1,169 @@
+""""""""""""""""""""""""""""
+" Start of Vim-plug
+""""""""""""""""""""""""""""
+call plug#begin('~/.vim/plugged')
+
+
+""""""""""""""""""""""""""""
+" Plug list block
+""""""""""""""""""""""""""""
+" Make sure you use single quotes
+
+" Shorthand notation; fetches https://github.com/junegunn/vim-easy-align
+Plug 'junegunn/vim-easy-align'
+
+" Any valid git URL is allowed
+Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+" Group dependencies, vim-snippets depends on ultisnips
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+
+" On-demand loading
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
+
+" Using a non-master branch
+Plug 'rdnetto/YCM-Generator', { 'branch': 'stable' }
+
+" Using a tagged release; wildcard allowed (requires git 1.9.2 or above)
+Plug 'fatih/vim-go', { 'tag': '*' }
+
+" Plugin options
+Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
+
+" Plugin outside ~/.vim/plugged with post-update hook
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+
+" Unmanaged plugin (manually installed and updated)
+Plug '~/my-prototype-plugin'
+
+" :colorscheme wombat256 or :colorscheme wombat256mod
+" version of Wombat256mod vim theme
+Plug 'wombat256.vim'
+""""""""""""""""""""""""""""
+
+" Add plugins   to &runtimepath
+call plug#end()
+""""""""""""""""""""""""""""
+" End of Vim-plug
+"""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""
+" Start of My setings
+""""""""""""""""""""""""""""
+" set for russin keys
+""""""""""""""""""""""""""""
+set keymap=russian-jcukenwin 
+set iminsert=0
+function! MyKeyMapHighlight()
+	if &iminsert == 0
+		hi StatusLine ctermfg=DarkBlue guifg=DarkBlue
+	else
+		hi StatusLine ctermfg=DarkGreen guifg=DarkGreen
+	endif
+endfunction
+" Вызываем функцию, чтобы она установила цвета при запуске Vim'a
+call MyKeyMapHighlight()
+
+" При изменении активного окна будет выполняться обновление
+" индикации текущей раскладки
+au WinEnter * :call MyKeyMapHighlight()
+
+":map <C-K> i
+"cmap <silent> <C-f> <C-^>
+imap <silent> <C-f> <C-^>X<Esc>:call MyKeyMapHighlight()<CR>a<C-H>
+"nmap <silent> <C-f> a<C-^><Esc>:call MyKeyMapHighlight()<CR>
+"vmap <silent> <C-f> <Esc>a<C-^><Esc>:call MyKeyMapHighlight()<CR>gv
+
+""""""""""""""""""""""""""""
+" *** Other setings *** 
+""""""""""""""""""""""""""""
+" Precede each line with its line number.
+set number
+set relativenumber
+set nocompatible
+set mouse=a
+"display the current cursor position
+set ruler
+"Display an incomplete command
+set showcmd
+"1.Filetype detection.  2.Using filetype plugin files 3.Using indent files
+filetype plugin indent on
+"break text to 78 characters plain text.  
+autocmd FileType text setlocal textwidth=78
+syntax enable
+"Spell cheking enabling for ru and eng by default
+"]s — Перейти к следующей ошбке
+"[s — К предыдущей ошибке
+"z= — Выдать список возможных замен
+"zG — Добавить слово в словарь
+"zW — Пометить слово как ошибочное
+setlocal spell spelllang=en,ru
+" Allow keys to move to the previous/next line on the first/last character
+set whichwrap=b,<,>,[,],l,h
+"" Список кодировок файлов для автоопределения
+set fileencodings=utf-8,cp1251,koi8-r,cp866
+
+" Включает виртуальный звонок (моргает, а не бибикает при ошибках)
+set visualbell
+""""""""""""""""""""""""""""
+" Setting colors and theme 
+""""""""""""""""""""""""""""
+colorscheme wombat256mod
+""""""""""""""""""""""""""""
+" Просмотр нетекстовых файлов в Vim -->
+au BufReadPost *.pdf silent %!pdftotext -nopgbrk "%" - |fmt -csw78
+au BufReadPost *.doc silent %!antiword "%"
+au BufReadPost *.odt silent %!odt2txt "%"
+""""""""""""""""""""""""""""
+"kind of folding used Possible values :
+"  manual indent expr  marker syntax diff  
+"set foldmethod
+" *** Menu block *** 
+""""""""""""""""""""""""""""
+" Settings menu
+""""""""""""""""""""""""""""
+set wildmenu
+set wcm=<Tab>
+menu Mset.Paste.on     :set paste<CR>
+menu Mset.Paste.off    :set nopaste<CR>
+menu Mset.Folding.manual     :setlocal foldmethod=manual<CR>
+menu Mset.Folding.indent   :setlocal foldmethod=indent<CR> menu Mset.Spell.ru     :set spell spelllang=<CR> :set enc=koi8-r<CR> :set spell spelllang=ru<CR> menu Mset.Spell.ru,en  :set spell spelllang=<CR> :set enc=koi8-r<CR> :set spell spelllang=ru,en<CR> menu Mset.Spell.en     :set spell spelllang=<CR>                     :set spell spelllang=en<CR> menu Mset.Spell.off                        :set nospell<CR> map <F9> :emenu Mset.<Tab> """""""""""""""""""""""""""" """""""""""""""""""""""""""" " *** Mapings block *** """""""""""""""""""""""""""" " Mapings for clipbord """""""""""""""""""""""""""" map cp "*p map cP "*P map cy "*y map cv "*yy map cx "*yydd """""""""""""""""""""""""""" "Insert a single character """""""""""""""""""""""""""" "  nnoremap S :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR> ":nnoremap ,i i_<Esc>r
+":nnoremap ,a a_<Esc>r
+":nnoremap s :exec "normal i".nr2char(getchar())."\e"<CR>
+":nnoremap S :exec "normal a".nr2char(getchar())."\e"<CR>
+function! RepeatChar(char, count)
+  return repeat(a:char, a:count)
+endfunction
+nnoremap <silent> <Space> :<C-U>exec "normal i".RepeatChar(nr2char(getchar()), v:count1)<CR>
+nnoremap <silent> <S-Space> :<C-U>exec "normal a".RepeatChar(nr2char(getchar()), v:count1)<CR>
+""""""""""""""""""""""""""""
+"Savind file keys
+""""""""""""""""""""""""""""
+imap <F2> <Esc>:w!<CR>
+map <F2> :w!<CR>
+map <C-F2> :mkveiw!<CR>
+""""""""""""""""""""""""""""
+" Loding File keys
+""""""""""""""""""""""""""""
+map <C-F5> :loadview<CR>
+""""""""""""""""""""""""""""
+" Movement keys
+""""""""""""""""""""""""""""
+"Ctrl+a: Go to beginning of the line [Normal Mode && Insert Mode]
+"Ctrl+e: Go to end of line [Normal Mode && Insert Mode]
+"Alt+f: Backward a word [Insert Mode]
+"Alt+b: Forward a word [Insert Mode]
+"Alt+d: Delete a word (backward) [Insert Mode]
+map <C-a> <ESC>^
+imap <C-a> <ESC>I
+map <C-e> <ESC>$
+imap <C-e> <ESC>A
+inoremap <M-f> <ESC><Space>Wi
+inoremap <M-b> <Esc>Bi
+inoremap <M-d> <ESC>cW
+""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""
+" End of My setings
+""""""""""""""""""""""""""""
+    

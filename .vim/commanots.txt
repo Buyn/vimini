@@ -1,0 +1,11 @@
+:%s/ render_to_strig/ render_to_string/gc
+ cubeBl
+:5,65s/model/MODEL/c
+:s/10/X_STEP_PIN/gc
+:.,+2s/foo/bar/g
+:0,$s/10/X_STEP_PIN/gc
+:%s/se_interaps/sec_interaps/gc
+nvwf /usr/share/vim/vim80/doc/help.txt
+chmod +w /usr/share/vim/vim80/doc/help.txt
+***************************************
+

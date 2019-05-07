@@ -1,0 +1,107 @@
+snippet tasN
+self.assertIs${3:Not}None(${4:test_result}, 
+			"$0test None result error")
+endsnippet
+
+
+snippet tasI'
+self.assertIn(${4:test_where}, ${5:test_what}, 
+			"$0test None result error")
+endsnippet
+
+
+snippet tasI
+self.assertIn(${4:test_where}, ${5:test_what}) 
+endsnippet
+
+
+snippet tasT
+self.assertTrue(${4:test_what} )
+endsnippet
+
+
+snippet tasT'
+self.assertTrue(${4:test_what}, 
+		"$0test None result error")
+endsnippet
+
+
+snippet tasTU
+self.assertTemplateUsed(${4:self.}${5:test_result}, ${6:'htmlvalue'}$0 )
+endsnippet
+
+
+snippet tasTU'
+self.assertTemplateUsed(${4:self.}${5:test_result}, ${6:'htmlvalue'}$0 )
+		${7:'Test error $5 is not equal $6'}$0 )
+endsnippet
+
+
+snippet tas==
+self.assertEqual(${4:self.}${5:test_result}, ${6:'value'}$0 )
+endsnippet
+
+
+snippet tas=='
+self.assertEqual(${4:self.}${5:test_result}, ${6:'value'},
+		${7:'Test error $5 is not equal $6'}$0 )
+endsnippet
+
+
+snippet tas!='
+self.assertNotEqual(${4:self.}${5:test_result}, ${6:'value'},
+		${7:'Test error $5 is not equal $6'}$0 )
+endsnippet
+
+
+snippet tm==
+
+def test_${VISUAL}(self):
+	test_result = self.test.${VISUAL}(${1:'value'})
+	test_result = self.test.${VISUAL}(${2:'value01'})
+	self.assertIs${3:Not}None(${4:test_result}, 
+			"$0test None result error")
+	self.assertEqual(self.test.${5:test_result}, $1},
+		 'Test error $5 is not equal $1')
+	self.assertEqual(self.test.$5, $2},
+		 'Test error $5 is not equal $2')
+
+endsnippet
+
+snippet tmr
+
+def test_${VISUAL}(self):
+	test_result = self.test.${VISUAL}(${1:'value'})
+	test_result2 = self.test.${VISUAL}(${2:'value'})
+	self.assertIs${3:Not}None(${4:test_result}, 
+			"$0test None result error")
+	self.assertEqual(${5:test_result}, ${6:'value'},
+		 'Test error $5 is not equal $6')
+	self.assertEqual(${7:test_result2}, ${8:'value'},
+		 'Test error $7 is not equal $8')
+
+endsnippet
+
+snippet tim
+
+def test_${VISUAL}(self):
+	test_result1 = self.test.${VISUAL}(${1:'value'})
+	test_result2 = self.test.${VISUAL}(${2:'value'})
+	self.assertIs${3:Not}None(${4:test_result1}, 
+			"test None result error")
+	self.assertIs${5:Not}None(${6:test_result2}, 
+			"$0test None result error")
+	self.assert${7:True}(${8:test_result1},
+		 'Test error $8 is not  $7')
+	self.assert${9:True}(${10:test_result2},
+		 'Test error $10 is not  $9')
+
+endsnippet
+
+snippet .tm
+self.test.${VISUAL}$1($0)
+endsnippet
+
+snippet .t
+self.test.$0
+endsnippet

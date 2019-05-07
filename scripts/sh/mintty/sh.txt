@@ -1,0 +1,8 @@
+C:\cygwin\bin\mintty.exe -i /Cygwin-Terminal.ico /bin/bash -l -c "eval `ssh-agent` ; ssh-add ; ssh <username>@<servername>"
+eval `ssh-agent` ; ssh-add ; ssh <username>@<servername>
+C:\Cygwin\bin\mintty.exe -e /bin/sh -l -c '/scripts/servername.sh'
+D:\shell\CygWin\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico
+D:\shell\CygWin\cygwin64\bin\mintty.exe -i /Cygwin-Terminal.ico /home/BuYn/scripts/sh/vim/  -l -c "mc"
+"D:\shell\CygWin\bin\mintty.exe" -w max -h always -t "%1" -e /bin/bash -li -c 'cd "$(dirname "$(cygpath -u "%1")")" && bash "$(cygpath -u "%1")"'
+"D:\shell\CygWin\cygwin64\bin\mintty.exe" -w max -h always -t "%1" -e /bin/bash -li -c 'cd "$(dirname "$(cygpath -u "%1")")" && bash "$(cygpath -u "%1")"'
+D:\shell\CygWin\cygwin64\bin\mintty.exe -h always -e /bin/bash -li -c '/home/BuYn/scripts/sh/vim/todomain.sh'

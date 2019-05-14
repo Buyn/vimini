@@ -4,7 +4,6 @@
 """"""""""""""""""""""""""""
 call plug#begin('~/.vim/plugged')
 
-
 """"""""""""""""""""""""""""
 " Plug list block
 """"""""""""""""""""""""""""
@@ -15,6 +14,14 @@ Plug 'junegunn/vim-easy-align'
 
 " Any valid git URL is allowed
 Plug 'https://github.com/junegunn/vim-github-dashboard.git'
+
+"Vim plugin that counts your keypresses and saves statistics to Code::Stats, a
+"free stats tracking service for programmers.
+Plug 'https://gitlab.com/code-stats/code-stats-vim.git'
+
+" WakaTime for Vim Vim The open source plugin for productivity metrics, goals, leaderboards, and automatic time tracking.
+"Plug 'https://github.com/wakatime/vim-wakatime.git'
+Plug 'wakatime/vim-wakatime'
 
 " Group dependencies, vim-snippets depends on ultisnips
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
@@ -114,6 +121,13 @@ set backspace=indent,eol
 set fileencodings=utf-8,cp1251,koi8-r,cp866
 " Включает виртуальный звонок (моргает, а не бибикает при ошибках)
 set visualbell
+""""""""""""""""""""""""}}}2
+""""""""""""""""""""""""""""
+" *** Plagins setings *** {{{2
+""""""""""""""""""""""""""""
+"Code::Stats plugin for Vim
+" REQUIRED: set your API key
+let g:codestats_api_key = 'SFMyNTY.UW5WWmJnPT0jI05qQXdNZz09.1h4hpvckNRH1BiYBcsaJmzeKYp_-HvbAzwkIcpEkHNg'
 """"""""""""""""""""""""}}}2
 """"""""""""""""""""""""""""
 " Setting colors and theme {{{2

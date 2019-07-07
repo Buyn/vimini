@@ -9,4 +9,4 @@
 #fi
 #echo "D:\shell\Far\far.exe" "${1}"
 #echo "D:\shell\Far\far.exe" '${1}'
-cygstart "D:\shell\Far\far.exe" "${1}"
+cygstart "D:\shell\Far\far.exe" ${1}

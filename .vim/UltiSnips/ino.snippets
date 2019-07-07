@@ -1,3 +1,20 @@
+## Serial.print
+snippet sprln
+Serial.println(${0});
+endsnippet
+
+snippet sprn
+Serial.print(${0});
+endsnippet
+
+snippet sprn"
+Serial.print("${0}");
+endsnippet
+
+snippet sprln"
+Serial.println("${0}");
+endsnippet
+
 ## Main
 # main
 snippet main
@@ -88,6 +105,18 @@ endsnippet
 ##
 ## Functions
 # function definition
+snippet ifndef
+#ifndef ${1:SOME_DEFINE}//{{{
+#define $1
+$0
+#endif /* $1 }}}*/
+endsnippet
+
+snippet ifndefu
+#ifndef ${1:UNITTEST}/*{{{*/
+$0
+#endif /* $1 }}}*/
+endsnippet
 
 snippet fun
 /*   $2   * {{{ */

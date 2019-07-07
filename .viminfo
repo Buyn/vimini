@@ -11,15 +11,57 @@
 # hlsearch on (H) or off (h):
 ~h
 # Последний Шаблон поиска:
-~Msle0~/\<value\>
+~Msle0~/\<elf2bin\>
 
 # Последний Замена Шаблон поиска:
-~MSle0&fade_speed
+~MSle0&LA
 
 # Последняя строка для замены:
-$timeout
+$POStepMotor
 
 # Командная строка, история (начиная от свежего к старому):
+:emenu Mset.а
+|2,0,1562372634,,"emenu Mset.а"
+:%s/StepMotor/EnScaner/gc
+|2,0,1562371780,,"%s/StepMotor/EnScaner/gc"
+:h v
+|2,0,1562037390,,"h v"
+:h viw
+|2,0,1562037368,,"h viw"
+:emenu Mset.
+|2,0,1561235652,,"emenu Mset."
+:%s/LA/POStepMotor/gc
+|2,0,1560467819,,"%s/LA/POStepMotor/gc"
+:%s/laveanaliser/postepmotor/gc
+|2,0,1560467644,,"%s/laveanaliser/postepmotor/gc"
+:emenu Mset.п
+|2,0,1561047207,,"emenu Mset.п"
+:%s/la.h/postepmotor.h/gc
+|2,0,1560986919,,"%s/la.h/postepmotor.h/gc"
+:emenu Mset.аkk
+|2,0,1560784047,,"emenu Mset.аkk"
+:%s/StepMotor/ToWaveStepMotor/gc
+|2,0,1559714536,,"%s/StepMotor/ToWaveStepMotor/gc"
+:%s/step go x 1   /step go x 1   /gc
+|2,0,1559714503,,"%s/step go x 1   /step go x 1   /gc"
+:emenu Mset.g
+|2,0,1559661380,,"emenu Mset.g"
+:emenu Mset.syntax.ino(i)
+|2,0,1559626234,,"emenu Mset.syntax.ino(i)"
+:%s/simplencoder/laveanaliser/gc
+|2,0,1559522018,,"%s/simplencoder/laveanaliser/gc"
+:%s/simplencoder/la/gc
+|2,0,1559521977,,"%s/simplencoder/la/gc"
+:%s/SimplEncoder/LA/gc
+|2,0,1559521932,,"%s/SimplEncoder/LA/gc"
+:%s/index/print_index/gc
+|2,0,1559599202,,"%s/index/print_index/gc"
+:%s/enc_pin1/pin/gc
+|2,0,1559589030,,"%s/enc_pin1/pin/gc"
+:emenu Mset.syntax.c
+|2,0,1559057213,,"emenu Mset.syntax.c"
+:emenu Mset.i
+|2,0,1557864329,,"emenu Mset.i"
 :%s/fade_speed/timeout/gc
 |2,0,1557846303,,"%s/fade_speed/timeout/gc"
 :PlugInstall
@@ -40,14 +82,10 @@ $timeout
 |2,0,1557148150,,"h n"
 :emenu Mset.export.emacs(em)
 |2,0,1555196478,,"emenu Mset.export.emacs(em)"
-:emenu Mset.
-|2,0,1555196462,,"emenu Mset."
 :%s/bagin/begin/gc
 |2,0,1554897081,,"%s/bagin/begin/gc"
 :'<,'>emenu Mset.
 |2,0,1554806858,,"'<,'>emenu Mset."
-:emenu Mset.а
-|2,0,1554725334,,"emenu Mset.а"
 :emenu Mset.f
 |2,0,1554539228,,"emenu Mset.f"
 :emenu Mset.ао
@@ -58,8 +96,6 @@ $timeout
 |2,0,1554364434,,"%s/SHIFTIN/SHIFTOUT/gc"
 :%s/SHIFTIN_h/SHIFTOUT_H/gc
 |2,0,1554364164,,"%s/SHIFTIN_h/SHIFTOUT_H/gc"
-:emenu Mset.syntax.c
-|2,0,1554375526,,"emenu Mset.syntax.c"
 :tab h lowercase
 |2,0,1554263135,,"tab h lowercase"
 :tab h uppercase
@@ -84,48 +120,96 @@ $timeout
 |2,0,1554086705,,"%s/isInt/self.isInt/gc"
 :%s/isCommandList/self.terMenu.isCommandList/gc
 |2,0,1554085503,,"%s/isCommandList/self.terMenu.isCommandList/gc"
-:%s/pull/pop/gc
-|2,0,1553735592,,"%s/pull/pop/gc"
-:%s/staksize/count/gc
-|2,0,1553735474,,"%s/staksize/count/gc"
-:%s/uint16/UINT/gc
-|2,0,1553735035,,"%s/uint16/UINT/gc"
-:%s/Stak/Stack/gc
-|2,0,1553720673,,"%s/Stak/Stack/gc"
-:%s/StackArray/Stack/gc
-|2,0,1553646466,,"%s/StackArray/Stack/gc"
-:%s/_STACKARRAY_/STACK_/gc
-|2,0,1553620347,,"%s/_STACKARRAY_/STACK_/gc"
-:%s/_STACKARRAY_/STACK/gc
-|2,0,1553620317,,"%s/_STACKARRAY_/STACK/gc"
-:'<,'>emenu Mset.f
-|2,0,1553611641,,"'<,'>emenu Mset.f"
-:nnoremap <S-F10> yymp:r !<C-R>"<backspace><cr>'p
-|2,0,1553493260,,"nnoremap <S-F10> yymp:r !<C-R>\"<backspace><cr>'p"
-:nnoremap <S-F10> yymm:r !<C-R>"<backspace><cr>'m
-|2,0,1553492955,,"nnoremap <S-F10> yymm:r !<C-R>\"<backspace><cr>'m"
-:nnoremap <S-F10> yy:r !<C-R>"<backspace><cr>
-|2,0,1553492908,,"nnoremap <S-F10> yy:r !<C-R>\"<backspace><cr>"
-:r !ping 192.168.0.1
-|2,0,1553492749,,"r !ping 192.168.0.1"
-:r !ls
-|2,0,1553492724,,"r !ls"
-:nnoremap <S-F10> yy:r !<C-R>"<backspace>
-|2,0,1553492705,,"nnoremap <S-F10> yy:r !<C-R>\"<backspace>"
-:nnoremap <S-F10> :r !<C-R>"<backspace>
-|2,0,1553492632,,"nnoremap <S-F10> :r !<C-R>\"<backspace>"
-:r !bash ls
-|2,0,1553492572,,"r !bash ls"
-:nnoremap <S-F10> :r !bash <C-R>"<backspace>
-|2,0,1553492564,,"nnoremap <S-F10> :r !bash <C-R>\"<backspace>"
-:nnoremap <S-F10> :r !bash <C-R>" <backspace><CR>
-|2,0,1553492521,,"nnoremap <S-F10> :r !bash <C-R>\" <backspace><CR>"
 
 # Строка поиска, история (начиная от свежего к старому):
+? \<elf2bin\>
+|2,1,1562171065,,"\\<elf2bin\\>"
+? \<elf2hex\>
+|2,1,1562171047,,"\\<elf2hex\\>"
+? StepMotor
+|2,1,1562371780,,"StepMotor"
+? \<objcopy\>
+|2,1,1562169540,,"\\<objcopy\\>"
+? \<bin\>
+|2,1,1562168767,,"\\<bin\\>"
+? \<hex\>
+|2,1,1562168732,,"\\<hex\\>"
+? \<binary\>
+|2,1,1562168652,,"\\<binary\\>"
+? \<ihex\>
+|2,1,1562168644,,"\\<ihex\\>"
+?/objcopy
+|2,1,1562168533,47,"objcopy"
+? \<StepMotor\>
+|2,1,1561244161,,"\\<StepMotor\\>"
+? \<update\>
+|2,1,1561243389,,"\\<update\\>"
+? \<off\>
+|2,1,1561243219,,"\\<off\\>"
+? \<ToWaveStepMotor\>
+|2,1,1561243201,,"\\<ToWaveStepMotor\\>"
+?/bit
+|2,1,1561128836,47,"bit"
+?/bitset
+|2,1,1561128824,47,"bitset"
+? \<bitSet\>
+|2,1,1561126863,,"\\<bitSet\\>"
+? \<bitClear\>
+|2,1,1561126859,,"\\<bitClear\\>"
+? LA
+|2,1,1560467819,,"LA"
+? laveanaliser
+|2,1,1560467644,,"laveanaliser"
+? la.h
+|2,1,1560986919,,"la.h"
+? \<sinput\>
+|2,1,1561000135,,"\\<sinput\\>"
+?/defi
+|2,1,1560996028,47,"defi"
+? \<contents\>
+|2,1,1560610291,,"\\<contents\\>"
+? \<realloc\>
+|2,1,1560610285,,"\\<realloc\\>"
+? \<spirutine\>
+|2,1,1560705895,,"\\<spirutine\\>"
+? \<setSPIbackmsg\>
+|2,1,1560705885,,"\\<setSPIbackmsg\\>"
+? \<spi_d\>
+|2,1,1560705880,,"\\<spi_d\\>"
+? \<ifndef\>
+|2,1,1559626141,,"\\<ifndef\\>"
+? \<enable\>
+|2,1,1559716796,,"\\<enable\\>"
+? step go x 1   
+|2,1,1559714503,,"step go x 1   "
+?//
+|2,1,1559802124,47,"/"
+? simplencoder
+|2,1,1559522018,,"simplencoder"
+? SimplEncoder
+|2,1,1559521932,,"SimplEncoder"
+? index
+|2,1,1559599202,,"index"
+? enc_pin1
+|2,1,1559589030,,"enc_pin1"
+? \<step_signsl_duration\>
+|2,1,1559311258,,"\\<step_signsl_duration\\>"
+? \<step\>
+|2,1,1559311191,,"\\<step\\>"
+? \<is_step_counter\>
+|2,1,1559311037,,"\\<is_step_counter\\>"
+? \<steps_loop\>
+|2,1,1559310884,,"\\<steps_loop\\>"
+?/def
+|2,1,1559058106,47,"def"
+?/#def
+|2,1,1559058093,47,"#def"
+? \<timeout\>
+|2,1,1558997632,,"\\<timeout\\>"
+? \<to_value\>
+|2,1,1557859702,,"\\<to_value\\>"
 ? \<value\>
 |2,1,1557846337,,"\\<value\\>"
-? \<to_value\>
-|2,1,1557846327,,"\\<to_value\\>"
 ? fade_speed
 |2,1,1557846303,,"fade_speed"
 ? \<git\>
@@ -138,90 +222,6 @@ $timeout
 |2,1,1555851425,,"\\<potenz_on\\>"
 ? \<ANALOG_R\>
 |2,1,1555849394,,"\\<ANALOG_R\\>"
-? \<ANALOG_P\>
-|2,1,1555849392,,"\\<ANALOG_P\\>"
-? \<X_MAX_PIN\>
-|2,1,1555849306,,"\\<X_MAX_PIN\\>"
-? \<step\>
-|2,1,1555848753,,"\\<step\\>"
-? \<step_pin\>
-|2,1,1555848703,,"\\<step_pin\\>"
-? \<sensor_multip\>
-|2,1,1555848665,,"\\<sensor_multip\\>"
-? \<step_signsl_duration\>
-|2,1,1555848542,,"\\<step_signsl_duration\\>"
-? @$
-|2,1,1555845872,,"@$"
-??emac
-|2,1,1555195981,63,"emac"
-? bagin
-|2,1,1554897081,,"bagin"
-? \<counter3\>
-|2,1,1554572072,,"\\<counter3\\>"
-? ShiftIn
-|2,1,1554368405,,"ShiftIn"
-? SHIFTIN
-|2,1,1554364434,,"SHIFTIN"
-? SHIFTIN_h
-|2,1,1554364164,,"SHIFTIN_h"
-?/shift
-|2,1,1554366646,47,"shift"
-? \<printer\>
-|2,1,1554298915,,"\\<printer\\>"
-? \<enc_pin3\>
-|2,1,1554298055,,"\\<enc_pin3\\>"
-? \<Names\>
-|2,1,1554107955,,"\\<Names\\>"
-?/dir
-|2,1,1554256933,47,"dir"
-?/der
-|2,1,1554256924,47,"der"
-? .ledstm.
-|2,1,1554086947,,".ledstm."
-? isInt
-|2,1,1554086705,,"isInt"
-??isI
-|2,1,1554086690,63,"isI"
-? isCommandList
-|2,1,1554085503,,"isCommandList"
-? \<execute_command\>
-|2,1,1554008742,,"\\<execute_command\\>"
-? \<back_msg\>
-|2,1,1554007879,,"\\<back_msg\\>"
-? \<setSPIbackmsg\>
-|2,1,1554007101,,"\\<setSPIbackmsg\\>"
-? \<spirutine\>
-|2,1,1554006744,,"\\<spirutine\\>"
-?/fun
-|2,1,1554000227,47,"fun"
-?/#if
-|2,1,1554000210,47,"#if"
-? \<setmsg\>
-|2,1,1553994523,,"\\<setmsg\\>"
-? \<readyTransfer\>
-|2,1,1553992691,,"\\<readyTransfer\\>"
-? \<print\>
-|2,1,1553977146,,"\\<print\\>"
-? \<DEBUGMSG_INFO\>
-|2,1,1553976599,,"\\<DEBUGMSG_INFO\\>"
-? \<DEBUGMSG_MSGSTASK\>
-|2,1,1553976477,,"\\<DEBUGMSG_MSGSTASK\\>"
-?/reset
-|2,1,1553915617,47,"reset"
-??rest
-|2,1,1553915602,63,"rest"
-? \<msg_stak\>
-|2,1,1553914996,,"\\<msg_stak\\>"
-? \<size\>
-|2,1,1553915219,,"\\<size\\>"
-? \<ledstate01\>
-|2,1,1553759494,,"\\<ledstate01\\>"
-? \<sspi\>
-|2,1,1553747488,,"\\<sspi\\>"
-? pull
-|2,1,1553735592,,"pull"
-? staksize
-|2,1,1553735474,,"staksize"
 
 # Выражение, история (начиная от свежего к старому):
 
@@ -232,116 +232,95 @@ $timeout
 # Debug Line, история (начиная от свежего к старому):
 
 # Регистры:
-"0	LINE	0
-	""""""""""""""""""""""""""""
-	" *** Other setings *** {{{2
-	""""""""""""""""""""""""""""
-	" Precede each line with its line number.
-	set number
-	set relativenumber
-	set nocompatible
-	set mouse=a
-	set autoindent  
-	"display the current cursor position
-	set ruler
-	"Display an incomplete command
-	set showcmd
-	"1.Filetype detection.  2.Using filetype plugin files 3.Using indent files
-	filetype plugin indent on
-	"break text to 78 characters plain text.  
-	autocmd FileType text setlocal textwidth=240
-	"char showe 
-	"set list
-	"set listchars=tab:\|\<Space>
-	" > is shown at the beginning, - throughout
-	set listchars=tab:>-     
-	syntax enable
-	"Spell cheking enabling for ru and eng by default
-	"]s — Перейти к следующей ошбке
-	"[s — К предыдущей ошибке
-	"z= — Выдать список возможных замен
-	"zG — Добавить слово в словарь
-	"zW — Пометить слово как ошибочное
-	set nospell
-	"setlocal spell spelllang=ru
-	" Allow keys to move to the previous/next line on the first/last character
-	set whichwrap=b,<,>,[,],l,h
-	set backspace=indent,eol
-	"" Список кодировок файлов для автоопределения
-	set fileencodings=utf-8,cp1251,koi8-r,cp866
-	" Включает виртуальный звонок (моргает, а не бибикает при ошибках)
-	set visualbell
-	""""""""""""""""""""""""}}}2
-	""""""""""""""""""""""""""""
-|3,0,0,1,40,0,1557849247,"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"","\" *** Other setings *** {{{2","\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"","\" Precede each line with its line number.","set number","set relativenumber","set nocompatible","set mouse=a","set autoindent  ","\"display the current cursor position","set ruler","\"Display an incomplete command","set showcmd",>77
-|<"\"1.Filetype detection.  2.Using filetype plugin files 3.Using indent files","filetype plugin indent on","\"break text to 78 characters plain text.  ","autocmd FileType text setlocal textwidth=240","\"char showe ","\"set list","\"set listchars=tab:\\|\\<Space>","\" > is shown at the beginning, - throughout","set listchars=tab:>-     ","syntax enable","\"Spell cheking enabling for ru and eng by default","\"]s — Перейти к следующей ошбке",>47
-|<"\"[s — К предыдущей ошибке","\"z= — Выдать список возможных замен","\"zG — Добавить слово в словарь","\"zW — Пометить слово как ошибочное","set nospell","\"setlocal spell spelllang=ru","\" Allow keys to move to the previous/next line on the first/last character","set whichwrap=b,<,>,[,],l,h","set backspace=indent,eol",>89
-|<"\"\" Список кодировок файлов для автоопределения","set fileencodings=utf-8,cp1251,koi8-r,cp866","\" Включает виртуальный звонок (моргает, а не бибикает при ошибках)","set visualbell","\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"}}}2","\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+"0	CHAR	0
+	StepMotor
+|3,0,0,0,1,0,1562371740,"StepMotor"
 ""1	LINE	0
-	"Code::Stats plugin for Vim
-|3,1,1,1,1,0,1557849295,"\"Code::Stats plugin for Vim"
+	EnScaner eScan(
+					& sencoder,
+					& sspi,
+					& posSM,
+					& loop);
+|3,1,1,1,5,0,1562415026,"EnScaner eScan(","				& sencoder,","				& sspi,","				& posSM,","				& loop);"
 "2	LINE	0
-	" Precede each line with its line number.
-	set number
-	set relativenumber
-	set nocompatible
-	set mouse=a
-	set autoindent  
-	"display the current cursor position
-	set ruler
-	"Display an incomplete command
-	set showcmd
-	"1.Filetype detection.  2.Using filetype plugin files 3.Using indent files
-	filetype plugin indent on
-	"break text to 78 characters plain text.  
-	autocmd FileType text setlocal textwidth=240
-	"char showe 
-	"set list
-	"set listchars=tab:\|\<Space>
-	" > is shown at the beginning, - throughout
-	set listchars=tab:>-     
-	syntax enable
-	"Spell cheking enabling for ru and eng by default
-	"]s — Перейти к следующей ошбке
-	"[s — К предыдущей ошибке
-	"z= — Выдать список возможных замен
-	"zG — Добавить слово в словарь
-	"zW — Пометить слово как ошибочное
-	set nospell
-	"setlocal spell spelllang=ru
-	" Allow keys to move to the previous/next line on the first/last character
-	set whichwrap=b,<,>,[,],l,h
-	set backspace=indent,eol
-	"" Список кодировок файлов для автоопределения
-	set fileencodings=utf-8,cp1251,koi8-r,cp866
-	" Включает виртуальный звонок (моргает, а не бибикает при ошибках)
-	set visualbell
-|3,0,2,1,35,0,1557849272,"\" Precede each line with its line number.","set number","set relativenumber","set nocompatible","set mouse=a","set autoindent  ","\"display the current cursor position","set ruler","\"Display an incomplete command","set showcmd","\"1.Filetype detection.  2.Using filetype plugin files 3.Using indent files","filetype plugin indent on","\"break text to 78 characters plain text.  ","autocmd FileType text setlocal textwidth=240",>15
-|<"\"char showe ","\"set list","\"set listchars=tab:\\|\\<Space>","\" > is shown at the beginning, - throughout","set listchars=tab:>-     ","syntax enable","\"Spell cheking enabling for ru and eng by default","\"]s — Перейти к следующей ошбке","\"[s — К предыдущей ошибке","\"z= — Выдать список возможных замен","\"zG — Добавить слово в словарь",>64
-|<"\"zW — Пометить слово как ошибочное","set nospell","\"setlocal spell spelllang=ru","\" Allow keys to move to the previous/next line on the first/last character","set whichwrap=b,<,>,[,],l,h","set backspace=indent,eol","\"\" Список кодировок файлов для автоопределения","set fileencodings=utf-8,cp1251,koi8-r,cp866",>122
-|<"\" Включает виртуальный звонок (моргает, а не бибикает при ошибках)","set visualbell"
+	EnScaner eScan(
+					& sencoder,
+					& sspi,
+					& smotors,
+					& setupLEDLine);
+|3,0,2,1,5,0,1562414156,"EnScaner eScan(","				& sencoder,","				& sspi,","				& smotors,","				& setupLEDLine);"
 "3	LINE	0
-	""""""""""""""""""""""""""""
-|3,0,3,1,1,0,1557849252,"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\"\""
+	void setupLEDLine(void);
+|3,0,3,1,1,0,1562414151,"void setupLEDLine(void);"
 "4	LINE	0
-	
-|3,0,4,1,1,0,1557849240,""
+	void setupLEDLine (void);
+|3,0,4,1,1,0,1562413932,"void setupLEDLine (void);"
 "5	LINE	0
-	Plug 'junegunn/vim-easy-align'
-|3,0,5,1,1,0,1557845540,"Plug 'junegunn/vim-easy-align'"
-"6	CHAR	0
-	'https://github.com/junegunn/vim-github-dashboard.git'
 	
-|3,0,6,0,2,0,1557845414,"'https://github.com/junegunn/vim-github-dashboard.git'",""
+|3,0,5,1,1,0,1562413642,""
+"6	LINE	0
+	
+|3,0,6,1,1,0,1562413287,""
 "7	LINE	0
 	
-|3,0,7,1,1,0,1557845339,""
+|3,0,7,1,1,0,1562412987,""
 "8	LINE	0
 	
-|3,0,8,1,1,0,1557845271,""
+|3,0,8,1,1,0,1562371836,""
 "9	LINE	0
-		void set_on(void); 
-|3,0,9,1,1,0,1557588300,"	void set_on(void); "
+	/*   EnScaner::set_enable   * {{{ */
+	void EnScaner::set_enable(int new_value){
+		if (new_value == 0) {
+			enable = false;
+		}else{	
+			enable = true;
+			}
+		} //}}}
+	
+	/*   EnScaner::update   * {{{ */
+	void EnScaner::update(void){
+		if ( value != 0) step();
+		} //}}}
+	
+	/*   EnScaner::resetimer   * {{{ */
+	void EnScaner::resetimer(void){
+		update_time = micros() + timeout;
+		} //}}}
+	
+	/*   EnScaner::runtime   * {{{ */
+	void EnScaner::runtime(void){
+		if (micros() < update_time) return;
+		step();
+		update_time = micros() + timeout;
+		} //}}}
+	/*   EnScaner::done   * {{{ */
+	bool EnScaner::done(void){
+		if ( value == 0 && !checked) {
+			checked = true;
+			return true;
+			}
+		else return false;
+		} //}}}
+	
+	/*   EnScaner::step   * {{{ */
+	void EnScaner::step(void){
+		if ( value == 0) return;
+		digitalWrite(pin, HIGH);
+		value--;
+		if (posUp) pos++;
+		else pos--;
+		steps_from_last++;
+		#ifdef DEBAG_STEP_LONGS//{{{
+		delayMicroseconds(DEBAG_STEP_LONGS);
+		#endif /* DEBAG_STEP_LONGS }}}*/
+		digitalWrite(pin, LOW);
+		} //}}}
+	
+	/*   EnScaner::on   * {{{ */
+	void EnScaner::on(void) {
+|3,0,9,1,50,0,1562371834,"/*   EnScaner::set_enable   * {{{ */","void EnScaner::set_enable(int new_value){","	if (new_value == 0) {","		enable = false;","	}else{	","		enable = true;","		}","	} //}}}","","/*   EnScaner::update   * {{{ */","void EnScaner::update(void){","	if ( value != 0) step();","	} //}}}","","/*   EnScaner::resetimer   * {{{ */","void EnScaner::resetimer(void){","	update_time = micros() + timeout;","	} //}}}","",>35
+|<"/*   EnScaner::runtime   * {{{ */","void EnScaner::runtime(void){","	if (micros() < update_time) return;","	step();","	update_time = micros() + timeout;","	} //}}}","/*   EnScaner::done   * {{{ */","bool EnScaner::done(void){","	if ( value == 0 && !checked) {","		checked = true;","		return true;","		}","	else return false;","	} //}}}","","/*   EnScaner::step   * {{{ */","void EnScaner::step(void){","	if ( value == 0) return;","	digitalWrite(pin, HIGH);","	value--;",>20
+|<"	if (posUp) pos++;","	else pos--;","	steps_from_last++;","	#ifdef DEBAG_STEP_LONGS//{{{","	delayMicroseconds(DEBAG_STEP_LONGS);","	#endif /* DEBAG_STEP_LONGS }}}*/","	digitalWrite(pin, LOW);","	} //}}}","","/*   EnScaner::on   * {{{ */","void EnScaner::on(void) {"
 "a	CHAR	0
 	By
 |3,0,10,0,1,0,1543113395,"By"
@@ -367,15 +346,15 @@ $timeout
 "i	CHAR	0
 	distance
 |3,0,18,0,1,0,1486911406,"distance"
-"j	CHAR	0
-	vehdj
-|3,0,19,0,1,0,1554265308,"vehdj"
+"j@	LINE	0
+	"rpkk
+|3,2,19,1,1,0,1561586450,"\"rpkk"
 "l	CHAR	0
 	LED::
 |3,0,21,0,1,0,1544503903,"LED::"
 "m	CHAR	0
-	marker
-|3,0,22,0,1,0,1486694758,"marker"
+	pSM->
+|3,0,22,0,1,0,1561080910,"pSM->"
 "n	CHAR	0
 	n
 |3,0,23,0,1,0,1505806322,"n"
@@ -383,344 +362,2515 @@ $timeout
 	jkQe�kbvisual@jk
 |3,0,24,0,1,0,1549925690,"jkQe�kbvisual@jk"
 "p	CHAR	0
-	sspi.pull()
-|3,0,25,0,1,0,1550329061,"sspi.pull()"
+	POStepMotor::
+|3,0,25,0,1,0,1560987429,"POStepMotor::"
 "q	CHAR	0
 	SlaveSPI::
 |3,0,26,0,1,0,1550325819,"SlaveSPI::"
-"r	CHAR	0
-	if  var 
-|3,0,27,0,1,0,1550502131,"if  var "
+"r	LINE	0
+	sd adsa 234dfs hfs ad as dfs a
+|3,0,27,1,1,0,1561586562,"sd adsa 234dfs hfs ad as dfs a"
 "s	CHAR	0
-	self.
-|3,0,28,0,1,0,1554482197,"self."
-"t	LINE	0
-	        print("End setUp")
-	
-	        print("start setUp")
-|3,0,29,1,3,0,1508143667,"        print(\"End setUp\")","","        print(\"start setUp\")"
+	ShiftIn::
+|3,0,28,0,1,0,1561019487,"ShiftIn::"
+"t	CHAR	0
+	tmpSM->
+|3,0,29,0,1,0,1561052851,"tmpSM->"
 "u	CHAR	0
 	uration
 |3,0,30,0,1,0,1486911381,"uration"
-"v@	CHAR	0
+"v	CHAR	0
 	viw"Ey
-|3,2,31,0,1,0,1486695301,"viw\"Ey"
+|3,0,31,0,1,0,1486695301,"viw\"Ey"
 "w	CHAR	0
 	wlan0
 |3,0,32,0,1,0,1546685759,"wlan0"
+"y	CHAR	0
+	tmpSM1->
+|3,0,34,0,1,0,1561084264,"tmpSM1->"
 "-	CHAR	0
-	YOUR_KEY_HERE
-|3,0,36,0,1,0,1557849638,"YOUR_KEY_HERE"
+	setupLEDLine
+|3,0,36,0,1,0,1562414896,"setupLEDLine"
 
 # Глобальные отметки:
 'P  131  10  /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
 |4,80,131,10,1546628411,"/cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt"
-'0  26  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,48,26,1,1557849668,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
-'1  25  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,49,25,0,1557849667,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
-'2  18  0  ~/.vim/vimrc
-|4,50,18,0,1557849649,"~/.vim/vimrc"
-'3  58  19  ~/.vim/vimrc
-|4,51,58,19,1557849024,"~/.vim/vimrc"
-'4  59  19  ~/.vim/vimrc
-|4,52,59,19,1557849024,"~/.vim/vimrc"
-'5  28  14  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,53,28,14,1557845710,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
-'6  23  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,54,23,0,1557845707,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
-'7  23  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,55,23,0,1557845707,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
-'8  3  0  ~/.vim/vimrc
-|4,56,3,0,1557845699,"~/.vim/vimrc"
-'9  3  0  ~/.vim/vimrc
-|4,57,3,0,1557845699,"~/.vim/vimrc"
+'0  131  15  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,48,131,15,1562433473,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+'1  23  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,49,23,1,1562377239,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+'2  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,50,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+'3  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,51,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+'4  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,52,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+'5  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,53,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+'6  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,54,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+'7  57  42  /cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/platform.txt
+|4,55,57,42,1562372059,"/cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/platform.txt"
+'8  24  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.cpp
+|4,56,24,0,1562371840,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.cpp"
+'9  25  5  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.h
+|4,57,25,5,1562371729,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.h"
 
 # Список прыжков (сначала более свежие):
--'  26  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,26,1,1557849668,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  25  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,25,0,1557849667,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  18  0  ~/.vim/vimrc
-|4,39,18,0,1557849649,"~/.vim/vimrc"
--'  126  0  ~/.vim/vimrc
-|4,39,126,0,1557849281,"~/.vim/vimrc"
--'  58  31  ~/.vim/vimrc
-|4,39,58,31,1557849054,"~/.vim/vimrc"
--'  59  19  ~/.vim/vimrc
-|4,39,59,19,1557849024,"~/.vim/vimrc"
--'  18  9  ~/.vim/vimrc
-|4,39,18,9,1557849004,"~/.vim/vimrc"
--'  3  0  ~/.vim/vimrc
-|4,39,3,0,1557848896,"~/.vim/vimrc"
--'  3  0  ~/.vim/vimrc
-|4,39,3,0,1557848896,"~/.vim/vimrc"
--'  14  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,14,1,1557846337,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  30  3  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,30,3,1557846332,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  6  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,6,1,1557846323,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  8  26  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,8,26,1557846303,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  37  5  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,37,5,1557846193,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  23  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,23,1,1557845721,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  28  14  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,28,14,1557845710,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  28  14  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,28,14,1557845710,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  28  14  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,28,14,1557845710,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  28  14  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,28,14,1557845710,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  28  14  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,28,14,1557845710,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  23  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,23,0,1557845707,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  23  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,23,0,1557845707,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  23  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,23,0,1557845707,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  23  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,23,0,1557845707,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  23  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,23,0,1557845707,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  3  0  ~/.vim/vimrc
-|4,39,3,0,1557845699,"~/.vim/vimrc"
--'  3  0  ~/.vim/vimrc
-|4,39,3,0,1557845699,"~/.vim/vimrc"
--'  3  0  ~/.vim/vimrc
-|4,39,3,0,1557845699,"~/.vim/vimrc"
--'  52  0  ~/.vim/vimrc
-|4,39,52,0,1557845609,"~/.vim/vimrc"
--'  52  0  ~/.vim/vimrc
-|4,39,52,0,1557845609,"~/.vim/vimrc"
--'  56  0  ~/.vim/vimrc
-|4,39,56,0,1557845609,"~/.vim/vimrc"
--'  51  0  ~/.vim/vimrc
-|4,39,51,0,1557845609,"~/.vim/vimrc"
--'  57  0  ~/.vim/vimrc
-|4,39,57,0,1557845609,"~/.vim/vimrc"
--'  52  0  ~/.vim/vimrc
-|4,39,52,0,1557845609,"~/.vim/vimrc"
--'  52  16  ~/.vim/vimrc
-|4,39,52,16,1557845596,"~/.vim/vimrc"
--'  52  16  ~/.vim/vimrc
-|4,39,52,16,1557845596,"~/.vim/vimrc"
--'  52  16  ~/.vim/vimrc
-|4,39,52,16,1557845596,"~/.vim/vimrc"
--'  19  17  ~/.vim/vimrc
-|4,39,19,17,1557845367,"~/.vim/vimrc"
--'  19  17  ~/.vim/vimrc
-|4,39,19,17,1557845367,"~/.vim/vimrc"
--'  19  17  ~/.vim/vimrc
-|4,39,19,17,1557845367,"~/.vim/vimrc"
--'  19  17  ~/.vim/vimrc
-|4,39,19,17,1557845367,"~/.vim/vimrc"
--'  23  17  ~/.vim/vimrc
-|4,39,23,17,1557845367,"~/.vim/vimrc"
--'  24  17  ~/.vim/vimrc
-|4,39,24,17,1557845367,"~/.vim/vimrc"
--'  19  17  ~/.vim/vimrc
-|4,39,19,17,1557845367,"~/.vim/vimrc"
--'  19  17  ~/.vim/vimrc
-|4,39,19,17,1557845367,"~/.vim/vimrc"
--'  251  0  ~/.vim/vimrc
-|4,39,251,0,1557845263,"~/.vim/vimrc"
--'  251  0  ~/.vim/vimrc
-|4,39,251,0,1557845263,"~/.vim/vimrc"
--'  251  0  ~/.vim/vimrc
-|4,39,251,0,1557845263,"~/.vim/vimrc"
--'  251  0  ~/.vim/vimrc
-|4,39,251,0,1557845263,"~/.vim/vimrc"
--'  262  0  ~/.vim/vimrc
-|4,39,262,0,1557845263,"~/.vim/vimrc"
--'  257  0  ~/.vim/vimrc
-|4,39,257,0,1557845263,"~/.vim/vimrc"
--'  256  0  ~/.vim/vimrc
-|4,39,256,0,1557845263,"~/.vim/vimrc"
--'  251  0  ~/.vim/vimrc
-|4,39,251,0,1557845263,"~/.vim/vimrc"
--'  251  0  ~/.vim/vimrc
-|4,39,251,0,1557845263,"~/.vim/vimrc"
--'  28  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,28,1,1557845177,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  28  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,28,1,1557845177,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  28  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,28,1,1557845177,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  28  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,28,1,1557845177,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  28  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,28,1,1557845177,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  28  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-|4,39,28,1,1557845177,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h"
--'  2  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,2,0,1557845156,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  2  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,2,0,1557845156,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  2  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,2,0,1557845156,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  2  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,2,0,1557845156,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  2  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,2,0,1557845156,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  2  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-|4,39,2,0,1557845156,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
--'  11  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-|4,39,11,0,1557845117,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py"
+-'  131  15  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,131,15,1562433473,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  124  4  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,124,4,1562413427,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  7  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,7,0,1562412872,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  23  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,23,1,1562377239,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  23  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,23,1,1562377239,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  33  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,33,1,1562377015,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  33  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,33,1,1562377015,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
 
 # История местных отметок (от более свежих к старым):
 
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-	*	1557849667	0
-	"	26	1
-	^	26	6
-	.	14	0
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+	*	1562433269	0
+	"	131	15
+	.	119	0
+	+	386	2
+	+	16	22
+	+	17	20
+	+	116	31
+	+	117	0
+	+	116	32
+	+	117	0
+	+	379	2
+	+	380	32
+	+	385	0
+	+	385	30
+	+	385	0
+	+	380	22
+	+	70	15
+	+	70	0
+	+	71	11
+	+	73	13
+	+	74	14
+	+	73	15
+	+	380	39
+	+	381	34
+	+	385	0
+	+	410	0
+	+	260	12
+	+	261	43
+	+	264	28
+	+	265	0
+	+	251	12
+	+	252	28
+	+	255	22
+	+	258	0
+	+	116	54
+	+	118	0
+	+	102	0
+	+	380	38
+	+	381	38
+	+	380	39
+	+	381	39
+	+	382	21
+	+	383	21
+	+	71	17
+	+	74	17
+	+	380	43
+	+	70	15
+	+	380	42
+	+	70	16
+	+	380	43
+	+	70	15
+	+	384	20
+	+	384	14
+	+	384	2
+	+	384	14
+	+	384	2
+	+	384	1
+	+	384	14
+	+	384	13
+	+	384	0
+	+	380	42
+	+	70	15
+	+	380	47
+	+	343	0
+	+	342	2
+	+	343	17
+	+	70	15
+	+	18	21
+	+	19	0
+	+	124	0
+	+	124	13
+	+	124	6
+	+	124	12
+	+	124	10
+	+	124	0
+	+	124	17
+	+	124	0
+	+	148	0
+	+	148	10
+	+	148	0
+	+	119	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
+	*	1562377176	0
+	"	23	1
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
+	*	1562373281	0
+	"	23	6
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
+	*	1562372939	0
+	"	53	6
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+	*	1562372649	0
+	"	4	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.cpp
+	*	1562371838	0
+	"	24	0
+	^	22	3
+	.	24	0
 	+	1	0
 	+	3	0
 	+	4	0
+	+	12	0
+	+	13	0
+	+	20	0
+	+	22	2
+	+	24	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.h
+	*	1562371727	0
+	"	25	5
+	^	35	14
+	.	35	13
+	+	4	36
+	+	5	13
+	+	4	30
+	+	11	0
+	+	10	8
+	+	11	0
+	+	22	0
+	+	23	0
+	+	25	0
+	+	26	0
+	+	27	0
+	+	29	0
+	+	28	10
+	+	29	0
+	+	27	0
+	+	18	0
+	+	18	10
+	+	35	13
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/gtest.cpp
+	*	1562358448	0
+	"	1	0
+
+> /cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/platform.txt
+	*	1562171106	0
+	"	57	42
+	^	47	9
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/STM32/SRC/ArduinoIDE/Blink/blink.ino
+	*	1562165792	0
+	"	27	24
+	^	27	25
+	.	27	24
+	+	1	0
+	+	20	11
+	+	15	22
+	+	20	19
+	+	26	0
+	+	25	24
+	+	27	24
+
+> /usr/share/vim/vim80/doc/visual.txt
+	*	1562037840	0
+	"	539	3
+
+> /cygdrive/d/scripts/CMD/Autorun/run_adm_procesexplore.cmd
+	*	1561916806	0
+	"	1	71
+	.	1	30
+	+	1	0
+	+	2	0
+	+	1	30
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/shiftout.cpp
+	*	1561645789	0
+	"	75	3
+	^	77	27
+	.	80	0
+	+	77	0
+	+	78	20
+	+	79	0
+	+	77	26
+	+	84	0
+	+	83	28
+	+	78	26
+	+	86	28
+	+	80	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/shiftout.h
+	*	1561645554	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Shiftin.h
+	*	1561552218	0
+	"	73	9
+
+> ~/.vim/UltiSnips/ino.snippets
+	*	1561294978	0
+	"	107	0
+	^	115	2
+	.	14	8
+	+	1	0
+	+	2	12
+	+	3	0
+	+	19	0
+	+	16	0
+	+	1	13
+	+	18	0
+	+	1	0
+	+	16	0
+	+	3	15
+	+	7	12
+	+	16	0
+	+	11	20
+	+	15	0
+	+	11	12
+	+	16	0
+	+	17	0
+	+	12	0
+	+	8	0
+	+	4	0
+	+	8	0
+	+	5	0
+	+	9	0
+	+	13	0
+	+	2	13
+	+	10	12
+	+	14	12
+	+	2	11
+	+	14	11
+	+	108	0
+	+	115	0
+	+	2	8
+	+	6	8
+	+	10	8
+	+	14	8
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/shiftout.cpp
+	*	1561253215	0
+	"	72	37
+	^	78	28
+	.	72	34
+	+	90	0
+	+	70	0
+	+	74	0
 	+	11	0
 	+	12	0
+	+	73	0
+	+	72	0
+	+	70	12
+	+	71	12
+	+	75	0
+	+	75	13
+	+	75	0
+	+	76	25
+	+	75	0
+	+	76	34
+	+	79	20
+	+	78	34
+	+	75	31
+	+	82	0
+	+	88	0
+	+	82	20
+	+	83	27
+	+	84	14
+	+	75	12
+	+	76	19
+	+	82	12
+	+	83	19
+	+	84	35
+	+	78	33
+	+	75	15
+	+	76	0
+	+	82	15
+	+	83	22
 	+	19	0
-	+	20	0
-	+	24	0
+	+	26	0
+	+	6	0
+	+	5	18
+	+	44	0
+	+	43	0
+	+	44	20
+	+	45	3
+	+	59	25
+	+	65	16
+	+	13	9
+	+	53	16
+	+	50	18
+	+	54	0
+	+	46	0
+	+	66	8
+	+	77	0
+	+	78	8
+	+	79	8
+	+	85	0
+	+	86	10
+	+	87	8
+	+	78	27
+	+	87	0
+	+	86	27
+	+	72	34
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/towavestepmotor.h
+	*	1561246076	0
+	"	50	35
+	.	50	35
+	+	45	0
+	+	42	0
+	+	50	35
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/towavestepmotor.cpp
+	*	1561245693	0
+	"	87	3
+	.	120	0
+	+	114	0
+	+	101	0
+	+	108	0
+	+	106	0
+	+	120	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/postepmotor.h
+	*	1561245677	0
+	"	36	24
+	^	29	18
+	.	14	10
+	+	20	1
+	+	23	0
 	+	25	0
+	+	44	17
+	+	44	0
+	+	43	9
+	+	42	0
+	+	25	27
+	+	18	9
+	+	15	0
+	+	16	0
+	+	17	10
+	+	16	10
+	+	15	0
+	+	18	0
+	+	26	30
+	+	25	39
+	+	42	0
+	+	30	7
+	+	26	7
+	+	25	22
+	+	53	11
+	+	53	0
+	+	53	18
+	+	53	25
+	+	47	13
+	+	48	13
+	+	49	11
+	+	47	15
+	+	48	14
+	+	49	11
+	+	48	11
+	+	47	0
+	+	53	0
+	+	51	11
+	+	53	0
+	+	56	14
+	+	51	12
+	+	26	62
+	+	53	0
+	+	26	15
+	+	50	18
+	+	42	0
+	+	50	1
+	+	41	4
+	+	27	0
+	+	26	10
+	+	27	60
+	+	34	42
+	+	26	54
+	+	28	21
+	+	53	18
+	+	53	26
+	+	40	25
+	+	38	45
+	+	29	13
+	+	39	32
+	+	37	32
+	+	53	0
+	+	47	0
+	+	20	17
+	+	25	46
+	+	49	8
+	+	51	15
+	+	49	10
+	+	51	11
+	+	48	10
+	+	47	15
+	+	42	0
+	+	37	13
+	+	50	0
+	+	52	13
+	+	50	0
+	+	30	6
+	+	35	38
+	+	36	0
+	+	35	4
+	+	36	4
+	+	35	4
+	+	36	15
+	+	31	18
+	+	37	0
+	+	34	0
+	+	37	0
+	+	35	0
+	+	32	0
+	+	33	15
+	+	32	4
+	+	33	4
+	+	22	29
+	+	50	7
+	+	52	0
+	+	51	1
+	+	52	1
+	+	48	0
+	+	50	0
+	+	35	33
+	+	36	35
+	+	29	17
+	+	14	10
+	m	37	13
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/postepmotor.cpp
+	*	1561244022	0
+	"	18	7
+	^	51	15
+	.	51	14
+	+	69	68
+	+	82	0
+	+	70	0
+	+	82	0
+	+	81	11
+	+	70	0
+	+	81	26
+	+	74	24
+	+	78	0
+	+	74	17
+	+	72	0
+	+	71	0
+	+	72	0
+	+	71	17
+	+	77	0
+	+	75	26
+	+	79	0
+	+	81	0
+	+	83	2
+	+	79	16
+	+	80	35
+	+	76	20
+	+	81	18
+	+	76	27
+	+	86	0
+	+	87	29
+	+	86	0
+	+	87	45
+	+	88	44
+	+	88	21
+	+	88	32
+	+	92	0
+	+	88	44
+	+	88	22
+	+	92	0
+	+	89	13
+	+	91	24
+	+	93	27
+	+	94	27
+	+	95	5
+	+	98	9
+	+	96	13
+	+	76	2
+	+	81	22
+	+	91	0
+	+	90	19
+	+	97	17
+	+	36	23
+	+	36	33
+	+	36	29
+	+	59	0
+	+	61	0
+	+	59	29
+	+	59	20
+	+	59	27
+	+	59	0
+	+	60	4
+	+	59	4
+	+	59	12
+	+	60	12
+	+	60	9
+	+	59	19
+	+	63	0
+	+	64	37
+	+	65	0
+	+	66	0
+	+	65	13
+	+	60	11
+	+	59	4
+	+	60	0
+	+	59	0
+	+	36	5
+	+	36	0
+	+	59	0
+	+	36	0
+	+	36	32
+	+	34	3
+	+	36	8
+	+	36	9
+	+	36	0
+	+	36	9
+	+	36	0
+	+	37	18
+	+	38	18
+	+	36	0
+	+	35	28
+	+	36	0
+	+	35	13
+	+	59	0
+	+	59	2
+	+	24	31
+	+	51	13
+	+	44	22
+	+	45	17
+	+	51	14
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/gtest.cpp
+	*	1561243652	0
+	"	3	0
+	^	97	29
+	.	4	0
+	+	12	8
+	+	16	0
+	+	12	8
+	+	15	0
+	+	12	14
+	+	13	7
+	+	14	7
+	+	15	0
+	+	13	5
+	+	14	0
+	+	15	0
+	+	14	4
+	+	16	0
+	+	12	15
+	+	12	8
+	+	13	0
+	+	12	15
+	+	13	15
+	+	14	11
+	+	17	0
+	+	18	0
+	+	19	0
+	+	18	0
+	+	17	0
+	+	18	0
+	+	17	10
+	+	18	10
+	+	19	10
+	+	17	4
+	+	17	7
+	+	17	0
+	+	16	14
+	+	17	0
+	+	16	14
+	+	17	0
+	+	16	26
+	+	17	26
+	+	18	24
+	+	19	0
+	+	128	0
+	+	109	0
+	+	83	0
+	+	69	0
+	+	62	0
+	+	54	0
+	+	38	0
+	+	23	0
+	+	11	0
+	+	136	21
+	+	139	3
+	+	139	0
+	+	136	36
+	+	137	34
+	+	138	0
+	+	136	38
+	+	137	25
+	+	151	27
+	+	152	24
+	+	153	27
+	+	155	27
+	+	157	27
+	+	156	24
+	+	154	22
+	+	115	0
+	+	118	15
+	+	120	27
+	+	140	12
+	+	141	27
+	+	142	16
+	+	143	16
+	+	146	16
+	+	147	16
+	+	145	27
+	+	141	42
+	+	145	42
+	+	89	0
+	+	93	38
+	+	92	19
+	+	91	39
+	+	93	32
+	+	94	12
+	+	95	0
+	+	96	24
+	+	97	28
+	+	98	0
+	+	99	0
+	+	100	0
+	+	101	0
+	+	102	24
+	+	4	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/stepmotor.cpp
+	*	1561243624	0
+	"	79	0
+	^	77	13
+	.	77	12
+	+	79	18
+	+	80	11
+	+	85	13
+	+	77	12
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/stepmotor.h
+	*	1561242789	0
+	"	23	2
+	^	40	39
+	.	40	38
+	+	42	0
+	+	39	22
+	+	40	12
+	+	41	18
+	+	47	33
+	+	41	18
+	+	5	13
+	+	39	30
+	+	40	21
+	+	23	11
+	+	40	38
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/shiftout.h
+	*	1561237977	0
+	"	60	15
+	^	68	16
+	.	68	15
+	+	62	0
+	+	59	0
+	+	67	0
+	+	63	0
+	+	67	0
+	+	60	13
+	+	61	14
+	+	60	13
+	+	61	13
+	+	58	11
+	+	68	15
+
+> /cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/cores/arduino/wiring_constants.h
+	*	1561128978	0
+	"	88	30
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Shiftin.cpp
+	*	1561126983	0
+	"	10	0
+	.	30	0
+	+	30	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/postepmotor.cpp
+	*	1561115269	0
+	"	45	18
+	^	45	19
+	.	45	18
+	+	45	18
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/Shiftin.cpp
+	*	1561099409	0
+	"	31	3
+	^	7	14
+	.	7	13
 	+	29	0
 	+	30	0
-	+	36	0
-	+	37	0
-	+	41	0
-	+	42	0
+	+	30	21
+	+	30	0
+	+	30	29
+	+	30	1
+	+	30	0
+	+	31	23
+	+	30	0
+	+	31	29
+	+	32	7
+	+	30	0
+	+	32	22
+	+	33	0
+	+	32	16
+	+	32	28
+	+	33	9
+	+	33	0
+	+	32	16
+	+	33	0
+	+	32	27
+	+	32	25
+	+	32	28
+	+	32	31
+	+	33	0
+	+	32	16
+	+	31	18
+	+	30	0
+	+	6	10
+	+	7	8
+	+	6	11
+	+	7	13
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/Shiftin.h
+	*	1561052008	0
+	"	45	0
+	^	80	134
+	.	80	132
+	+	48	39
+	+	49	38
+	+	50	38
+	+	48	0
 	+	47	0
 	+	48	0
-	+	53	0
+	+	46	0
+	+	48	0
+	+	52	0
+	+	48	0
+	+	53	3
+	+	54	34
+	+	55	34
+	+	56	34
+	+	57	34
+	+	54	35
+	+	55	35
+	+	56	35
+	+	57	35
+	+	54	34
+	+	55	34
+	+	56	34
+	+	57	34
+	+	72	0
+	+	71	16
+	+	74	0
+	+	75	0
+	+	74	0
+	+	75	0
+	+	75	9
+	+	75	0
+	+	74	0
+	+	75	9
+	+	75	8
+	+	76	19
+	+	74	16
+	+	73	9
+	+	80	132
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/SPI_ShiftIN.ino
+	*	1561034357	0
+	"	375	0
+	^	347	24
+	.	347	23
+	+	297	7
+	+	46	33
+	+	74	25
+	+	310	0
+	+	305	0
+	+	310	0
+	+	307	0
+	+	305	0
+	+	307	0
+	+	305	11
+	+	75	15
+	+	305	19
+	+	306	3
+	+	306	18
+	+	307	0
+	+	270	0
+	+	264	0
+	+	268	2
+	+	269	2
+	+	77	0
+	+	76	0
 	+	54	0
-	+	59	0
+	+	57	0
+	+	177	11
+	+	182	13
+	+	75	22
+	+	15	0
+	+	14	0
+	+	177	13
+	+	57	0
+	+	58	0
+	+	51	0
+	+	43	0
+	+	33	0
+	+	23	0
+	+	23	9
+	+	22	9
+	+	23	27
+	+	143	0
+	+	144	0
+	+	143	23
+	+	144	25
+	+	143	7
+	+	144	0
+	+	146	0
+	+	310	0
+	+	306	37
+	+	75	23
+	+	74	24
+	+	300	21
+	+	299	0
+	+	46	33
+	+	25	0
+	+	342	0
+	+	344	27
+	+	345	0
+	+	348	0
+	+	345	25
+	+	348	6
+	+	329	7
+	+	348	15
+	+	346	19
+	+	348	18
+	+	332	19
+	+	332	0
+	+	334	0
+	+	332	0
+	+	333	0
+	+	332	6
+	+	343	37
+	+	343	0
+	+	344	0
+	+	343	0
+	+	344	0
+	+	351	0
+	+	350	0
+	+	343	0
+	+	342	22
+	+	351	33
+	+	343	28
+	+	350	2
+	+	339	2
+	+	340	0
+	+	340	9
+	+	340	15
+	+	341	0
+	+	339	1
+	+	334	0
+	+	329	0
+	+	327	0
+	+	323	1
+	+	321	1
+	+	320	1
+	+	322	1
+	+	324	1
+	+	325	1
+	+	339	2
+	+	347	23
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/Stack.h
+	*	1561006649	0
+	"	84	0
+	.	159	0
+	+	159	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/slavespi.cpp
+	*	1561000475	0
+	"	4	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Stack.h
+	*	1560999113	0
+	"	59	6
+	^	23	2
+	.	23	0
+	+	1	11
+	+	222	0
+	+	134	21
+	+	217	20
+	+	36	0
+	+	128	0
+	+	23	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/2sloeber-workspace/ShiftOut_exe/shiftout.h
+	*	1560993520	0
+	"	64	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/slavespi.h
+	*	1560986818	0
+	"	58	15
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/spicom.py
+	*	1560624291	0
+	"	35	14
+
+> /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
+	*	1560613255	0
+	"	743	0
+	^	757	12
+	.	757	11
+	+	166	8
+	+	167	59
+	+	168	10
+	+	169	0
+	+	167	0
+	+	135	0
+	+	133	119
+	+	134	0
+	+	133	34
+	+	450	0
+	+	448	0
+	+	450	0
+	+	451	0
+	+	450	36
+	+	450	0
+	+	445	0
+	+	449	0
+	+	460	0
+	+	449	0
+	+	446	0
+	+	451	81
+	+	441	7
+	+	442	25
+	+	443	0
+	+	443	57
+	+	445	0
+	+	443	75
+	+	445	0
+	+	461	0
+	+	61	55
+	+	332	24
+	+	444	0
+	+	178	0
+	+	332	24
+	+	329	0
+	+	330	0
+	+	332	0
+	+	332	24
+	+	332	23
+	+	331	21
+	+	74	0
+	+	333	0
+	+	458	0
+	+	452	29
+	+	453	0
+	+	456	70
+	+	454	0
+	+	444	39
+	+	443	56
+	+	585	56
+	+	599	27
+	+	601	27
+	+	601	48
+	+	601	0
+	+	601	47
+	+	601	0
+	+	597	0
+	+	598	0
+	+	589	0
+	+	593	25
+	+	586	31
+	+	589	0
+	+	586	0
+	+	586	18
+	+	589	12
+	+	589	0
+	+	586	0
+	+	601	0
+	+	607	0
+	+	605	38
+	+	602	78
+	+	602	17
+	+	605	38
+	+	602	27
+	+	605	38
+	+	603	107
+	+	605	33
+	+	594	58
+	+	606	0
+	+	592	121
+	+	602	84
+	+	592	0
+	+	603	70
+	+	603	79
+	+	600	76
+	+	592	0
+	+	588	66
+	+	587	13
+	+	590	49
+	+	590	0
+	+	591	0
+	+	590	88
+	+	591	0
+	+	590	0
+	+	591	4
+	+	737	0
+	+	761	0
+	+	754	0
+	+	756	0
+	+	757	11
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/moneyToViplan.txt
+	*	1560464621	0
+	"	9	0
+	^	7	6
+	.	9	0
+	+	4	0
+	+	6	0
+	+	4	25
+	+	7	5
+	+	4	0
+	+	9	0
+
+> ~/.bash_aliases
+	*	1560345609	0
+	"	8	0
+	^	8	22
+	.	8	22
+	+	7	22
+	+	7	40
+	+	9	20
+	+	7	41
+	+	7	72
+	+	9	1
+	+	7	21
+	+	9	0
+	+	7	43
+	+	7	21
+	+	7	22
+	+	7	73
+	+	9	0
+	+	7	72
+	+	8	13
+	+	8	66
+	+	9	0
+	+	8	13
+	+	7	11
+	+	7	0
+	+	8	22
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/termenu.py
+	*	1560170304	0
+	"	20	0
+	^	117	25
+	.	117	51
+	+	25	0
+	+	24	20
+	+	33	0
+	+	32	12
+	+	36	19
+	+	47	19
+	+	62	14
+	+	74	21
+	+	83	18
+	+	90	23
+	+	122	21
+	+	175	21
+	+	180	22
+	+	190	22
+	+	90	27
+	+	83	22
+	+	74	25
+	+	34	0
+	+	40	0
+	+	41	0
+	+	42	0
+	+	43	0
+	+	177	0
+	+	27	0
+	+	177	0
+	+	52	0
+	+	56	0
 	+	60	0
-	+	61	0
+	+	126	0
+	+	130	0
+	+	134	0
+	+	138	0
+	+	142	0
+	+	146	0
+	+	150	0
+	+	154	0
+	+	164	0
+	+	167	0
+	+	177	0
+	+	90	0
+	+	90	37
+	+	90	30
+	+	90	18
+	+	90	30
+	+	90	38
+	+	90	24
+	+	90	30
+	+	90	39
+	+	90	20
+	+	90	31
+	+	90	40
+	+	90	28
+	+	90	31
+	+	90	45
+	+	90	26
+	+	90	35
+	+	90	46
+	+	90	28
+	+	90	35
+	+	90	43
+	+	90	34
+	+	90	35
+	+	90	0
+	+	90	34
+	+	90	43
+	+	90	44
+	+	90	34
+	+	90	0
+	+	21	0
+	+	90	0
+	+	90	35
+	+	90	26
+	+	90	43
+	+	90	23
+	+	90	26
+	+	90	56
+	+	90	0
+	+	115	50
+	+	116	57
+	+	117	51
+
+> /cygdrive/c/Users/BuYn/.bashrc
+	*	1559990608	0
+	"	21	0
+	^	2	9
+	.	21	0
+	+	5	7
+	+	21	16
+	+	14	17
+	+	16	18
+	+	16	0
+	+	5	7
+	+	29	0
+	+	21	33
+	+	21	0
+	+	21	33
+	+	20	21
+	+	21	0
+	+	20	21
+	+	19	0
+	+	20	0
+	+	19	25
+	+	22	0
+	+	25	0
+	+	22	37
+	+	19	0
+	+	20	0
+	+	19	8
+	+	20	6
+	+	16	6
+	+	16	19
+	+	25	0
+	+	22	55
+	+	5	0
+	+	1	28
+	+	14	21
+	+	8	35
+	+	9	28
+	+	8	8
+	+	9	8
+	+	10	55
+	+	10	31
+	+	14	0
+	+	10	34
+	+	14	0
+	+	9	32
+	+	8	38
+	+	10	35
+	+	9	31
+	+	8	37
+	+	16	0
+	+	11	11
+	+	11	12
+	+	11	11
+	+	11	34
+	+	14	0
+	+	11	38
+	+	13	31
+	+	16	20
+	+	25	20
+	+	12	0
+	+	11	9
+	+	5	0
+	+	3	7
+	+	4	7
+	+	15	11
+	+	15	40
+	+	15	39
+	+	16	0
+	+	15	39
+	+	18	22
+	+	1	32
+	+	22	54
+	+	25	20
+	+	23	8
+	+	21	8
+	+	24	0
+	+	23	9
+	+	24	11
+	+	22	0
+	+	21	29
+	+	26	10
+	+	27	10
+	+	28	13
+	+	17	9
+	+	6	11
+	+	7	21
+	+	2	29
+	+	21	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/ToWaveStepmotor/towavestepmotor.cpp
+	*	1559923452	0
+	"	120	14
+	.	110	1
+	+	115	1
+	+	104	1
+	+	110	1
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/ToWaveStepmotor/ToWaveStepmotor.ino
+	*	1559922051	0
+	"	13	0
+	^	13	23
+	.	14	25
+	+	16	18
+	+	17	24
+	+	15	23
+	+	13	0
+	+	12	22
+	+	14	25
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/towavestepmotor.h
+	*	1559920791	0
+	"	20	23
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/Arduino/ToWaveStepmotor/ToWaveStepmotor.ino
+	*	1559824850	0
+	"	28	21
+	^	28	22
+	.	28	21
+	+	10	0
+	+	28	21
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/Arduino/ToWaveStepmotor/SPI_ShiftIN.ino
+	*	1559824474	0
+	"	10	0
+	^	22	0
+	.	10	0
+	+	1	0
+	+	9	0
+	+	23	0
+	+	9	0
+	+	7	0
+	+	10	0
+	+	23	0
+	+	23	23
+	+	23	0
+	+	11	0
+	+	23	6
+	+	23	0
+	+	20	0
+	+	23	0
+	+	10	0
+	+	23	0
+	+	8	0
+	+	9	0
+	+	10	0
+	+	24	0
+	+	23	5
+	+	31	5
+	+	30	0
+	+	22	0
+	+	10	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/blink.h
+	*	1559824007	0
+	"	1	0
+	^	26	46
+	.	26	45
+	+	21	0
+	+	26	0
+	+	21	0
+	+	21	18
+	+	26	18
+	+	21	1
+	+	21	0
+	+	14	21
+	+	14	24
+	+	15	17
+	+	16	26
+	+	21	0
+	+	13	0
+	+	20	0
+	+	13	13
+	+	21	0
+	+	25	0
+	+	26	0
+	+	25	0
+	+	27	0
+	+	26	0
+	+	21	0
+	+	27	0
+	+	26	0
+	+	18	0
+	+	20	0
+	+	19	22
+	+	26	17
+	+	26	11
+	+	17	25
+	+	26	45
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/blink.cpp
+	*	1559824005	0
+	"	1	0
+	^	18	28
+	.	16	0
+	+	10	5
+	+	10	0
+	+	10	5
+	+	11	2
+	+	10	13
+	+	10	0
+	+	10	16
+	+	10	0
+	+	10	14
+	+	10	2
+	+	10	1
+	+	10	0
+	+	14	0
+	+	15	0
+	+	14	1
+	+	15	1
+	+	10	0
+	+	12	0
+	+	13	16
+	+	14	1
+	+	15	1
+	+	14	24
+	+	15	27
+	+	21	31
+	+	23	30
+	+	22	20
+	+	20	0
+	+	20	21
+	+	20	29
+	+	21	0
+	+	25	0
+	+	19	10
+	+	24	24
+	+	20	12
+	+	25	0
+	+	19	13
+	+	22	5
+	+	26	0
+	+	18	27
+	+	16	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/gtest.cpp
+	*	1559823161	0
+	"	20	1
+	.	14	0
+	+	8	0
+	+	14	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/towavestepmotor.cpp
+	*	1559822659	0
+	"	49	11
+	^	52	10
+	.	52	9
+	+	1	0
+	+	3	0
+	+	4	0
+	+	119	14
+	+	126	14
+	+	75	12
+	+	85	12
+	+	87	0
+	+	86	6
+	+	85	41
+	+	8	6
+	+	9	16
+	+	11	25
+	+	85	10
+	+	83	0
+	+	92	6
+	+	93	25
+	+	79	15
+	+	80	7
+	+	27	32
+	+	28	38
+	+	29	11
+	+	44	30
+	+	45	30
+	+	46	5
+	+	120	8
+	+	121	0
+	+	77	0
+	+	78	0
+	+	76	7
+	+	76	0
+	+	93	0
+	+	49	0
+	+	19	0
+	+	11	1
+	+	32	0
+	+	33	15
+	+	32	0
+	+	34	13
+	+	40	0
+	+	41	24
+	+	40	15
+	+	42	14
+	+	33	14
+	+	41	14
+	+	44	0
+	+	41	0
+	+	40	0
+	+	36	0
+	+	37	14
+	+	36	0
+	+	38	12
+	+	40	0
+	+	37	14
+	+	38	12
+	+	51	7
+	+	52	9
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/towavestepmotor.h
+	*	1559821374	0
+	"	22	26
+	^	33	31
+	.	33	30
+	+	9	0
+	+	10	0
+	+	23	0
+	+	25	0
+	+	26	0
+	+	50	21
+	+	48	51
+	+	49	0
+	+	48	65
+	+	29	0
+	+	32	0
+	+	29	16
+	+	32	14
+	+	35	0
+	+	31	0
+	+	30	0
+	+	31	8
+	+	32	16
+	+	31	24
+	+	31	0
+	+	32	13
+	+	31	13
+	+	22	3
+	+	34	0
+	+	33	0
+	+	34	0
+	+	33	0
+	+	34	0
+	+	33	30
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/defcfg.h
+	*	1559802645	0
+	"	5	26
+	^	5	27
+	.	5	26
+	+	3	0
+	+	2	6
+	+	2	2
+	+	4	2
+	+	2	6
+	+	4	6
+	+	2	0
+	+	3	0
+	+	2	23
+	+	4	21
+	+	3	28
+	+	5	26
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/blink.h
+	*	1559802453	0
+	"	12	15
+	^	12	16
+	.	12	15
+	+	13	0
+	+	1	0
+	+	21	0
+	+	21	13
+	+	8	0
+	+	35	19
+	+	17	0
+	+	16	14
+	+	13	0
+	+	11	0
+	+	34	0
+	+	21	0
+	+	23	0
+	+	21	6
+	+	26	0
+	+	26	10
+	+	31	0
+	+	21	17
+	+	35	0
+	+	36	0
+	+	37	11
+	+	21	0
+	+	21	1
+	+	22	2
+	+	23	1
+	+	24	0
+	+	29	1
+	+	19	1
+	+	20	0
+	+	12	15
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/blink.cpp
+	*	1559802267	0
+	"	10	5
+	^	10	12
+	.	10	0
+	+	10	9
+	+	14	9
+	+	1	0
+	+	7	15
+	+	10	0
+	+	14	0
+	+	19	0
+	+	16	0
+	+	19	0
+	+	14	11
+	+	10	11
+	+	9	0
+	+	10	5
+	+	10	0
+
+> /cygdrive/d/scripts/ahk/Magic_Carpet.ahk
+	*	1559770696	0
+	"	1	0
+
+> /cygdrive/d/scripts/ahk/kingdomNL.ahk
+	*	1559769291	0
+	"	11	0
+	^	11	8
+	.	11	0
+	+	11	7
+	+	8	0
+	+	1	0
+	+	5	0
+	+	3	0
+	+	2	0
+	+	3	0
+	+	2	9
+	+	3	14
+	+	11	0
+
+> /cygdrive/c/Users/BuYn/AppData/Local/DOSBox/dosbox-0.74.conf
+	*	1559668230	0
+	"	15	15
+	^	29	1
+	.	29	0
+	+	34	0
+	+	35	0
+	+	34	0
+	+	36	0
+	+	14	0
+	+	30	7
+	+	29	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/stepmotor.h
+	*	1559662608	0
+	"	20	24
+	^	20	25
+	.	20	24
+	+	19	28
+	+	20	29
+	+	19	28
+	+	20	26
+	+	19	26
+	+	20	25
+	+	19	26
+	+	20	24
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/stepmotor.cpp
+	*	1559662594	0
+	"	77	0
+	^	79	2
+	.	80	0
+	+	81	0
+	+	80	1
+	+	82	1
+	+	80	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA_STM32/LA_STM32.ino
+	*	1559661352	0
+	"	23	19
+	^	11	22
+	.	11	21
+	+	11	21
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA_STM32/la.h
+	*	1559659220	0
+	"	14	6
+	^	16	21
+	.	16	20
+	+	16	20
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA_STM32/la.cpp
+	*	1559659214	0
+	"	37	19
+	^	58	42
+	.	58	17
+	+	52	0
+	+	54	0
+	+	51	18
+	+	51	0
+	+	52	13
+	+	53	34
+	+	54	13
+	+	58	17
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA/LA.ino
+	*	1559656030	0
+	"	28	0
+	^	33	37
+	.	33	36
+	+	8	11
+	+	12	0
+	+	14	1
+	+	18	15
+	+	26	0
+	+	27	0
+	+	28	0
+	+	23	0
+	+	27	2
+	+	23	0
+	+	33	40
+	+	40	0
+	+	37	12
+	+	33	54
+	+	28	0
+	+	33	36
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA/la.cpp
+	*	1559644411	0
+	"	63	2
+	^	48	1
+	.	49	0
+	+	42	39
+	+	40	1
+	+	44	0
+	+	49	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA/la.h
+	*	1559639265	0
+	"	16	19
+	.	16	19
+	+	16	19
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/LA/la.h
+	*	1559638794	0
+	"	24	6
+	.	33	0
+	+	21	0
+	+	23	0
+	+	6	0
+	+	7	0
+	+	26	14
+	+	28	0
+	+	27	12
+	+	26	6
+	+	5	0
+	+	35	0
+	+	34	44
+	+	34	58
+	+	39	8
+	+	40	0
+	+	39	8
+	+	35	0
+	+	34	39
+	+	35	18
+	+	16	0
+	+	19	0
+	+	17	16
+	+	17	8
+	+	19	0
+	+	17	21
+	+	23	9
+	+	25	0
+	+	37	0
+	+	37	26
+	+	37	20
+	+	35	34
+	+	18	18
+	+	17	18
+	+	18	20
+	+	16	15
+	+	23	24
+	+	37	0
+	+	25	23
+	+	36	0
+	+	35	21
+	+	36	14
+	+	23	10
+	+	28	7
+	+	29	0
+	+	33	0
+	+	29	0
+	+	32	1
+	+	29	0
+	+	20	16
+	+	29	17
+	+	29	9
+	+	29	0
+	+	29	9
+	+	29	20
+	+	33	0
+	+	34	0
+	+	33	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/LA/la.cpp
+	*	1559638790	0
+	"	9	5
+	^	42	2
+	.	42	1
+	+	23	2
 	+	66	0
-	+	67	0
+	+	47	2
+	+	48	30
+	+	56	13
+	+	48	0
+	+	56	0
+	+	57	0
+	+	58	3
+	+	60	3
+	+	57	0
+	+	58	0
+	+	56	0
+	+	59	0
+	+	48	49
+	+	66	14
+	+	66	0
+	+	66	47
+	+	64	43
+	+	66	31
+	+	64	39
+	+	66	27
+	+	54	32
+	+	64	38
+	+	39	1
+	+	48	48
+	+	55	0
+	+	54	0
+	+	57	0
+	+	58	0
+	+	60	2
+	+	56	0
+	+	40	0
+	+	47	0
+	+	46	14
+	+	54	0
+	+	66	0
+	+	53	0
+	+	66	0
+	+	49	0
+	+	54	0
+	+	49	63
+	+	65	0
+	+	49	61
+	+	48	41
+	+	56	24
+	+	48	42
+	+	56	0
+	+	23	1
+	+	26	31
+	+	27	6
+	+	26	53
+	+	26	30
+	+	26	53
+	+	27	6
+	+	27	29
+	+	28	0
+	+	49	49
+	+	31	0
+	+	4	17
+	+	37	9
+	+	47	54
+	+	54	55
+	+	50	0
+	+	49	3
+	+	50	13
+	+	51	0
+	+	50	17
+	+	52	0
+	+	51	26
+	+	53	0
+	+	52	13
+	+	53	0
+	+	41	0
+	+	40	2
+	+	43	0
+	+	41	36
+	+	46	0
+	+	43	17
+	+	45	0
+	+	46	0
+	+	45	12
+	+	43	38
+	+	4	15
+	+	6	24
+	+	44	12
+	+	43	15
+	+	42	0
+	+	41	15
+	+	42	9
+	+	8	16
+	+	9	1
+	+	49	0
+	+	42	0
+	+	41	0
+	+	42	0
+	+	41	9
+	+	42	1
+
+> /cygdrive/e/del/LA/logic_analyzer-master/logic_analyzer/logic_analyzer.ino
+	*	1559582709	0
+	"	123	1
+	^	125	2
+	.	125	1
+	+	125	1
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/LA/simplencoder.cpp
+	*	1559520855	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/Home/bath.txt
+	*	1559340258	0
+	"	8	0
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+	*	1559340244	0
+	"	11	0
+	.	11	0
+	+	11	0
+	e	5	13
+
+> /cygdrive/d/tools.win/Fast/Actual_fast/StartAll.cmd
+	*	1559340030	0
+	"	1	0
+	^	1	97
+	.	1	0
+	+	1	36
+	+	1	5
+	+	1	36
+	+	2	0
+	+	1	97
+	+	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/RAMPS_driver/Source/stm32_Toch_Driver/stm32_Toch_Driver.ino
+	*	1559311438	0
+	"	23	24
+	^	15	30
+	.	15	29
+	+	12	27
+	+	13	29
+	+	14	28
+	+	15	29
+
+> /cygdrive/d/Virtual/Dos.Box/DOSBox-0.74/cofig.cmd
+	*	1559230267	0
+	"	2	4
+	^	2	5
+	.	2	4
+	+	1	0
+	+	3	2
+	+	2	4
+
+> ~/scripts/sh/vim/todo/todo5min.sh
+	*	1559225303	0
+	"	1	18
+
+> /cygdrive/d/shell/Far/FarMenu.Ini
+	*	1559225037	0
+	"	96	1
+
+> ~/.bashrc
+	*	1559224519	0
+	"	1	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
+	*	1559151340	0
+	"	79	5
+	^	81	37
+	.	81	36
+	+	49	0
+	+	58	0
+	+	59	0
+	+	64	0
+	+	65	0
 	+	73	0
+	+	74	0
+	+	84	0
 	+	6	7
 	+	6	10
 	+	6	8
 	+	7	12
 	+	5	7
-	+	21	7
+	+	30	7
 	+	7	8
-	+	24	19
-	+	25	19
-	+	26	5
-	+	29	16
-	+	30	16
-	+	29	16
-	+	30	16
+	+	30	19
+	+	30	5
+	+	39	16
+	+	40	16
+	+	39	16
+	+	40	16
 	+	6	0
 	+	9	0
 	+	8	0
 	+	15	0
 	+	16	0
-	+	51	0
+	+	62	0
 	+	14	0
+	+	30	0
+	+	61	15
+	+	73	19
+	+	74	19
+	+	77	1
+	+	66	16
+	+	41	0
+	+	42	0
+	+	41	18
+	+	42	11
+	+	45	0
+	+	46	0
+	+	44	0
+	+	45	0
+	+	44	0
+	+	42	15
+	+	79	0
+	+	76	22
+	+	78	0
+	+	79	0
+	+	78	20
+	+	48	0
+	+	51	0
+	+	50	21
+	+	92	0
+	+	30	7
+	+	61	4
+	+	58	0
+	+	53	0
+	+	53	16
+	+	54	0
+	+	55	0
+	+	54	16
+	+	55	0
+	+	53	0
+	+	57	0
+	+	30	24
+	+	30	0
+	+	30	19
+	+	31	19
+	+	32	7
+	+	34	0
+	+	35	24
+	+	36	9
+	+	9	0
+	+	7	26
+	+	16	24
+	+	21	0
+	+	23	12
+	+	67	30
+	+	72	12
+	+	67	26
+	+	72	16
+	+	67	20
+	+	68	0
+	+	71	4
+	+	72	0
+	+	71	6
+	+	72	0
+	+	70	0
+	+	28	16
+	+	83	0
+	+	81	18
+	+	80	0
+	+	82	0
+	+	81	0
+	+	80	4
+	+	81	36
+	m	60	15
+	n	60	15
+
+> scp://R_Pi_Magus//etc/dhcpcd.conf
+	*	1559137155	0
+	"	57	0
+
+> /cygdrive/d/Virtual/Dos.Box/DOSBox-0.74/millalde.cmd
+	*	1559086981	0
+	"	2	0
+	^	2	0
+	.	1	63
+	+	1	11
+	+	1	3
+	+	1	48
+	+	1	63
 
 > /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-	*	1557849666	0
-	"	25	0
-	^	39	15
-	.	41	16
+	*	1559059731	0
+	"	45	19
+	^	45	21
+	.	45	20
 	+	3	7
 	+	4	36
 	+	11	8
 	+	9	0
 	+	10	0
-	+	19	0
-	+	22	0
-	+	24	0
+	+	21	0
+	+	23	0
 	+	25	0
-	+	11	0
-	+	26	9
-	+	28	15
-	+	29	0
 	+	26	0
-	+	35	0
+	+	11	0
+	+	27	9
+	+	29	15
+	+	33	0
+	+	27	0
 	+	38	0
-	+	35	0
-	+	37	0
-	+	40	18
-	+	41	9
+	+	44	0
+	+	38	0
+	+	43	0
+	+	46	18
+	+	47	9
+	+	48	0
+	+	46	15
+	+	46	14
+	+	47	16
+	+	45	12
+	+	40	0
+	+	40	21
+	+	40	5
+	+	43	0
+	+	40	0
 	+	42	0
-	+	40	15
-	+	39	14
-	+	41	16
+	+	40	0
+	+	48	3
+	+	48	8
+	+	42	0
+	+	39	12
+	+	40	0
+	+	48	0
+	+	33	0
+	+	30	19
+	+	31	9
+	+	32	14
+	+	27	11
+	+	43	27
+	+	46	0
+	+	21	0
+	+	19	23
+	+	43	39
+	+	20	25
+	+	45	20
+
+> ~/.vim/UltiSnips/c.snippets
+	*	1559058205	0
+	"	81	0
+	^	81	0
+	.	82	0
+	+	96	0
+	+	96	11
+	+	96	19
+	+	96	0
+	+	96	28
+	+	96	15
+	+	96	0
+	+	96	25
+	+	96	0
+	+	82	0
+
+> /cygdrive/d/Development/lisp/HOME/.gitignore
+	*	1558405225	0
+	"	2	0
+	.	2	0
+	+	2	0
+
+> /cygdrive/d/Development/Ardunio/Arduino_stm32/Arduino_STM32-master/Arduino_STM32-master/README.md
+	*	1558284483	0
+	"	5357	0
+	^	5442	0
+	.	5441	9
+	+	12	0
+	+	44	0
+	+	5441	9
+
+> ~/scripts/sh/run/runFar.sh
+	*	1558144015	0
+	"	12	35
+	.	12	35
+	+	12	35
+
+> /cygdrive/d/Development/lisp/HOME/emacs_Run_fromD.cmd
+	*	1557924209	0
+	"	3	0
+	^	2	12
+	.	3	0
+	+	2	35
+	+	3	0
+	+	2	0
+	+	4	5
+	+	3	0
+	+	1	0
+	+	3	0
+	+	1	1
+	+	4	0
+	+	1	0
+	+	2	0
+	+	3	0
+
+> /cygdrive/d/Development/lisp/HOME/emacs_Run.cmd
+	*	1557923230	0
+	"	2	0
+	.	3	0
+	+	3	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/gtest.cpp
+	*	1557868180	0
+	"	69	21
+	^	68	8
+	.	69	21
+	+	8	27
+	+	9	0
+	+	62	19
+	+	64	0
+	+	65	22
+	+	67	0
+	+	66	9
+	+	67	21
+	+	69	0
+	+	68	0
+	+	68	8
+	+	69	21
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/slavespi.h
+	*	1557864079	0
+	"	73	0
+	^	33	2
+	.	33	1
+	+	57	16
+	+	57	0
+	+	49	7
+	+	57	24
+	+	32	20
+	+	22	22
+	+	32	29
+	+	14	16
+	+	53	30
+	+	15	0
+	+	53	0
+	+	54	16
+	+	57	30
+	+	57	27
+	+	54	26
+	+	53	30
+	+	57	0
+	+	68	0
+	+	54	5
+	+	53	0
+	+	50	7
+	+	57	0
+	+	59	13
+	+	60	16
+	+	31	0
+	+	28	25
+	+	56	24
+	+	31	0
+	+	45	19
+	+	28	24
+	+	64	0
+	+	63	15
+	+	67	31
+	+	17	5
+	+	17	7
+	+	17	0
+	+	17	7
+	+	20	0
+	+	16	13
+	+	19	0
+	+	16	0
+	+	20	12
+	+	17	1
+	+	16	18
+	+	18	9
+	+	19	0
+	+	18	10
+	+	19	0
+	+	18	29
+	+	17	1
+	+	14	13
+	+	23	8
+	+	20	0
+	+	24	20
+	+	23	0
+	+	24	0
+	+	22	0
+	+	14	0
+	+	53	0
+	+	53	16
+	+	54	0
+	+	53	19
+	+	71	2
+	+	52	0
+	+	18	14
+	+	19	0
+	+	21	8
+	+	23	3
+	+	24	0
+	+	96	6
+	+	4	0
+	+	6	0
+	+	96	18
+	+	71	1
+	+	30	0
+	+	32	0
+	+	33	0
+	+	76	16
+	+	74	6
+	+	30	1
+	+	32	1
+	+	31	0
+	+	33	1
+	+	31	0
+	+	30	0
+	+	33	0
+	+	32	0
+	+	30	1
+	+	31	1
+	+	32	1
+	+	33	1
 
 > ~/.vim/vimrc
 	*	1557849647	0
@@ -836,103 +2986,9 @@ $timeout
 	*	1557570569	0
 	"	1325	6
 
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/gtest.cpp
-	*	1557569195	0
-	"	11	0
-
-> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/Home/bath.txt
-	*	1557562589	0
-	"	1	0
-
 > /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
 	*	1557562580	0
 	"	3	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/termenu.py
-	*	1557561916	0
-	"	219	0
-	^	117	25
-	.	117	51
-	+	25	0
-	+	24	20
-	+	33	0
-	+	32	12
-	+	36	19
-	+	47	19
-	+	62	14
-	+	74	21
-	+	83	18
-	+	90	23
-	+	122	21
-	+	175	21
-	+	180	22
-	+	190	22
-	+	90	27
-	+	83	22
-	+	74	25
-	+	34	0
-	+	40	0
-	+	41	0
-	+	42	0
-	+	43	0
-	+	177	0
-	+	27	0
-	+	177	0
-	+	52	0
-	+	56	0
-	+	60	0
-	+	126	0
-	+	130	0
-	+	134	0
-	+	138	0
-	+	142	0
-	+	146	0
-	+	150	0
-	+	154	0
-	+	164	0
-	+	167	0
-	+	177	0
-	+	90	0
-	+	90	37
-	+	90	30
-	+	90	18
-	+	90	30
-	+	90	38
-	+	90	24
-	+	90	30
-	+	90	39
-	+	90	20
-	+	90	31
-	+	90	40
-	+	90	28
-	+	90	31
-	+	90	45
-	+	90	26
-	+	90	35
-	+	90	46
-	+	90	28
-	+	90	35
-	+	90	43
-	+	90	34
-	+	90	35
-	+	90	0
-	+	90	34
-	+	90	43
-	+	90	44
-	+	90	34
-	+	90	0
-	+	21	0
-	+	90	0
-	+	90	35
-	+	90	26
-	+	90	43
-	+	90	23
-	+	90	26
-	+	90	56
-	+	90	0
-	+	115	50
-	+	116	57
-	+	117	51
 
 > /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/.gitignore
 	*	1557560613	0
@@ -1074,2006 +3130,3 @@ $timeout
 	+	19	0
 	+	32	0
 	+	31	23
-
-> /cygdrive/d/Development/lisp/HOME/emacs_demon.cmd
-	*	1557511877	0
-	"	2	13
-
-> /cygdrive/d/Development/lisp/HOME/emacs_Run_fromD.cmd
-	*	1557423172	0
-	"	1	35
-	^	1	37
-	.	1	35
-	+	1	35
-	+	2	0
-	+	1	35
-
-> /cygdrive/d/shell/Far/FarMenu.Ini
-	*	1557422440	0
-	"	92	0
-
-> /cygdrive/c/Users/BuYn/.bashrc
-	*	1557417957	0
-	"	21	0
-	^	2	9
-	.	21	0
-	+	5	7
-	+	21	16
-	+	14	17
-	+	16	18
-	+	16	0
-	+	5	7
-	+	29	0
-	+	21	33
-	+	21	0
-	+	21	33
-	+	20	21
-	+	21	0
-	+	20	21
-	+	19	0
-	+	20	0
-	+	19	25
-	+	22	0
-	+	25	0
-	+	22	37
-	+	19	0
-	+	20	0
-	+	19	8
-	+	20	6
-	+	16	6
-	+	16	19
-	+	25	0
-	+	22	55
-	+	5	0
-	+	1	28
-	+	14	21
-	+	8	35
-	+	9	28
-	+	8	8
-	+	9	8
-	+	10	55
-	+	10	31
-	+	14	0
-	+	10	34
-	+	14	0
-	+	9	32
-	+	8	38
-	+	10	35
-	+	9	31
-	+	8	37
-	+	16	0
-	+	11	11
-	+	11	12
-	+	11	11
-	+	11	34
-	+	14	0
-	+	11	38
-	+	13	31
-	+	16	20
-	+	25	20
-	+	12	0
-	+	11	9
-	+	5	0
-	+	3	7
-	+	4	7
-	+	15	11
-	+	15	40
-	+	15	39
-	+	16	0
-	+	15	39
-	+	18	22
-	+	1	32
-	+	22	54
-	+	25	20
-	+	23	8
-	+	21	8
-	+	24	0
-	+	23	9
-	+	24	11
-	+	22	0
-	+	21	29
-	+	26	10
-	+	27	10
-	+	28	13
-	+	17	9
-	+	6	11
-	+	7	21
-	+	2	29
-	+	21	0
-
-> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/moneyToViplan.txt
-	*	1557223090	0
-	"	1	0
-
-> /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
-	*	1557215351	0
-	"	105	0
-	.	110	0
-	+	98	146
-	+	95	0
-	+	98	0
-	+	95	0
-	+	96	0
-	+	109	0
-	+	110	0
-
-> /usr/share/vim/vim80/doc/pattern.txt
-	*	1557148156	0
-	"	60	7
-
-> /cygdrive/d/scripts/ahk/exmpl/send_beck.ahk
-	*	1557052889	0
-	"	1	0
-	^	2	1
-	.	2	0
-	+	4	22
-	+	2	0
-
-> /cygdrive/d/Development/lisp/HOME/.emacs
-	*	1556035979	0
-	"	4	0
-
-> /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/mplife.txt
-	*	1556032931	0
-	"	1	0
-
-> /cygdrive/d/tools.win/Fast/Actual_fast/Progects/Sony/SonyPresent.txt
-	*	1555921318	0
-	"	5	49
-	^	5	51
-	.	5	49
-	+	7	0
-	+	6	11
-	+	4	16
-	+	5	49
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stepmotor_Driver/stepmotor_Driver.ino
-	*	1555867557	0
-	"	58	28
-	^	58	29
-	.	54	33
-	+	8	0
-	+	24	0
-	+	7	0
-	+	24	0
-	+	51	0
-	+	22	37
-	+	25	16
-	+	64	20
-	+	295	76
-	+	24	21
-	+	25	17
-	+	18	0
-	+	24	19
-	+	23	29
-	+	24	19
-	+	23	29
-	+	25	16
-	+	23	29
-	+	25	17
-	+	25	0
-	+	23	30
-	+	25	17
-	+	23	30
-	+	25	16
-	+	68	0
-	+	65	2
-	+	66	3
-	+	67	3
-	+	54	33
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stepmotor_Driver/stm32_Toch_Driver.ino
-	*	1555846412	0
-	"	1	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/RAMPS_driver/Source/stm32_Toch_Driver/stm32_Toch_Driver.ino
-	*	1555845910	0
-	"	185	0
-	^	15	30
-	.	15	29
-	+	12	27
-	+	13	29
-	+	14	28
-	+	15	29
-
-> /cygdrive/d/Development/lisp/HOME/INI/org_agend_cfg.el
-	*	1555775846	0
-	"	45	9
-
-> /cygdrive/d/Development/lisp/HOME/INI/evil_frame_cfg.el
-	*	1555775823	0
-	"	25	4
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/buttons.py
-	*	1555677529	0
-	"	37	4
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/commanditem.py
-	*	1555675650	0
-	"	22	12
-	^	34	22
-	.	34	10
-	+	17	0
-	+	18	0
-	+	22	0
-	+	35	0
-	+	40	0
-	+	45	0
-	+	50	0
-	+	55	0
-	+	60	0
-	+	64	0
-	+	65	0
-	+	34	0
-	+	33	0
-	+	34	10
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_menucommannds.py
-	*	1555673757	0
-	"	14	0
-	^	45	17
-	.	21	0
-	+	45	16
-	+	57	0
-	+	56	0
-	+	55	0
-	+	21	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/ledsMenu.py
-	*	1555673334	0
-	"	10	4
-	^	163	9
-	.	163	8
-	+	17	15
-	+	17	16
-	+	17	15
-	+	17	22
-	+	17	15
-	+	17	11
-	+	17	0
-	+	17	3
-	+	17	0
-	+	17	3
-	+	17	12
-	+	17	14
-	+	17	8
-	+	17	13
-	+	17	12
-	+	17	16
-	+	17	13
-	+	17	15
-	+	17	26
-	+	17	0
-	+	17	30
-	+	17	28
-	+	17	17
-	+	17	7
-	+	17	10
-	+	17	7
-	+	17	8
-	+	17	9
-	+	17	31
-	+	17	0
-	+	3	0
-	+	14	3
-	+	25	0
-	+	4	0
-	+	13	0
-	+	17	0
-	+	15	0
-	+	22	0
-	+	17	6
-	+	16	0
-	+	17	13
-	+	18	10
-	+	19	10
-	+	20	8
-	+	19	11
-	+	21	0
-	+	87	20
-	+	90	0
-	+	93	0
-	+	98	19
-	+	90	20
-	+	93	20
-	+	103	0
-	+	106	0
-	+	109	0
-	+	127	0
-	+	116	0
-	+	119	0
-	+	122	0
-	+	145	0
-	+	149	0
-	+	154	0
-	+	162	8
-	+	163	8
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_commandmenuitem.py
-	*	1555651587	0
-	"	4	0
-
-> /cygdrive/d/games/No Mans Sky The Abyss/Binaries/SETTINGS/TKGRAPHICSSETTINGS.MXML
-	*	1555644002	0
-	"	4	40
-	^	4	36
-	.	4	36
-	+	5	40
-	+	4	0
-	+	5	36
-	+	4	36
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/SPI_ShiftIN.ino
-	*	1555428712	0
-	"	39	0
-	^	45	34
-	.	45	33
-	+	47	0
-	+	48	0
-	+	49	0
-	+	47	22
-	+	48	22
-	+	49	22
-	+	47	30
-	+	48	30
-	+	49	30
-	+	164	17
-	+	165	22
-	+	167	0
-	+	168	0
-	+	166	23
-	+	169	14
-	+	170	20
-	+	171	23
-	+	174	19
-	+	179	16
-	+	175	23
-	+	180	22
-	+	179	18
-	+	73	24
-	+	45	32
-	+	296	7
-	+	300	0
-	+	298	22
-	+	45	30
-	+	298	22
-	+	45	32
-	+	296	19
-	+	297	0
-	+	296	26
-	+	300	0
-	+	298	22
-	+	297	33
-	+	296	18
-	+	45	31
-	+	258	0
-	+	259	0
-	+	260	0
-	+	261	0
-	+	262	0
-	+	260	25
-	+	261	25
-	+	262	25
-	+	298	3
-	+	297	7
-	+	296	7
-	+	45	33
-	+	73	25
-	+	309	0
-	+	304	0
-	+	309	0
-	+	306	0
-	+	304	0
-	+	306	0
-	+	304	11
-	+	74	15
-	+	304	19
-	+	305	3
-	+	305	18
-	+	306	0
-	+	269	0
-	+	263	0
-	+	267	2
-	+	268	2
-	+	76	0
-	+	75	0
-	+	53	0
-	+	56	0
-	+	176	11
-	+	181	13
-	+	74	22
-	+	15	0
-	+	14	0
-	+	176	13
-	+	56	0
-	+	57	0
-	+	50	0
-	+	42	0
-	+	32	0
-	+	23	0
-	+	23	9
-	+	22	9
-	+	23	27
-	+	142	0
-	+	143	0
-	+	142	23
-	+	143	25
-	+	142	7
-	+	143	0
-	+	145	0
-	+	309	0
-	+	305	37
-	+	74	23
-	+	73	24
-	+	299	21
-	+	298	0
-	+	45	33
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/main.py
-	*	1555370297	0
-	"	65	26
-	^	108	11
-	.	110	0
-	+	39	12
-	+	39	21
-	+	39	15
-	+	39	24
-	+	39	18
-	+	39	11
-	+	39	0
-	+	39	24
-	+	39	0
-	+	39	53
-	+	39	0
-	+	49	0
-	+	49	27
-	+	49	26
-	+	49	27
-	+	49	26
-	+	49	36
-	+	49	42
-	+	49	0
-	+	49	30
-	+	49	0
-	+	49	42
-	+	49	39
-	+	49	44
-	+	49	33
-	+	49	0
-	+	49	44
-	+	49	0
-	+	49	45
-	+	49	0
-	+	49	17
-	+	49	0
-	+	49	16
-	+	58	0
-	+	49	7
-	+	49	41
-	+	49	15
-	+	49	20
-	+	49	14
-	+	49	36
-	+	49	18
-	+	49	16
-	+	49	15
-	+	49	20
-	+	49	29
-	+	49	11
-	+	39	0
-	+	39	13
-	+	41	0
-	+	39	35
-	+	39	38
-	+	39	19
-	+	39	20
-	+	3	44
-	+	16	0
-	+	23	0
-	+	39	0
-	+	49	0
-	+	78	16
-	+	36	24
-	+	76	10
-	+	82	13
-	+	78	24
-	+	48	0
-	+	55	0
-	+	84	0
-	+	96	0
-	+	87	0
-	+	90	0
-	+	92	92
-	+	90	29
-	+	87	29
-	+	86	61
-	+	89	38
-	+	90	0
-	+	89	30
-	+	92	34
-	+	92	91
-	+	92	34
-	+	52	18
-	+	57	0
-	+	63	0
-	+	58	0
-	+	67	17
-	+	68	12
-	+	69	0
-	+	68	12
-	+	109	0
-	+	110	0
-	+	109	0
-	+	108	21
-	+	108	10
-	+	108	22
-	+	109	0
-	+	108	11
-	+	110	0
-
-> /cygdrive/d/Development/lisp/HOME/emacs_client.cmd
-	*	1555280123	0
-	"	3	0
-
-> /cygdrive/d/Development/lisp/HOME/emacs_debug.cmd
-	*	1555277001	0
-	"	2	55
-	^	2	56
-	.	2	55
-	+	3	0
-	+	2	55
-
-> /cygdrive/d/Development/lisp/HOME/emacs_Run.cmd
-	*	1555276884	0
-	"	1	0
-
-> ~/.bash_aliases
-	*	1555197199	0
-	"	7	72
-	^	7	73
-	.	7	72
-	+	7	22
-	+	7	40
-	+	8	20
-	+	7	41
-	+	7	72
-	+	8	1
-	+	7	21
-	+	8	0
-	+	7	43
-	+	7	21
-	+	7	22
-	+	7	73
-	+	8	0
-	+	7	72
-
-> /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
-	*	1555185284	0
-	"	8	0
-	.	14	0
-	+	14	0
-	e	5	13
-
-> /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_wifi_router.txt
-	*	1555185121	0
-	"	1	0
-
-> /cygdrive/c/Users/BuYn/Desktop/Edit.rkp
-	*	1555145559	0
-	"	1	0
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/presenter/gstodo.py
-	*	1555096083	0
-	"	172	36
-	^	172	37
-	.	172	36
-	+	9	0
-	+	28	0
-	+	6	0
-	+	11	0
-	+	16	0
-	+	24	0
-	+	22	0
-	+	24	0
-	+	18	0
-	+	22	0
-	+	23	0
-	+	21	0
-	+	26	0
-	+	37	0
-	+	39	0
-	+	38	18
-	+	38	0
-	+	38	36
-	+	38	26
-	+	39	0
-	+	38	48
-	+	39	0
-	+	83	40
-	+	84	44
-	+	83	64
-	+	84	81
-	+	83	0
-	+	84	0
-	+	98	0
-	+	63	0
-	+	17	0
-	+	28	0
-	+	27	0
-	+	25	0
-	+	27	0
-	+	18	0
-	+	24	0
-	+	23	0
-	+	36	0
-	+	47	0
-	+	60	0
-	+	62	0
-	+	63	0
-	+	64	0
-	+	72	0
-	+	74	0
-	+	80	0
-	+	93	0
-	+	92	0
-	+	93	0
-	+	82	0
-	+	92	0
-	+	99	0
-	+	91	0
-	+	94	0
-	+	97	0
-	+	95	0
-	+	161	0
-	+	162	0
-	+	164	0
-	+	175	0
-	+	177	0
-	+	180	0
-	+	182	0
-	+	189	0
-	+	191	0
-	+	194	0
-	+	196	0
-	+	198	0
-	+	200	0
-	+	212	0
-	+	112	12
-	+	113	24
-	+	106	12
-	+	113	41
-	+	108	12
-	+	107	31
-	+	161	0
-	+	174	0
-	+	176	0
-	+	179	0
-	+	181	0
-	+	188	0
-	+	190	0
-	+	194	0
-	+	196	0
-	+	202	0
-	+	204	0
-	+	209	0
-	+	213	0
-	+	225	0
-	+	161	0
-	+	167	40
-	+	169	22
-	+	173	0
-	+	172	18
-	+	170	0
-	+	171	0
-	+	170	37
-	+	172	36
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/model/globalsvar.py
-	*	1555014101	0
-	"	8	0
-	^	6	1
-	.	7	0
-	+	21	0
-	+	31	32
-	+	27	30
-	+	6	0
-	+	7	0
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_lightGoggleToDo.py
-	*	1554999667	0
-	"	62	17
-	^	53	69
-	.	53	59
-	+	21	8
-	+	64	0
-	+	63	0
-	+	53	0
-	+	49	16
-	+	50	0
-	+	52	21
-	+	53	84
-	+	53	0
-	+	53	45
-	+	50	48
-	+	53	40
-	+	54	38
-	+	55	8
-	+	64	0
-	+	55	15
-	+	56	30
-	+	57	29
-	+	58	29
-	+	60	81
-	+	59	8
-	+	57	0
-	+	59	17
-	+	62	18
-	+	60	17
-	+	57	0
-	+	62	8
-	+	60	0
-	+	59	0
-	+	61	13
-	+	59	0
-	+	58	10
-	+	53	40
-	+	50	77
-	+	53	83
-	+	54	0
-	+	53	94
-	+	53	0
-	+	53	109
-	+	54	0
-	+	53	59
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_window_create.py
-	*	1554912710	0
-	"	101	56
-	^	101	13
-	.	101	56
-	+	17	0
-	+	22	0
-	+	26	0
-	+	33	0
-	+	39	0
-	+	45	0
-	+	57	0
-	+	109	0
-	+	106	0
-	+	15	0
-	+	6	0
-	+	1	0
-	+	17	0
-	+	105	0
-	+	93	0
-	+	106	0
-	+	94	0
-	+	104	0
-	+	94	27
-	+	96	0
-	+	98	0
-	+	103	8
-	+	103	0
-	+	99	0
-	+	100	69
-	+	102	68
-	+	101	56
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
-	*	1554846044	0
-	"	1	0
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_GoggleToDo.py
-	*	1554821050	0
-	"	127	0
-	^	22	9
-	.	21	0
-	+	1	0
-	+	6	0
-	+	12	0
-	+	13	0
-	+	26	0
-	+	33	0
-	+	38	0
-	+	48	0
-	+	59	0
-	+	67	0
-	+	76	0
-	+	84	0
-	+	93	0
-	+	11	0
-	+	108	4
-	+	105	0
-	+	21	0
-	+	22	26
-	+	23	21
-	+	22	8
-	+	23	8
-	+	43	16
-	+	44	42
-	+	46	0
-	+	46	26
-	+	44	26
-	+	44	0
-	+	44	18
-	+	46	0
-	+	44	27
-	+	46	0
-	+	44	29
-	+	46	0
-	+	45	41
-	+	46	0
-	+	24	0
-	+	21	8
-	+	22	8
-	+	23	16
-	+	22	0
-	+	23	0
-	+	22	8
-	+	21	0
-
-> /usr/share/vim/vim80/doc/help.txt
-	*	1554806871	0
-	"	2	0
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/test_offlinegspread.py
-	*	1554805593	0
-	"	41	8
-	^	27	40
-	.	27	41
-	+	1	0
-	+	6	0
-	+	13	0
-	+	11	0
-	+	59	0
-	+	62	0
-	+	59	0
-	+	13	0
-	+	31	0
-	+	48	0
-	+	57	0
-	+	58	0
-	+	13	17
-	+	31	31
-	+	46	0
-	+	36	0
-	+	38	0
-	+	41	0
-	+	43	0
-	+	46	0
-	+	47	0
-	+	48	16
-	+	58	0
-	+	49	0
-	+	41	12
-	+	41	23
-	+	41	0
-	+	24	0
-	+	26	0
-	+	41	0
-	+	17	0
-	+	18	68
-	+	27	17
-	+	28	0
-	+	27	41
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/SRC/tests/testGoggleToDo.py
-	*	1554804424	0
-	"	30	0
-
-> /cygdrive/d/Development/version-control/GitHub/GooglePy/Main.py
-	*	1554730117	0
-	"	2	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/simplencoder.cpp
-	*	1554714084	0
-	"	63	17
-	^	64	3
-	.	64	0
-	+	63	28
-	+	64	30
-	+	65	2
-	+	66	0
-	+	70	15
-	+	66	2
-	+	64	0
-
-> /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
-	*	1554711209	0
-	"	605	37
-	^	591	5
-	.	591	4
-	+	167	0
-	+	166	8
-	+	167	59
-	+	168	10
-	+	169	0
-	+	167	0
-	+	135	0
-	+	133	119
-	+	134	0
-	+	133	34
-	+	450	0
-	+	448	0
-	+	450	0
-	+	451	0
-	+	450	36
-	+	450	0
-	+	445	0
-	+	449	0
-	+	460	0
-	+	449	0
-	+	446	0
-	+	451	81
-	+	441	7
-	+	442	25
-	+	443	0
-	+	443	57
-	+	445	0
-	+	443	75
-	+	445	0
-	+	461	0
-	+	61	55
-	+	332	24
-	+	444	0
-	+	178	0
-	+	332	24
-	+	329	0
-	+	330	0
-	+	332	0
-	+	332	24
-	+	332	23
-	+	331	21
-	+	74	0
-	+	333	0
-	+	458	0
-	+	452	29
-	+	453	0
-	+	456	70
-	+	454	0
-	+	444	39
-	+	443	56
-	+	585	56
-	+	599	27
-	+	601	27
-	+	601	48
-	+	601	0
-	+	601	47
-	+	601	0
-	+	597	0
-	+	598	0
-	+	589	0
-	+	593	25
-	+	586	31
-	+	589	0
-	+	586	0
-	+	586	18
-	+	589	12
-	+	589	0
-	+	586	0
-	+	601	0
-	+	607	0
-	+	605	38
-	+	602	78
-	+	602	17
-	+	605	38
-	+	602	27
-	+	605	38
-	+	603	107
-	+	605	33
-	+	594	58
-	+	606	0
-	+	592	121
-	+	602	84
-	+	592	0
-	+	603	70
-	+	603	79
-	+	600	76
-	+	592	0
-	+	588	66
-	+	587	13
-	+	590	49
-	+	590	0
-	+	591	0
-	+	590	88
-	+	591	0
-	+	590	0
-	+	591	4
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/simplencoder.h
-	*	1554572799	0
-	"	13	3
-	^	24	13
-	.	24	12
-	+	24	12
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/EncoderSTM32.ino
-	*	1554571497	0
-	"	9	0
-	^	13	22
-	.	14	21
-	+	12	22
-	+	13	21
-	+	14	21
-	+	15	28
-	+	10	1
-	+	12	21
-	+	13	22
-	+	22	0
-	+	10	0
-	+	47	0
-	+	22	0
-	+	21	0
-	+	39	0
-	+	27	0
-	+	39	0
-	+	31	0
-	+	12	22
-	+	13	21
-	+	14	21
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/shiftout.cpp
-	*	1554570617	0
-	"	9	0
-	^	61	23
-	.	60	0
-	+	33	0
-	+	32	16
-	+	33	16
-	+	34	16
-	+	30	14
-	+	37	14
-	+	10	0
-	+	12	0
-	+	13	18
-	+	9	11
-	+	11	11
-	+	13	11
-	+	47	0
-	+	49	0
-	+	47	11
-	+	49	0
-	+	61	0
-	+	47	0
-	+	61	22
-	+	47	0
-	+	60	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/slavespi.cpp
-	*	1554563031	0
-	"	230	0
-	^	226	1
-	.	231	0
-	+	16	83
-	+	118	17
-	+	115	0
-	+	118	0
-	+	121	0
-	+	118	0
-	+	115	19
-	+	121	8
-	+	118	0
-	+	79	0
-	+	80	0
-	+	78	0
-	+	23	0
-	+	118	53
-	+	115	2
-	+	120	2
-	+	118	14
-	+	127	17
-	+	63	197
-	+	63	171
-	+	33	0
-	+	63	178
-	+	63	198
-	+	63	188
-	+	63	171
-	+	63	178
-	+	63	191
-	+	63	197
-	+	63	273
-	+	63	171
-	+	63	197
-	+	75	0
-	+	77	0
-	+	75	0
-	+	76	0
-	+	82	0
-	+	84	0
-	+	82	0
-	+	83	0
-	+	63	276
-	+	63	256
-	+	63	273
-	+	227	3
-	+	228	0
-	+	230	0
-	+	232	0
-	+	230	0
-	+	230	21
-	+	232	0
-	+	230	50
-	+	230	3
-	+	232	3
-	+	52	0
-	+	53	0
-	+	54	8
-	+	60	0
-	+	61	34
-	+	120	0
-	+	118	32
-	+	120	16
-	+	63	236
-	+	63	254
-	+	63	0
-	+	61	34
-	+	63	18
-	+	230	0
-	+	229	0
-	+	230	15
-	+	118	0
-	+	120	0
-	+	118	0
-	+	118	41
-	+	118	1
-	+	115	1
-	+	63	21
-	+	50	17
-	+	51	0
-	+	194	0
-	+	173	0
-	+	241	2
-	+	246	0
-	+	242	0
-	+	242	12
-	+	241	3
-	+	256	0
-	+	260	0
-	+	264	0
-	+	275	0
-	+	241	2
-	+	242	0
-	+	274	0
-	+	261	0
-	+	263	0
-	+	260	0
-	+	259	0
-	+	255	0
-	+	226	0
-	+	232	0
-	+	238	0
-	+	231	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/slavespi.h
-	*	1554562977	0
-	"	29	0
-	^	33	2
-	.	33	1
-	+	57	16
-	+	57	0
-	+	49	7
-	+	57	24
-	+	32	20
-	+	22	22
-	+	32	29
-	+	14	16
-	+	53	30
-	+	15	0
-	+	53	0
-	+	54	16
-	+	57	30
-	+	57	27
-	+	54	26
-	+	53	30
-	+	57	0
-	+	68	0
-	+	54	5
-	+	53	0
-	+	50	7
-	+	57	0
-	+	59	13
-	+	60	16
-	+	31	0
-	+	28	25
-	+	56	24
-	+	31	0
-	+	45	19
-	+	28	24
-	+	64	0
-	+	63	15
-	+	67	31
-	+	17	5
-	+	17	7
-	+	17	0
-	+	17	7
-	+	20	0
-	+	16	13
-	+	19	0
-	+	16	0
-	+	20	12
-	+	17	1
-	+	16	18
-	+	18	9
-	+	19	0
-	+	18	10
-	+	19	0
-	+	18	29
-	+	17	1
-	+	14	13
-	+	23	8
-	+	20	0
-	+	24	20
-	+	23	0
-	+	24	0
-	+	22	0
-	+	14	0
-	+	53	0
-	+	53	16
-	+	54	0
-	+	53	19
-	+	71	2
-	+	52	0
-	+	18	14
-	+	19	0
-	+	21	8
-	+	23	3
-	+	24	0
-	+	96	6
-	+	4	0
-	+	6	0
-	+	96	18
-	+	71	1
-	+	30	0
-	+	32	0
-	+	33	0
-	+	76	16
-	+	74	6
-	+	30	1
-	+	32	1
-	+	31	0
-	+	33	1
-	+	31	0
-	+	30	0
-	+	33	0
-	+	32	0
-	+	30	1
-	+	31	1
-	+	32	1
-	+	33	1
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Shiftin.h
-	*	1554559750	0
-	"	24	0
-	^	52	27
-	.	52	26
-	+	47	0
-	+	61	0
-	+	52	0
-	+	52	26
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Shiftin.cpp
-	*	1554558585	0
-	"	42	0
-	^	30	11
-	.	30	10
-	+	30	10
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Viktor/Source/stepper_switch_STM32/stepper_switch_STM32.ino
-	*	1554556025	0
-	"	3	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Stack.h
-	*	1554535054	0
-	"	261	0
-	^	217	21
-	.	217	20
-	+	1	11
-	+	222	0
-	+	134	21
-	+	217	20
-
-> scp://R_Pi_Magus/rspspi.sh
-	*	1554526301	0
-	"	2	2
-	^	1	3
-	.	1	2
-	+	1	42
-	+	2	12
-	+	3	0
-	+	2	0
-	+	1	2
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_ledsmenu.py
-	*	1554494337	0
-	"	77	4
-	^	25	0
-	.	25	0
-	+	65	0
-	+	51	30
-	+	52	35
-	+	52	38
-	+	53	24
-	+	52	23
-	+	51	23
-	+	53	25
-	+	51	25
-	+	53	25
-	+	51	0
-	+	65	0
-	+	64	0
-	+	64	16
-	+	64	34
-	+	64	0
-	+	64	28
-	+	64	0
-	+	17	0
-	+	25	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_leds.py
-	*	1554481881	0
-	"	37	0
-	^	75	8
-	.	74	29
-	+	14	0
-	+	1	0
-	+	11	30
-	+	47	0
-	+	18	0
-	+	48	0
-	+	62	0
-	+	65	0
-	+	62	0
-	+	48	0
-	+	46	0
-	+	24	0
-	+	39	0
-	+	38	33
-	+	48	20
-	+	51	0
-	+	52	27
-	+	53	14
-	+	56	0
-	+	74	29
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ShiftOut_exe/shiftout.cpp
-	*	1554480812	0
-	"	29	1
-	^	24	27
-	.	24	26
-	+	13	0
-	+	41	0
-	+	44	0
-	+	21	0
-	+	12	0
-	+	9	0
-	+	12	0
-	+	13	0
-	+	41	0
-	+	21	0
-	+	14	0
-	+	40	0
-	+	14	15
-	+	15	15
-	+	39	11
-	+	15	38
-	+	39	0
-	+	50	23
-	+	45	0
-	+	58	0
-	+	57	0
-	+	56	0
-	+	47	7
-	+	47	0
-	+	50	0
-	+	46	0
-	+	29	0
-	+	29	26
-	+	30	31
-	+	30	0
-	+	31	0
-	+	39	0
-	+	29	0
-	+	30	0
-	+	31	0
-	+	30	0
-	+	29	10
-	+	30	0
-	+	34	2
-	+	35	2
-	+	30	0
-	+	27	0
-	+	28	0
-	+	34	0
-	+	35	0
-	+	39	0
-	+	33	0
-	+	30	34
-	+	5	0
-	+	36	21
-	+	27	0
-	+	17	0
-	+	25	0
-	+	21	0
-	+	17	3
-	+	21	0
-	+	25	0
-	+	21	0
-	+	25	0
-	+	21	25
-	+	26	0
-	+	27	0
-	+	38	0
-	+	27	0
-	+	15	3
-	+	38	0
-	+	37	12
-	+	16	40
-	+	14	18
-	+	15	18
-	+	21	0
-	+	20	0
-	+	19	0
-	+	21	1
-	+	20	24
-	+	21	14
-	+	20	16
-	+	25	0
-	+	22	0
-	+	18	34
-	+	23	23
-	+	21	9
-	+	20	34
-	+	21	7
-	+	24	0
-	+	23	0
-	+	24	26
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/shiftout.h
-	*	1554480478	0
-	"	30	4
-	.	49	0
-	+	43	11
-	+	45	11
-	+	47	11
-	+	45	0
-	+	49	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/fest.sh
-	*	1554384031	0
-	"	6	14
-	^	6	15
-	.	6	14
-	+	7	4
-	+	7	3
-	+	7	5
-	+	7	0
-	+	7	2
-	+	7	4
-	+	7	3
-	+	7	0
-	+	7	1
-	+	7	0
-	+	7	3
-	+	7	0
-	+	7	3
-	+	7	0
-	+	7	4
-	+	7	3
-	+	7	6
-	+	7	0
-	+	7	5
-	+	7	0
-	+	7	12
-	+	7	0
-	+	1	0
-	+	6	14
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ShiftOut_exe/shiftout.h
-	*	1554380278	0
-	"	59	2
-	^	55	5
-	.	55	9
-	+	24	0
-	+	25	0
-	+	24	0
-	+	26	0
-	+	24	0
-	+	64	17
-	+	48	0
-	+	61	0
-	+	48	0
-	+	49	0
-	+	51	0
-	+	49	0
-	+	42	0
-	+	50	0
-	+	51	0
-	+	52	0
-	+	54	0
-	+	56	0
-	+	61	0
-	+	56	0
-	+	55	23
-	+	56	0
-	+	55	0
-	+	60	0
-	+	57	0
-	+	56	0
-	+	42	0
-	+	35	0
-	+	38	22
-	+	61	0
-	+	55	4
-	+	42	0
-	+	41	0
-	+	56	0
-	+	57	0
-	+	61	0
-	+	55	9
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Shift/Source/stm32_shift_two/stm32_shift_two.ino
-	*	1554376453	0
-	"	1	2
-	^	40	0
-	.	41	0
-	+	13	19
-	+	15	6
-	+	17	0
-	+	15	10
-	+	17	10
-	+	13	21
-	+	15	21
-	+	13	21
-	+	17	23
-	+	15	24
-	+	13	23
-	+	17	0
-	+	15	21
-	+	13	21
-	+	26	2
-	+	26	0
-	+	25	2
-	+	24	2
-	+	23	2
-	+	27	0
-	+	26	27
-	+	30	0
-	+	32	0
-	+	33	0
-	+	43	2
-	+	45	0
-	+	30	43
-	+	44	19
-	+	14	0
-	+	13	23
-	+	15	23
-	+	17	24
-	+	13	25
-	+	38	41
-	+	15	24
-	+	13	24
-	+	17	23
-	+	15	24
-	+	41	0
-
-> ~/.vim/UltiSnips/c.snippets
-	*	1554375638	0
-	"	90	11
-	^	84	26
-	.	87	13
-	+	94	0
-	+	90	0
-	+	94	0
-	+	95	0
-	+	83	0
-	+	89	0
-	+	82	0
-	+	91	0
-	+	92	0
-	+	90	11
-	+	91	19
-	+	94	0
-	+	91	28
-	+	93	15
-	+	92	0
-	+	94	0
-	+	84	25
-	+	87	13
-
-> /cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/cores/arduino/wiring_shift.c
-	*	1554373917	0
-	"	51	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Shiftout/Source/Shift_out/shift_out.ino
-	*	1554366109	0
-	"	20	0
-	^	45	46
-	.	45	45
-	+	43	36
-	+	46	31
-	+	44	36
-	+	46	31
-	+	44	31
-	+	45	45
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Viktor/Source/stepper_switch_STM32/stepper_switch_button.ino
-	*	1554303419	0
-	"	9	28
-	^	9	29
-	.	9	28
-	+	3	12
-	+	4	12
-	+	5	13
-	+	6	13
-	+	10	21
-	+	8	30
-	+	9	28
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/simplencoder.h
-	*	1554299989	0
-	"	20	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/SerialPrinter.cpp
-	*	1554299987	0
-	"	32	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/Encoder/Encoder.ino
-	*	1554299227	0
-	"	21	0
-	.	10	0
-	+	10	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/EncoderSTM32/SerialPrinter.h
-	*	1554299098	0
-	"	15	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Encoder00/Source/Encoder/simplencoder.cpp
-	*	1554298655	0
-	"	7	1
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_spimsg.py
-	*	1554278411	0
-	"	16	0
-	^	6	0
-	.	16	0
-	+	8	0
-	+	10	0
-	+	14	0
-	+	20	0
-	+	27	0
-	+	34	0
-	+	41	18
-	+	59	0
-	+	54	0
-	+	59	0
-	+	11	0
-	+	6	0
-	+	1	0
-	+	18	0
-	+	16	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_termenu.py
-	*	1554268724	0
-	"	49	0
-	^	57	25
-	.	84	0
-	+	11	0
-	+	14	0
-	+	6	0
-	+	1	0
-	+	7	0
-	+	14	0
-	+	22	0
-	+	29	0
-	+	37	0
-	+	44	0
-	+	61	0
-	+	84	0
-	+	87	0
-	+	84	0
-	+	88	0
-	+	12	0
-	+	20	0
-	+	17	13
-	+	35	0
-	+	42	0
-	+	59	0
-	+	42	0
-	+	35	0
-	+	27	0
-	+	20	0
-	+	35	8
-	+	35	0
-	+	19	0
-	+	34	33
-	+	14	1
-	+	19	15
-	+	34	29
-	+	46	24
-	+	49	24
-	+	54	24
-	+	57	24
-	+	65	0
-	+	70	0
-	+	75	0
-	+	80	0
-	+	84	0
-
-> /usr/share/vim/vim80/doc/change.txt
-	*	1554265628	0
-	"	301	0
-
-> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/fest.sh
-	*	1554257536	0
-	"	1	0
-
-> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/model/spimsg.py
-	*	1554204268	0
-	"	52	16
-	.	51	0
-	+	50	39
-	+	51	0
-
-> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/presenter/buttons.py
-	*	1554200678	0
-	"	25	25
-	^	24	26
-	.	24	25
-	+	24	25
-
-> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/presenterbuttons.py
-	*	1554200622	0
-	"	1	0
-
-> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/presenter/spicom.py
-	*	1554200182	0
-	"	166	8
-
-> scp://R_Pi_Magus/1spirsp.sh
-	*	1554197489	0
-	"	1	0
-
-> scp://R_Pi_Magus/python/SPI_LED/Toch/Source/Python/RIZ/SRC/main.py
-	*	1554197489	0
-	"	1	0
-
-> scp://R_Pi_Magus/python/spi_proba.py
-	*	1554197489	0
-	"	1	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/spimsg.py
-	*	1554102043	0
-	"	2	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/testMain.py
-	*	1554096139	0
-	"	1	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/main.py
-	*	1554083910	0
-	"	78	12
-	^	17	13
-	.	17	12
-	+	3	16
-	+	4	0
-	+	10	0
-	+	15	0
-	+	16	0
-	+	17	0
-	+	23	0
-	+	24	0
-	+	32	0
-	+	186	0
-	+	18	0
-	+	19	0
-	+	22	0
-	+	19	25
-	+	21	21
-	+	20	0
-	+	24	0
-	+	30	0
-	+	32	0
-	+	34	0
-	+	36	0
-	+	60	7
-	+	47	0
-	+	73	0
-	+	62	0
-	+	72	0
-	+	82	0
-	+	74	0
-	+	81	0
-	+	83	0
-	+	100	0
-	+	102	0
-	+	109	0
-	+	111	0
-	+	162	0
-	+	164	0
-	+	167	0
-	+	169	0
-	+	177	0
-	+	171	0
-	+	175	0
-	+	179	0
-	+	180	0
-	+	76	0
-	+	80	17
-	+	75	14
-	+	76	0
-	+	180	14
-	+	180	33
-	+	181	0
-	+	179	13
-	+	181	35
-	+	182	47
-	+	185	0
-	+	183	13
-	+	184	7
-	+	179	0
-	+	17	0
-	+	9	0
-	+	16	0
-	+	9	14
-	+	17	12
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SSPI/slavespi.h
-	*	1554004905	0
-	"	23	0
-	^	93	5
-	.	93	4
-	+	73	0
-	+	69	10
-	+	65	0
-	+	64	11
-	+	66	28
-	+	85	0
-	+	70	0
-	+	57	1
-	+	66	0
-	+	64	0
-	+	68	0
-	+	67	0
-	+	68	0
-	+	72	0
-	+	74	3
-	+	68	0
-	+	75	0
-	+	38	0
-	+	86	0
-	+	77	0
-	+	71	0
-	+	4	0
-	+	38	0
-	+	35	1
-	+	36	1
-	+	34	1
-	+	35	1
-	+	32	1
-	+	92	30
-	+	27	0
-	+	25	0
-	+	17	0
-	+	25	0
-	+	26	0
-	+	17	3
-	+	91	0
-	+	90	18
-	+	25	0
-	+	25	8
-	+	25	0
-	+	18	0
-	+	20	0
-	+	21	0
-	+	22	0
-	+	23	0
-	+	18	13
-	+	25	1
-	+	76	0
-	+	82	0
-	+	81	22
-	+	93	4
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/SSPI/slavespi.cpp
-	*	1554004901	0
-	"	210	0
-	^	177	28
-	.	182	0
-	+	201	0
-	+	188	0
-	+	189	0
-	+	202	0
-	+	47	0
-	+	45	0
-	+	65	0
-	+	147	0
-	+	60	0
-	+	96	0
-	+	129	0
-	+	142	0
-	+	129	18
-	+	169	0
-	+	170	0
-	+	173	0
-	+	160	0
-	+	159	0
-	+	160	18
-	+	161	18
-	+	162	1
-	+	163	9
-	+	208	19
-	+	163	12
-	+	187	0
-	+	164	2
-	+	203	0
-	+	205	0
-	+	203	3
-	+	204	16
-	+	104	16
-	+	97	2
-	+	98	1
-	+	227	0
-	+	252	0
-	+	78	0
-	+	75	4
-	+	71	4
-	+	75	3
-	+	71	3
-	+	70	0
-	+	220	0
-	+	218	0
-	+	196	0
-	+	201	52
-	+	202	16
-	+	209	29
-	+	211	4
-	+	217	27
-	+	215	0
-	+	215	33
-	+	214	20
-	+	216	5
-	+	214	0
-	+	216	7
-	+	214	3
-	+	215	24
-	+	213	0
-	+	212	28
-	+	228	25
-	+	229	25
-	+	223	15
-	+	229	0
-	+	228	34
-	+	229	30
-	+	188	2
-	+	229	21
-	+	188	1
-	+	185	14
-	+	191	0
-	+	192	0
-	+	191	5
-	+	185	0
-	+	191	7
-	+	184	0
-	+	191	0
-	+	190	0
-	+	197	0
-	+	196	4
-	+	197	3
-	+	204	6
-	+	198	0
-	+	204	0
-	+	213	0
-	+	199	15
-	+	176	0
-	+	175	0
-	+	176	27
-	+	177	29
-	+	178	0
-	+	179	0
-	+	181	0
-	+	180	0
-	+	179	0
-	+	181	0
-	+	182	0
-	m	201	0

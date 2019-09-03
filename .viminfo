@@ -11,13 +11,13 @@
 # hlsearch on (H) or off (h):
 ~h
 # Последний Шаблон поиска:
-~Msle0~/\<elf2bin\>
+~Msle0~/\<int\>
 
 # Последний Замена Шаблон поиска:
-~MSle0&LA
+~MSle0&StepMotor
 
 # Последняя строка для замены:
-$POStepMotor
+$EnScaner
 
 # Командная строка, история (начиная от свежего к старому):
 :emenu Mset.а
@@ -122,6 +122,14 @@ $POStepMotor
 |2,0,1554085503,,"%s/isCommandList/self.terMenu.isCommandList/gc"
 
 # Строка поиска, история (начиная от свежего к старому):
+? \<pulseIn\>
+|2,1,1565442052,,"\\<pulseIn\\>"
+? \<getPing\>
+|2,1,1565442038,,"\\<getPing\\>"
+? \<_duration\>
+|2,1,1565441805,,"\\<_duration\\>"
+? \<int\>
+|2,1,1562372657,,"\\<int\\>"
 ? \<elf2bin\>
 |2,1,1562171065,,"\\<elf2bin\\>"
 ? \<elf2hex\>
@@ -214,14 +222,6 @@ $POStepMotor
 |2,1,1557846303,,"fade_speed"
 ? \<git\>
 |2,1,1557845367,,"\\<git\\>"
-? LED
-|2,1,1557570723,,"LED"
-? \<def_delay\>
-|2,1,1555851460,,"\\<def_delay\\>"
-? \<potenz_on\>
-|2,1,1555851425,,"\\<potenz_on\\>"
-? \<ANALOG_R\>
-|2,1,1555849394,,"\\<ANALOG_R\\>"
 
 # Выражение, история (начиная от свежего к старому):
 
@@ -232,95 +232,49 @@ $POStepMotor
 # Debug Line, история (начиная от свежего к старому):
 
 # Регистры:
-"0	CHAR	0
-	StepMotor
-|3,0,0,0,1,0,1562371740,"StepMotor"
+"0	LINE	0
+	  Serial.print("Min pin :");
+	  Serial.println(digitalRead(MIN_PIN));
+	  Serial.println(analogRead(MIN_PIN));
+|3,0,0,1,3,0,1566400433,"  Serial.print(\"Min pin :\");","  Serial.println(digitalRead(MIN_PIN));","  Serial.println(analogRead(MIN_PIN));"
 ""1	LINE	0
-	EnScaner eScan(
-					& sencoder,
-					& sspi,
-					& posSM,
-					& loop);
-|3,1,1,1,5,0,1562415026,"EnScaner eScan(","				& sencoder,","				& sspi,","				& posSM,","				& loop);"
+	int analogPin = PB3; // potentiometer wiper (middle terminal) connected to analog pin 3
+	                    // outside leads to ground and +5V
+|3,1,1,1,2,0,1566400757,"int analogPin = PB3; // potentiometer wiper (middle terminal) connected to analog pin 3","                    // outside leads to ground and +5V"
 "2	LINE	0
-	EnScaner eScan(
-					& sencoder,
-					& sspi,
-					& smotors,
-					& setupLEDLine);
-|3,0,2,1,5,0,1562414156,"EnScaner eScan(","				& sencoder,","				& sspi,","				& smotors,","				& setupLEDLine);"
+						
+|3,0,2,1,1,0,1566400110,"					"
 "3	LINE	0
-	void setupLEDLine(void);
-|3,0,3,1,1,0,1562414151,"void setupLEDLine(void);"
+	  im.interapt();
+|3,0,3,1,1,0,1566399920,"  im.interapt();"
 "4	LINE	0
-	void setupLEDLine (void);
-|3,0,4,1,1,0,1562413932,"void setupLEDLine (void);"
+	rem pause
+|3,0,4,1,1,0,1565284570,"rem pause"
 "5	LINE	0
-	
-|3,0,5,1,1,0,1562413642,""
+	copy /Y "D:\Development\Ardunio\Eclipse\Home\sloeber-workspace\intermove\tenso.h" "D:\tools.win\Fast\Evol_fast\vadim\tradomat\Fan_Al\SRC\STM32\Ten_step\"
+|3,0,5,1,1,0,1565206798,"copy /Y \"D:\\Development\\Ardunio\\Eclipse\\Home\\sloeber-workspace\\intermove\\tenso.h\" \"D:\\tools.win\\Fast\\Evol_fast\\vadim\\tradomat\\Fan_Al\\SRC\\STM32\\Ten_step\\\""
 "6	LINE	0
 	
-|3,0,6,1,1,0,1562413287,""
+|3,0,6,1,1,0,1565206523,""
 "7	LINE	0
 	
-|3,0,7,1,1,0,1562412987,""
-"8	LINE	0
-	
-|3,0,8,1,1,0,1562371836,""
+|3,0,7,1,1,0,1565206522,""
+"8	BLOCK	3
+	rem 
+	rem 
+|3,0,8,2,2,3,1565206488,"rem ","rem "
 "9	LINE	0
-	/*   EnScaner::set_enable   * {{{ */
-	void EnScaner::set_enable(int new_value){
-		if (new_value == 0) {
-			enable = false;
-		}else{	
-			enable = true;
 			}
-		} //}}}
-	
-	/*   EnScaner::update   * {{{ */
-	void EnScaner::update(void){
-		if ( value != 0) step();
-		} //}}}
-	
-	/*   EnScaner::resetimer   * {{{ */
-	void EnScaner::resetimer(void){
-		update_time = micros() + timeout;
-		} //}}}
-	
-	/*   EnScaner::runtime   * {{{ */
-	void EnScaner::runtime(void){
-		if (micros() < update_time) return;
-		step();
-		update_time = micros() + timeout;
-		} //}}}
-	/*   EnScaner::done   * {{{ */
-	bool EnScaner::done(void){
-		if ( value == 0 && !checked) {
-			checked = true;
-			return true;
+		if( tmpSM->pos > newPos){
+			setDirToZero(tmpSM);
+			return tmpSM->pos;
 			}
-		else return false;
-		} //}}}
-	
-	/*   EnScaner::step   * {{{ */
-	void EnScaner::step(void){
-		if ( value == 0) return;
-		digitalWrite(pin, HIGH);
-		value--;
-		if (posUp) pos++;
-		else pos--;
-		steps_from_last++;
-		#ifdef DEBAG_STEP_LONGS//{{{
-		delayMicroseconds(DEBAG_STEP_LONGS);
-		#endif /* DEBAG_STEP_LONGS }}}*/
-		digitalWrite(pin, LOW);
-		} //}}}
-	
-	/*   EnScaner::on   * {{{ */
-	void EnScaner::on(void) {
-|3,0,9,1,50,0,1562371834,"/*   EnScaner::set_enable   * {{{ */","void EnScaner::set_enable(int new_value){","	if (new_value == 0) {","		enable = false;","	}else{	","		enable = true;","		}","	} //}}}","","/*   EnScaner::update   * {{{ */","void EnScaner::update(void){","	if ( value != 0) step();","	} //}}}","","/*   EnScaner::resetimer   * {{{ */","void EnScaner::resetimer(void){","	update_time = micros() + timeout;","	} //}}}","",>35
-|<"/*   EnScaner::runtime   * {{{ */","void EnScaner::runtime(void){","	if (micros() < update_time) return;","	step();","	update_time = micros() + timeout;","	} //}}}","/*   EnScaner::done   * {{{ */","bool EnScaner::done(void){","	if ( value == 0 && !checked) {","		checked = true;","		return true;","		}","	else return false;","	} //}}}","","/*   EnScaner::step   * {{{ */","void EnScaner::step(void){","	if ( value == 0) return;","	digitalWrite(pin, HIGH);","	value--;",>20
-|<"	if (posUp) pos++;","	else pos--;","	steps_from_last++;","	#ifdef DEBAG_STEP_LONGS//{{{","	delayMicroseconds(DEBAG_STEP_LONGS);","	#endif /* DEBAG_STEP_LONGS }}}*/","	digitalWrite(pin, LOW);","	} //}}}","","/*   EnScaner::on   * {{{ */","void EnScaner::on(void) {"
+		if( tmpSM->pos < newPos){
+			tmpSM->move( newPos - tmpSM->pos );
+			setDirFromZero(tmpSM);
+			return tmpSM->pos;
+			}
+|3,0,9,1,10,0,1562436670,"		}","	if( tmpSM->pos > newPos){","		setDirToZero(tmpSM);","		return tmpSM->pos;","		}","	if( tmpSM->pos < newPos){","		tmpSM->move( newPos - tmpSM->pos );","		setDirFromZero(tmpSM);","		return tmpSM->pos;","		}"
 "a	CHAR	0
 	By
 |3,0,10,0,1,0,1543113395,"By"
@@ -335,8 +289,8 @@ $POStepMotor
 	spi.dev()
 |3,0,13,0,1,0,1553303524,"spi.dev()"
 "e	CHAR	0
-	command_stak
-|3,0,14,0,1,0,1549945906,"command_stak"
+	EnScaner::
+|3,0,14,0,1,0,1562433495,"EnScaner::"
 "f	CHAR	0
 	RGB_LED::
 |3,0,15,0,1,0,1544331658,"RGB_LED::"
@@ -389,240 +343,248 @@ $POStepMotor
 	tmpSM1->
 |3,0,34,0,1,0,1561084264,"tmpSM1->"
 "-	CHAR	0
-	setupLEDLine
-|3,0,36,0,1,0,1562414896,"setupLEDLine"
+	 Read
+|3,0,36,0,1,0,1566400048," Read"
 
 # Глобальные отметки:
 'P  131  10  /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
 |4,80,131,10,1546628411,"/cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt"
-'0  131  15  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,48,131,15,1562433473,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
-'1  23  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,49,23,1,1562377239,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
-'2  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,50,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
-'3  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,51,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
-'4  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,52,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
-'5  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,53,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
-'6  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,54,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
-'7  57  42  /cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/platform.txt
-|4,55,57,42,1562372059,"/cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/platform.txt"
-'8  24  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.cpp
-|4,56,24,0,1562371840,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.cpp"
-'9  25  5  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.h
-|4,57,25,5,1562371729,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.h"
+'0  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py
+|4,48,1,0,1566901551,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py"
+'1  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py
+|4,49,1,0,1566901516,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py"
+'2  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,50,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+'3  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,51,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+'4  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,52,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+'5  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,53,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+'6  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,54,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+'7  19  12  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/intermove.cpp
+|4,55,19,12,1565441520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/intermove.cpp"
+'8  9  22  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd
+|4,56,9,22,1565441501,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd"
+'9  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd
+|4,57,1,0,1565441485,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd"
 
 # Список прыжков (сначала более свежие):
--'  131  15  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,131,15,1562433473,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  124  4  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,124,4,1562413427,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  7  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,7,0,1562412872,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  23  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,23,1,1562377239,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  23  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,23,1,1562377239,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  33  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,33,1,1562377015,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  33  1  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,33,1,1562377015,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  33  15  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,33,15,1562376518,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
-|4,39,1,0,1562375159,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  23  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,23,6,1562373606,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h
-|4,39,1,0,1562373266,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  53  6  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,53,6,1562372950,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
-|4,39,1,0,1562372894,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  4  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,4,0,1562372690,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
--'  1  0  /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-|4,39,1,0,1562372629,"/cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp"
+-'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py
+|4,39,1,0,1566901551,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py"
+-'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py
+|4,39,1,0,1566901516,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py"
+-'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py
+|4,39,1,0,1566901516,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py"
+-'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
+|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
+-'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
+|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
 
 # История местных отметок (от более свежих к старым):
 
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py
+	*	1566901549	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py
+	*	1566901514	0
+	"	1	0
+
 > /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-	*	1562433269	0
-	"	131	15
+	*	1566402707	0
+	"	412	0
 	.	119	0
 	+	386	2
 	+	16	22
@@ -703,6 +665,386 @@ $POStepMotor
 	+	148	0
 	+	119	0
 
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
+	*	1566401519	0
+	"	2	18
+	^	28	4
+	.	2	18
+	+	1	18
+	+	7	0
+	+	6	0
+	+	5	0
+	+	6	1
+	+	5	1
+	+	22	0
+	+	9	0
+	+	22	0
+	+	10	0
+	+	21	0
+	+	20	7
+	+	21	0
+	+	29	2
+	+	30	3
+	+	11	2
+	+	12	0
+	+	11	0
+	+	16	2
+	+	15	2
+	+	18	0
+	+	17	27
+	+	1	0
+	+	2	18
+	+	29	0
+	+	23	0
+	+	25	0
+	+	24	4
+	+	28	3
+	+	1	17
+	+	2	17
+	+	1	0
+	+	2	18
+
+> /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
+	*	1565532697	0
+	"	23	25
+	.	1	0
+	+	1	0
+
+> /cygdrive/d/Development/lisp/HOME/INI/init.el
+	*	1565529441	0
+	"	1	0
+
+> /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
+	*	1565528162	0
+	"	43	22
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/intermove.cpp
+	*	1565285231	0
+	"	19	12
+	^	23	13
+	.	23	12
+	+	23	12
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd
+	*	1565284700	0
+	"	9	22
+	.	9	22
+	+	5	8
+	+	5	82
+	+	5	154
+	+	5	83
+	+	9	94
+	+	2	13
+	+	5	86
+	+	5	0
+	+	5	152
+	+	5	0
+	+	2	13
+	+	4	84
+	+	5	3
+	+	9	18
+	+	7	0
+	+	5	3
+	+	6	4
+	+	1	9
+	+	5	3
+	+	6	3
+	+	7	0
+	+	4	82
+	+	3	0
+	+	3	76
+	+	4	14
+	+	5	0
+	+	6	0
+	+	5	14
+	+	7	9
+	+	4	14
+	+	5	3
+	+	6	3
+	+	8	31
+	+	9	15
+	+	5	0
+	+	9	29
+	+	9	0
+	+	10	0
+	+	11	0
+	+	9	24
+	+	9	14
+	+	10	0
+	+	9	14
+	+	9	22
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/#tenso.cpp#
+	*	1565205770	0
+	"	1	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
+	*	1564810629	0
+	"	4	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/intermove/towavestepmotor.cpp
+	*	1564809802	0
+	"	1	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/intermove/gtest.cpp
+	*	1564809198	0
+	"	1	0
+
+> /cygdrive/d/Development/Ardunio/Sorce/Vadim/Tenso/sketch_jun20a/sketch_jun20a.ino
+	*	1564754685	0
+	"	16	0
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Cooking/GreenTea.txt
+	*	1564504797	0
+	"	1	0
+
+> ~/.bash_aliases
+	*	1564500121	0
+	"	6	0
+	^	8	22
+	.	8	22
+	+	7	22
+	+	7	40
+	+	9	20
+	+	7	41
+	+	7	72
+	+	9	1
+	+	7	21
+	+	9	0
+	+	7	43
+	+	7	21
+	+	7	22
+	+	7	73
+	+	9	0
+	+	7	72
+	+	8	13
+	+	8	66
+	+	9	0
+	+	8	13
+	+	7	11
+	+	7	0
+	+	8	22
+
+> /cygdrive/d/Development/lisp/HOME/emacs_client.cmd
+	*	1564424940	0
+	"	4	6
+	^	4	4
+	.	2	0
+	+	4	52
+	+	2	0
+	+	4	3
+	+	2	0
+
+> /cygdrive/d/Development/lisp/HOME/emacs_Run_fromD.cmd
+	*	1564422461	0
+	"	3	43
+	^	2	12
+	.	3	0
+	+	2	35
+	+	3	0
+	+	2	0
+	+	4	5
+	+	3	0
+	+	1	0
+	+	3	0
+	+	1	1
+	+	4	0
+	+	1	0
+	+	2	0
+	+	3	0
+
+> /cygdrive/d/Development/lisp/HOME/emacs_client_debug.cmd
+	*	1564313014	0
+	"	3	71
+	^	3	72
+	.	3	71
+	+	3	0
+	+	2	3
+	+	3	71
+
+> /cygdrive/d/Development/lisp/HOME/emacs_debug.cmd
+	*	1564256632	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/ORG/Plan.org
+	*	1563631271	0
+	"	279	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.h
+	*	1562489176	0
+	"	33	6
+	^	35	16
+	.	35	15
+	+	4	36
+	+	5	13
+	+	4	30
+	+	11	0
+	+	10	8
+	+	11	0
+	+	24	0
+	+	26	0
+	+	28	0
+	+	29	0
+	+	36	0
+	+	30	10
+	+	36	0
+	+	29	0
+	+	18	0
+	+	18	10
+	+	47	13
+	+	18	10
+	+	19	10
+	+	21	10
+	+	21	0
+	+	29	0
+	+	28	63
+	+	48	0
+	+	42	0
+	+	47	9
+	+	44	19
+	+	43	12
+	+	42	23
+	+	43	15
+	+	44	23
+	+	47	19
+	+	47	0
+	+	42	0
+	+	47	0
+	+	44	3
+	+	28	51
+	+	42	14
+	+	43	12
+	+	44	1
+	+	43	1
+	+	21	0
+	+	20	0
+	+	28	64
+	+	26	0
+	+	25	41
+	+	28	77
+	+	45	31
+	+	47	0
+	+	46	27
+	+	31	4
+	+	30	4
+	+	29	4
+	+	32	14
+	+	33	19
+	+	34	15
+	+	35	15
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.cpp
+	*	1562489170	0
+	"	11	1
+	^	47	2
+	.	47	0
+	+	4	19
+	+	6	42
+	+	6	0
+	+	4	20
+	+	6	0
+	+	6	42
+	+	15	0
+	+	6	14
+	+	7	21
+	+	8	2
+	+	8	10
+	+	15	0
+	+	9	1
+	+	10	1
+	+	11	1
+	+	12	12
+	+	11	1
+	+	10	1
+	+	9	1
+	+	4	41
+	+	6	15
+	+	7	4
+	+	4	35
+	+	6	13
+	+	7	16
+	+	8	10
+	+	9	22
+	+	10	10
+	+	9	12
+	+	7	20
+	+	11	12
+	+	12	24
+	+	15	0
+	+	6	0
+	+	5	19
+	+	6	17
+	+	7	20
+	+	8	13
+	+	6	6
+	+	8	26
+	+	8	0
+	+	8	7
+	+	8	37
+	+	12	2
+	+	12	0
+	+	8	0
+	+	17	0
+	+	19	11
+	+	22	0
+	+	26	0
+	+	54	0
+	+	56	7
+	+	55	3
+	+	26	13
+	+	24	0
+	+	24	30
+	+	24	0
+	+	24	30
+	+	24	42
+	+	23	3
+	+	27	12
+	+	30	0
+	+	31	15
+	+	30	0
+	+	32	1
+	+	32	14
+	+	33	20
+	+	35	12
+	+	34	12
+	+	13	0
+	+	14	21
+	+	53	0
+	+	38	0
+	+	39	15
+	+	38	0
+	+	40	24
+	+	48	0
+	+	41	0
+	+	47	0
+	+	43	25
+	+	44	20
+	+	45	12
+	+	48	0
+	+	49	31
+	+	50	11
+	+	47	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/towavestepmotor.cpp
+	*	1562489155	0
+	"	54	0
+
+> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.cpp
+	*	1562489150	0
+	"	85	26
+	^	88	12
+	.	85	18
+	+	85	21
+	+	86	35
+	+	90	0
+	+	88	0
+	+	87	0
+	+	89	0
+	+	88	13
+	+	89	1
+	+	90	0
+	+	85	18
+
 > /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/postepmotor.h
 	*	1562377176	0
 	"	23	1
@@ -714,48 +1056,6 @@ $POStepMotor
 > /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/slavespi.h
 	*	1562372939	0
 	"	53	6
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/simplencoder.cpp
-	*	1562372649	0
-	"	4	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.cpp
-	*	1562371838	0
-	"	24	0
-	^	22	3
-	.	24	0
-	+	1	0
-	+	3	0
-	+	4	0
-	+	12	0
-	+	13	0
-	+	20	0
-	+	22	2
-	+	24	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/EnScaner.h
-	*	1562371727	0
-	"	25	5
-	^	35	14
-	.	35	13
-	+	4	36
-	+	5	13
-	+	4	30
-	+	11	0
-	+	10	8
-	+	11	0
-	+	22	0
-	+	23	0
-	+	25	0
-	+	26	0
-	+	27	0
-	+	29	0
-	+	28	10
-	+	29	0
-	+	27	0
-	+	18	0
-	+	18	10
-	+	35	13
 
 > /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/EncoderScan/gtest.cpp
 	*	1562358448	0
@@ -1641,33 +1941,6 @@ $POStepMotor
 	+	7	5
 	+	4	0
 	+	9	0
-
-> ~/.bash_aliases
-	*	1560345609	0
-	"	8	0
-	^	8	22
-	.	8	22
-	+	7	22
-	+	7	40
-	+	9	20
-	+	7	41
-	+	7	72
-	+	9	1
-	+	7	21
-	+	9	0
-	+	7	43
-	+	7	21
-	+	7	22
-	+	7	73
-	+	9	0
-	+	7	72
-	+	8	13
-	+	8	66
-	+	9	0
-	+	8	13
-	+	7	11
-	+	7	0
-	+	8	22
 
 > /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/termenu.py
 	*	1560170304	0
@@ -2629,504 +2902,3 @@ $POStepMotor
 > scp://R_Pi_Magus//etc/dhcpcd.conf
 	*	1559137155	0
 	"	57	0
-
-> /cygdrive/d/Virtual/Dos.Box/DOSBox-0.74/millalde.cmd
-	*	1559086981	0
-	"	2	0
-	^	2	0
-	.	1	63
-	+	1	11
-	+	1	3
-	+	1	48
-	+	1	63
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.h
-	*	1559059731	0
-	"	45	19
-	^	45	21
-	.	45	20
-	+	3	7
-	+	4	36
-	+	11	8
-	+	9	0
-	+	10	0
-	+	21	0
-	+	23	0
-	+	25	0
-	+	26	0
-	+	11	0
-	+	27	9
-	+	29	15
-	+	33	0
-	+	27	0
-	+	38	0
-	+	44	0
-	+	38	0
-	+	43	0
-	+	46	18
-	+	47	9
-	+	48	0
-	+	46	15
-	+	46	14
-	+	47	16
-	+	45	12
-	+	40	0
-	+	40	21
-	+	40	5
-	+	43	0
-	+	40	0
-	+	42	0
-	+	40	0
-	+	48	3
-	+	48	8
-	+	42	0
-	+	39	12
-	+	40	0
-	+	48	0
-	+	33	0
-	+	30	19
-	+	31	9
-	+	32	14
-	+	27	11
-	+	43	27
-	+	46	0
-	+	21	0
-	+	19	23
-	+	43	39
-	+	20	25
-	+	45	20
-
-> ~/.vim/UltiSnips/c.snippets
-	*	1559058205	0
-	"	81	0
-	^	81	0
-	.	82	0
-	+	96	0
-	+	96	11
-	+	96	19
-	+	96	0
-	+	96	28
-	+	96	15
-	+	96	0
-	+	96	25
-	+	96	0
-	+	82	0
-
-> /cygdrive/d/Development/lisp/HOME/.gitignore
-	*	1558405225	0
-	"	2	0
-	.	2	0
-	+	2	0
-
-> /cygdrive/d/Development/Ardunio/Arduino_stm32/Arduino_STM32-master/Arduino_STM32-master/README.md
-	*	1558284483	0
-	"	5357	0
-	^	5442	0
-	.	5441	9
-	+	12	0
-	+	44	0
-	+	5441	9
-
-> ~/scripts/sh/run/runFar.sh
-	*	1558144015	0
-	"	12	35
-	.	12	35
-	+	12	35
-
-> /cygdrive/d/Development/lisp/HOME/emacs_Run_fromD.cmd
-	*	1557924209	0
-	"	3	0
-	^	2	12
-	.	3	0
-	+	2	35
-	+	3	0
-	+	2	0
-	+	4	5
-	+	3	0
-	+	1	0
-	+	3	0
-	+	1	1
-	+	4	0
-	+	1	0
-	+	2	0
-	+	3	0
-
-> /cygdrive/d/Development/lisp/HOME/emacs_Run.cmd
-	*	1557923230	0
-	"	2	0
-	.	3	0
-	+	3	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/gtest.cpp
-	*	1557868180	0
-	"	69	21
-	^	68	8
-	.	69	21
-	+	8	27
-	+	9	0
-	+	62	19
-	+	64	0
-	+	65	22
-	+	67	0
-	+	66	9
-	+	67	21
-	+	69	0
-	+	68	0
-	+	68	8
-	+	69	21
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/slavespi.h
-	*	1557864079	0
-	"	73	0
-	^	33	2
-	.	33	1
-	+	57	16
-	+	57	0
-	+	49	7
-	+	57	24
-	+	32	20
-	+	22	22
-	+	32	29
-	+	14	16
-	+	53	30
-	+	15	0
-	+	53	0
-	+	54	16
-	+	57	30
-	+	57	27
-	+	54	26
-	+	53	30
-	+	57	0
-	+	68	0
-	+	54	5
-	+	53	0
-	+	50	7
-	+	57	0
-	+	59	13
-	+	60	16
-	+	31	0
-	+	28	25
-	+	56	24
-	+	31	0
-	+	45	19
-	+	28	24
-	+	64	0
-	+	63	15
-	+	67	31
-	+	17	5
-	+	17	7
-	+	17	0
-	+	17	7
-	+	20	0
-	+	16	13
-	+	19	0
-	+	16	0
-	+	20	12
-	+	17	1
-	+	16	18
-	+	18	9
-	+	19	0
-	+	18	10
-	+	19	0
-	+	18	29
-	+	17	1
-	+	14	13
-	+	23	8
-	+	20	0
-	+	24	20
-	+	23	0
-	+	24	0
-	+	22	0
-	+	14	0
-	+	53	0
-	+	53	16
-	+	54	0
-	+	53	19
-	+	71	2
-	+	52	0
-	+	18	14
-	+	19	0
-	+	21	8
-	+	23	3
-	+	24	0
-	+	96	6
-	+	4	0
-	+	6	0
-	+	96	18
-	+	71	1
-	+	30	0
-	+	32	0
-	+	33	0
-	+	76	16
-	+	74	6
-	+	30	1
-	+	32	1
-	+	31	0
-	+	33	1
-	+	31	0
-	+	30	0
-	+	33	0
-	+	32	0
-	+	30	1
-	+	31	1
-	+	32	1
-	+	33	1
-
-> ~/.vim/vimrc
-	*	1557849647	0
-	"	18	0
-	^	126	13
-	.	130	27
-	+	237	86
-	+	262	19
-	+	1	0
-	+	3	0
-	+	1	7
-	+	3	0
-	+	1	33
-	+	3	0
-	+	1	7
-	+	3	0
-	+	1	0
-	+	2	0
-	+	317	10
-	+	263	10
-	+	348	0
-	+	347	0
-	+	346	0
-	+	344	0
-	+	345	0
-	+	346	0
-	+	344	0
-	+	345	0
-	+	307	0
-	+	310	0
-	+	309	7
-	+	284	0
-	+	309	13
-	+	309	11
-	+	309	10
-	+	310	0
-	+	309	10
-	+	307	0
-	+	309	0
-	+	310	0
-	+	309	0
-	+	310	0
-	+	309	25
-	+	310	0
-	+	311	0
-	+	309	35
-	+	311	0
-	+	275	18
-	+	61	0
-	+	276	7
-	+	264	15
-	+	265	0
-	+	238	26
-	+	239	0
-	+	238	26
-	+	236	21
-	+	250	26
-	+	237	22
-	+	243	22
-	+	326	0
-	+	325	2
-	+	326	0
-	+	238	47
-	+	290	0
-	+	291	45
-	+	292	47
-	+	293	31
-	+	292	19
-	+	361	0
-	+	360	21
-	+	361	0
-	+	360	45
-	+	361	0
-	+	360	0
-	+	360	49
-	+	361	0
-	+	360	47
-	+	239	37
-	+	263	0
-	+	262	22
-	+	6	0
-	+	22	0
-	+	23	5
-	+	25	0
-	+	23	5
-	+	22	22
-	+	23	0
-	+	24	0
-	+	24	7
-	+	24	6
-	+	24	28
-	+	25	0
-	+	24	6
-	+	20	0
-	+	18	27
-	+	19	44
-	+	17	0
-	+	21	0
-	+	18	0
-	+	59	0
-	+	133	0
-	+	126	12
-	+	129	0
-	+	18	0
-	+	128	0
-	+	130	27
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/leds.py
-	*	1557845114	0
-	"	11	0
-
-> /usr/share/vim/vim80/doc/motion.txt
-	*	1557570569	0
-	"	1325	6
-
-> /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
-	*	1557562580	0
-	"	3	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/.gitignore
-	*	1557560613	0
-	"	2	0
-	.	2	0
-	+	3	0
-	+	2	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/.gitignore
-	*	1557560468	0
-	"	2	0
-	.	3	0
-	+	3	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/stepmotor.py
-	*	1557558344	0
-	"	27	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/typsconvert.py
-	*	1557553774	0
-	"	9	0
-	.	22	10
-	+	22	10
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/model/globalsvar.py
-	*	1557553440	0
-	"	106	22
-	^	106	23
-	.	106	22
-	+	25	8
-	+	26	12
-	+	27	11
-	+	28	15
-	+	30	12
-	+	31	14
-	+	29	25
-	+	23	28
-	+	19	18
-	+	18	11
-	+	20	8
-	+	21	10
-	+	16	9
-	+	17	8
-	+	13	0
-	+	23	0
-	+	32	0
-	+	23	0
-	+	13	27
-	+	16	28
-	+	23	0
-	+	76	0
-	+	61	16
-	+	62	24
-	+	23	28
-	+	24	28
-	+	25	28
-	+	26	28
-	+	27	28
-	+	28	28
-	+	29	28
-	+	30	28
-	+	31	28
-	+	24	28
-	+	25	28
-	+	26	28
-	+	27	28
-	+	28	28
-	+	29	27
-	+	30	27
-	+	31	27
-	+	29	27
-	+	30	27
-	+	31	27
-	+	13	34
-	+	14	0
-	+	13	3
-	+	61	0
-	+	60	24
-	+	61	0
-	+	37	28
-	+	68	30
-	+	64	0
-	+	67	0
-	+	63	0
-	+	66	0
-	+	65	0
-	+	68	0
-	+	98	15
-	+	99	14
-	+	100	0
-	+	101	0
-	+	102	0
-	+	103	0
-	+	100	4
-	+	101	4
-	+	102	9
-	+	103	7
-	+	111	52
-	+	100	14
-	+	101	14
-	+	102	14
-	+	103	14
-	+	98	19
-	+	69	0
-	+	72	0
-	+	73	0
-	+	74	0
-	+	75	0
-	+	69	10
-	+	72	25
-	+	73	29
-	+	74	0
-	+	75	25
-	+	73	20
-	+	74	20
-	+	73	25
-	+	74	25
-	+	75	25
-	+	76	0
-	+	70	0
-	+	107	0
-	+	106	18
-	+	107	26
-	+	108	23
-	+	109	31
-	+	106	23
-	+	105	15
-	+	106	22
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/tests/test_stepmotor.py
-	*	1557519359	0
-	"	31	23
-	^	31	49
-	.	31	23
-	+	10	0
-	+	44	16
-	+	46	0
-	+	45	11
-	+	19	0
-	+	32	0
-	+	31	23

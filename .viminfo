@@ -11,15 +11,29 @@
 # hlsearch on (H) or off (h):
 ~h
 # Последний Шаблон поиска:
-~Msle0~/\<int\>
+~MSle0~/\<X_MIN_PIN\>
 
 # Последний Замена Шаблон поиска:
 ~MSle0&StepMotor
 
 # Последняя строка для замены:
-$EnScaner
+$
 
 # Командная строка, история (начиная от свежего к старому):
+:emenu Mset.syntax.txt
+|2,0,1580279497,,"emenu Mset.syntax.txt"
+:emenu Mset.syntax.text
+|2,0,1580279485,,"emenu Mset.syntax.text"
+:%s/Start\Start\\/Startup\\/gc
+|2,0,1578092951,,"%s/Start\\Start\\\\/Startup\\\\/gc"
+:'<,'>%s/;/;/gc
+|2,0,1578092772,,"'<,'>%s/;/;/gc"
+:%s/DISM.exe/C:\Windows\SysNative\dism.exe /gc
+|2,0,1576443071,,"%s/DISM.exe/C:\\Windows\\SysNative\\dism.exe /gc"
+:emenu Mset.syntax.c
+|2,0,1574477502,,"emenu Mset.syntax.c"
+:emenu Mset.VimRC.reload(rF5)
+|2,0,1573932595,,"emenu Mset.VimRC.reload(rF5)"
 :emenu Mset.а
 |2,0,1562372634,,"emenu Mset.а"
 :%s/StepMotor/EnScaner/gc
@@ -58,8 +72,6 @@ $EnScaner
 |2,0,1559599202,,"%s/index/print_index/gc"
 :%s/enc_pin1/pin/gc
 |2,0,1559589030,,"%s/enc_pin1/pin/gc"
-:emenu Mset.syntax.c
-|2,0,1559057213,,"emenu Mset.syntax.c"
 :emenu Mset.i
 |2,0,1557864329,,"emenu Mset.i"
 :%s/fade_speed/timeout/gc
@@ -108,20 +120,44 @@ $EnScaner
 |2,0,1554263030,,"tab h <s-u>"
 :tab h <s+u>
 |2,0,1554263022,,"tab h <s+u>"
-:tab h shift+u
-|2,0,1554263003,,"tab h shift+u"
-:tab h s+u
-|2,0,1554262985,,"tab h s+u"
-:emenu Mset.Folding.indent
-|2,0,1554087877,,"emenu Mset.Folding.indent"
-:%s/.ledstm./.spi./gc
-|2,0,1554086947,,"%s/.ledstm./.spi./gc"
-:%s/isInt/self.isInt/gc
-|2,0,1554086705,,"%s/isInt/self.isInt/gc"
-:%s/isCommandList/self.terMenu.isCommandList/gc
-|2,0,1554085503,,"%s/isCommandList/self.terMenu.isCommandList/gc"
 
 # Строка поиска, история (начиная от свежего к старому):
+?/proc
+|2,1,1578290536,47,"proc"
+? {
+|2,1,1578103131,,"{"
+? Start\Start\\
+|2,1,1578092951,,"Start\\Start\\\\"
+? DISM.exe
+|2,1,1576443071,,"DISM.exe"
+? @$
+|2,1,1575657851,,"@$"
+? \<X_MIN_PIN\>
+|2,1,1575393358,,"\\<X_MIN_PIN\\>"
+? \<X_MAX_PIN\>
+|2,1,1575393336,,"\\<X_MAX_PIN\\>"
+? \<include\>
+|2,1,1574647921,,"\\<include\\>"
+? \<yield\>
+|2,1,1573383463,,"\\<yield\\>"
+? \<is_ready\>
+|2,1,1573383356,,"\\<is_ready\\>"
+? \<GAIN\>
+|2,1,1573226613,,"\\<GAIN\\>"
+? \<shiftIn\>
+|2,1,1573226588,,"\\<shiftIn\\>"
+?/iratusItems
+|2,1,1571395867,47,"iratusItems"
+?/iratusI
+|2,1,1571396121,47,"iratusI"
+?/iratusi
+|2,1,1571396107,47,"iratusi"
+?/C:\Users\BuYn\AppData\LocalLow\Unfrozen\Iratus\irf4x3hv\playersave.svf 
+|2,1,1571394353,47,"C:\\Users\\BuYn\\AppData\\LocalLow\\Unfrozen\\Iratus\\irf4x3hv\\playersave.svf "
+?/level
+|2,1,1571393790,47,"level"
+?/Iratus
+|2,1,1571393721,47,"Iratus"
 ? \<pulseIn\>
 |2,1,1565442052,,"\\<pulseIn\\>"
 ? \<getPing\>
@@ -186,42 +222,6 @@ $EnScaner
 |2,1,1560705880,,"\\<spi_d\\>"
 ? \<ifndef\>
 |2,1,1559626141,,"\\<ifndef\\>"
-? \<enable\>
-|2,1,1559716796,,"\\<enable\\>"
-? step go x 1   
-|2,1,1559714503,,"step go x 1   "
-?//
-|2,1,1559802124,47,"/"
-? simplencoder
-|2,1,1559522018,,"simplencoder"
-? SimplEncoder
-|2,1,1559521932,,"SimplEncoder"
-? index
-|2,1,1559599202,,"index"
-? enc_pin1
-|2,1,1559589030,,"enc_pin1"
-? \<step_signsl_duration\>
-|2,1,1559311258,,"\\<step_signsl_duration\\>"
-? \<step\>
-|2,1,1559311191,,"\\<step\\>"
-? \<is_step_counter\>
-|2,1,1559311037,,"\\<is_step_counter\\>"
-? \<steps_loop\>
-|2,1,1559310884,,"\\<steps_loop\\>"
-?/def
-|2,1,1559058106,47,"def"
-?/#def
-|2,1,1559058093,47,"#def"
-? \<timeout\>
-|2,1,1558997632,,"\\<timeout\\>"
-? \<to_value\>
-|2,1,1557859702,,"\\<to_value\\>"
-? \<value\>
-|2,1,1557846337,,"\\<value\\>"
-? fade_speed
-|2,1,1557846303,,"fade_speed"
-? \<git\>
-|2,1,1557845367,,"\\<git\\>"
 
 # Выражение, история (начиная от свежего к старому):
 
@@ -233,48 +233,41 @@ $EnScaner
 
 # Регистры:
 "0	LINE	0
-	  Serial.print("Min pin :");
-	  Serial.println(digitalRead(MIN_PIN));
-	  Serial.println(analogRead(MIN_PIN));
-|3,0,0,1,3,0,1566400433,"  Serial.print(\"Min pin :\");","  Serial.println(digitalRead(MIN_PIN));","  Serial.println(analogRead(MIN_PIN));"
-""1	LINE	0
-	int analogPin = PB3; // potentiometer wiper (middle terminal) connected to analog pin 3
-	                    // outside leads to ground and +5V
-|3,1,1,1,2,0,1566400757,"int analogPin = PB3; // potentiometer wiper (middle terminal) connected to analog pin 3","                    // outside leads to ground and +5V"
+	alias ghe='git push origin experemental; st'
+|3,0,0,1,1,0,1580561654,"alias ghe='git push origin experemental; st'"
+"1	LINE	0
+	хоть бы одну кастрюлю
+|3,0,1,1,1,0,1580279591,"хоть бы одну кастрюлю"
 "2	LINE	0
-						
-|3,0,2,1,1,0,1566400110,"					"
+	нужны 3 ёмкости кастрюли
+	для мяса
+	для костей
+	для ножек
+|3,0,2,1,4,0,1580279575,"нужны 3 ёмкости кастрюли","для мяса","для костей","для ножек"
 "3	LINE	0
-	  im.interapt();
-|3,0,3,1,1,0,1566399920,"  im.interapt();"
+	включить печку
+|3,0,3,1,1,0,1580279522,"включить печку"
 "4	LINE	0
-	rem pause
-|3,0,4,1,1,0,1565284570,"rem pause"
+	***************************************
+	разделка курятины
+	***************************************
+|3,0,4,1,3,0,1580279472,"***************************************","разделка курятины","***************************************"
 "5	LINE	0
-	copy /Y "D:\Development\Ardunio\Eclipse\Home\sloeber-workspace\intermove\tenso.h" "D:\tools.win\Fast\Evol_fast\vadim\tradomat\Fan_Al\SRC\STM32\Ten_step\"
-|3,0,5,1,1,0,1565206798,"copy /Y \"D:\\Development\\Ardunio\\Eclipse\\Home\\sloeber-workspace\\intermove\\tenso.h\" \"D:\\tools.win\\Fast\\Evol_fast\\vadim\\tradomat\\Fan_Al\\SRC\\STM32\\Ten_step\\\""
+	***************************************
+|3,0,5,1,1,0,1580279466,"***************************************"
 "6	LINE	0
-	
-|3,0,6,1,1,0,1565206523,""
+	***************************************
+	разделка курятины
+|3,0,6,1,2,0,1580279465,"***************************************","разделка курятины"
 "7	LINE	0
 	
-|3,0,7,1,1,0,1565206522,""
-"8	BLOCK	3
-	rem 
-	rem 
-|3,0,8,2,2,3,1565206488,"rem ","rem "
+|3,0,7,1,1,0,1580279462,""
+"8	LINE	0
+	**********************************}}}1
+|3,0,8,1,1,0,1580279354,"**********************************}}}1"
 "9	LINE	0
-			}
-		if( tmpSM->pos > newPos){
-			setDirToZero(tmpSM);
-			return tmpSM->pos;
-			}
-		if( tmpSM->pos < newPos){
-			tmpSM->move( newPos - tmpSM->pos );
-			setDirFromZero(tmpSM);
-			return tmpSM->pos;
-			}
-|3,0,9,1,10,0,1562436670,"		}","	if( tmpSM->pos > newPos){","		setDirToZero(tmpSM);","		return tmpSM->pos;","		}","	if( tmpSM->pos < newPos){","		tmpSM->move( newPos - tmpSM->pos );","		setDirFromZero(tmpSM);","		return tmpSM->pos;","		}"
+	;run, "C:\Users\BuYn\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\CapsANDwin - Ярлык.lnk"
+|3,0,9,1,1,0,1579953547,";run, \"C:\\Users\\BuYn\\AppData\\Roaming\\Microsoft\\Windows\\Start Menu\\Programs\\Startup\\CapsANDwin - Ярлык.lnk\""
 "a	CHAR	0
 	By
 |3,0,10,0,1,0,1543113395,"By"
@@ -300,9 +293,9 @@ $EnScaner
 "i	CHAR	0
 	distance
 |3,0,18,0,1,0,1486911406,"distance"
-"j@	LINE	0
-	"rpkk
-|3,2,19,1,1,0,1561586450,"\"rpkk"
+"j@	CHAR	0
+	A"j
+|3,2,19,0,1,0,1578091860,"A\"j"
 "l	CHAR	0
 	LED::
 |3,0,21,0,1,0,1544503903,"LED::"
@@ -319,8 +312,8 @@ $EnScaner
 	POStepMotor::
 |3,0,25,0,1,0,1560987429,"POStepMotor::"
 "q	CHAR	0
-	SlaveSPI::
-|3,0,26,0,1,0,1550325819,"SlaveSPI::"
+	kj
+|3,0,26,0,1,0,1578092711,"kj"
 "r	LINE	0
 	sd adsa 234dfs hfs ad as dfs a
 |3,0,27,1,1,0,1561586562,"sd adsa 234dfs hfs ad as dfs a"
@@ -343,236 +336,970 @@ $EnScaner
 	tmpSM1->
 |3,0,34,0,1,0,1561084264,"tmpSM1->"
 "-	CHAR	0
-	 Read
-|3,0,36,0,1,0,1566400048," Read"
+	experemental
+|3,0,36,0,1,0,1580561661,"experemental"
 
 # Глобальные отметки:
 'P  131  10  /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
 |4,80,131,10,1546628411,"/cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt"
-'0  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py
-|4,48,1,0,1566901551,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py"
-'1  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py
-|4,49,1,0,1566901516,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py"
-'2  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,50,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
-'3  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,51,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
-'4  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,52,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
-'5  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,53,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
-'6  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,54,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
-'7  19  12  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/intermove.cpp
-|4,55,19,12,1565441520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/intermove.cpp"
-'8  9  22  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd
-|4,56,9,22,1565441501,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd"
-'9  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd
-|4,57,1,0,1565441485,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/copy_src.cmd"
+'0  33  3  /cygdrive/c/Users/BuYn/.bashrc
+|4,48,33,3,1581750569,"/cygdrive/c/Users/BuYn/.bashrc"
+'1  112  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,49,112,0,1581750323,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+'2  8  53  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+|4,50,8,53,1581123953,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt"
+'3  1  0  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/gspython.txt
+|4,51,1,0,1581120212,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/gspython.txt"
+'4  15  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,52,15,0,1581110430,"/cygdrive/c/Users/BuYn/.bashrc"
+'5  15  8  /cygdrive/c/Users/BuYn/.bashrc
+|4,53,15,8,1580919154,"/cygdrive/c/Users/BuYn/.bashrc"
+'6  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,54,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+'7  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,55,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+'8  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,56,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+'9  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,57,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
 
 # Список прыжков (сначала более свежие):
--'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py
-|4,39,1,0,1566901551,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py"
--'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py
-|4,39,1,0,1566901516,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py"
--'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py
-|4,39,1,0,1566901516,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/Exempl/Source/python/spi_con.py"
--'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  412  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,412,0,1566402709,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  2  18  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,2,18,1566401520,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  24  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino
-|4,39,24,0,1566401517,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Toch.ino"
--'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  29  5  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,29,5,1566400381,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  18  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,18,2,1566399971,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  11  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,11,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  12  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,12,2,1566399943,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  13  2  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,13,2,1566399941,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  9  1  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,9,1,1566399868,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  22  6  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,22,6,1566399862,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  1  0  /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino
-|4,39,1,0,1566397994,"/cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/analog/analog.ino"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  23  25  /cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt
-|4,39,23,25,1565532699,"/cygdrive/d/Development/version-control/GitHub/Tutorial-Mod/Roguelike_tutorial/Doc/ecran.txt"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  1  0  /cygdrive/d/Development/lisp/HOME/INI/init.el
-|4,39,1,0,1565529442,"/cygdrive/d/Development/lisp/HOME/INI/init.el"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  43  22  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,43,22,1565528166,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
--'  48  9  /cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino
-|4,39,48,9,1565442057,"/cygdrive/d/Development/Ardunio/Sorce/Vadim/USonic/USonic/USonic.ino"
+-'  33  3  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,33,3,1581750569,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  112  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,112,0,1581750323,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  1  0  /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+|4,39,1,0,1581748968,"/cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt"
+-'  8  53  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+|4,39,8,53,1581123953,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt"
+-'  8  53  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+|4,39,8,53,1581123953,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt"
+-'  1  0  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/gspython.txt
+|4,39,1,0,1581120212,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/gspython.txt"
+-'  1  0  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/gspython.txt
+|4,39,1,0,1581120212,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/gspython.txt"
+-'  15  0  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+|4,39,15,0,1581120184,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt"
+-'  15  0  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+|4,39,15,0,1581120184,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt"
+-'  6  0  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+|4,39,6,0,1581120080,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt"
+-'  6  0  /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+|4,39,6,0,1581120080,"/cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt"
+-'  15  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,0,1581110430,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,0,1581110430,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,0,1581110430,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,0,1581110430,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,0,1581110430,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,0,1581110430,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  8  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,8,1580919154,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  8  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,8,1580919154,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  8  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,8,1580919154,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  8  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,8,1580919154,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  8  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,8,1580919154,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  15  8  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,15,8,1580919154,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  23  0  /cygdrive/c/Users/BuYn/.bashrc
+|4,39,23,0,1580919117,"/cygdrive/c/Users/BuYn/.bashrc"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580830084,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580728052,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
+-'  17  0  /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+|4,39,17,0,1580692148,"/cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd"
 
 # История местных отметок (от более свежих к старым):
+
+> /cygdrive/c/Users/BuYn/.bashrc
+	*	1581750565	0
+	"	33	3
+	^	19	33
+	.	19	32
+	+	5	7
+	+	25	16
+	+	17	17
+	+	20	18
+	+	20	0
+	+	5	7
+	+	33	0
+	+	25	33
+	+	25	0
+	+	25	33
+	+	24	21
+	+	25	0
+	+	24	21
+	+	23	0
+	+	24	0
+	+	23	25
+	+	26	0
+	+	29	0
+	+	26	37
+	+	23	0
+	+	24	0
+	+	23	8
+	+	24	6
+	+	20	6
+	+	20	19
+	+	29	0
+	+	26	55
+	+	5	0
+	+	1	28
+	+	17	21
+	+	8	35
+	+	9	28
+	+	8	8
+	+	9	8
+	+	11	55
+	+	11	31
+	+	17	0
+	+	11	34
+	+	17	0
+	+	9	32
+	+	8	38
+	+	11	35
+	+	9	31
+	+	8	37
+	+	20	0
+	+	13	11
+	+	13	12
+	+	13	11
+	+	13	34
+	+	17	0
+	+	13	38
+	+	16	31
+	+	20	20
+	+	29	20
+	+	14	0
+	+	13	9
+	+	5	0
+	+	3	7
+	+	4	7
+	+	18	11
+	+	18	40
+	+	18	39
+	+	20	0
+	+	18	39
+	+	22	22
+	+	1	32
+	+	26	54
+	+	29	20
+	+	27	8
+	+	25	8
+	+	28	0
+	+	27	9
+	+	28	11
+	+	26	0
+	+	25	29
+	+	30	10
+	+	31	10
+	+	32	13
+	+	21	9
+	+	6	11
+	+	7	21
+	+	2	29
+	+	25	0
+	+	17	24
+	+	16	39
+	+	23	0
+	+	10	26
+	+	12	8
+	+	10	8
+	+	15	26
+	+	10	24
+	+	19	32
+
+> /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/git.txt
+	*	1581749138	0
+	"	112	0
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/todogspython.txt
+	*	1581123944	0
+	"	8	53
+	^	8	54
+	.	8	53
+	+	8	53
+
+> /cygdrive/d/Development/version-control/GitHub/GooglePy/Doc/gspython.txt
+	*	1581120210	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
+	*	1580830082	0
+	"	17	0
+	.	14	0
+	+	11	0
+	+	14	0
+	e	5	13
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Cooking/chikenCut.txt
+	*	1580279602	0
+	"	41	0
+	.	44	0
+	+	7	0
+	+	10	0
+	+	8	24
+	+	11	0
+	+	27	0
+	+	8	0
+	+	1	0
+	+	2	0
+	+	29	0
+	+	28	0
+	+	29	36
+	+	31	0
+	+	11	0
+	+	4	0
+	+	29	38
+	+	34	0
+	+	35	42
+	+	35	13
+	+	35	17
+	+	35	0
+	+	39	0
+	+	40	0
+	+	41	0
+	+	42	0
+	+	44	0
+
+> /cygdrive/d/tools.win/Fast/Actual_fast/StartAll.cmd
+	*	1580231846	0
+	"	9	0
+	^	9	62
+	.	9	62
+	+	8	0
+	+	12	51
+	+	11	51
+	+	10	52
+	+	6	0
+	+	8	0
+	+	11	0
+	+	8	0
+	+	4	0
+	+	5	0
+	+	6	0
+	+	8	0
+	+	14	0
+	+	7	0
+	+	9	62
+
+> /cygdrive/f/Arhiv/app/feirfox/Gestures/1smartup.config
+	*	1580140573	0
+	"	1	0
+
+> /cygdrive/d/Development/lisp/HOME/.emacs.d/.gitignore
+	*	1579991459	0
+	"	1	1
+
+> /cygdrive/d/tools.win/Fast/SYS_fast/Auto_run.ahk
+	*	1579990991	0
+	"	33	1
+	^	33	2
+	.	33	1
+	+	17	5
+	+	17	0
+	+	17	81
+	+	17	2
+	+	17	12
+	+	17	4
+	+	17	1
+	+	17	107
+	+	17	106
+	+	17	0
+	+	17	108
+	+	17	107
+	+	17	88
+	+	17	101
+	+	17	110
+	+	17	108
+	+	17	109
+	+	17	92
+	+	17	96
+	+	17	88
+	+	17	100
+	+	17	88
+	+	17	87
+	+	17	86
+	+	17	106
+	+	17	105
+	+	17	104
+	+	17	90
+	+	17	96
+	+	17	106
+	+	17	114
+	+	17	111
+	+	17	104
+	+	17	88
+	+	17	0
+	+	17	111
+	+	17	105
+	+	17	106
+	+	17	107
+	+	17	0
+	+	1	0
+	+	17	0
+	+	2	0
+	+	3	0
+	+	33	0
+	+	32	0
+	+	33	1
+
+> ~/scripts/sh/run/echoarg.sh
+	*	1579465760	0
+	"	2	0
+
+> /cygdrive/d/Development/lisp/Dropbox/Office/Tools_docs/MagicSpells/Browsers/FirefoxTode.txt
+	*	1579325683	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/worck.txt
+	*	1579237453	0
+	"	9	0
+	.	7	0
+	+	2	0
+	+	3	0
+	+	4	0
+	+	5	0
+	+	7	0
+
+> /cygdrive/d/tools.win/Fast/Actual_fast/Progects/Vadim/TraderMat.txt
+	*	1579237393	0
+	"	1	0
+
+> /cygdrive/d/My_Docs/Ofice/Research/Doc/tutorial/diary/LUA_CH.txt
+	*	1579237383	0
+	"	56	0
+	^	56	2
+	.	56	0
+	+	1	0
+	+	5	0
+	+	9	0
+	+	6	4
+	+	9	0
+	+	6	4
+	+	6	25
+	+	7	0
+	+	8	0
+	+	9	0
+	+	8	9
+	+	9	0
+	+	8	9
+	+	8	23
+	+	9	0
+	+	31	0
+	+	34	0
+	+	35	0
+	+	42	0
+	+	32	0
+	+	33	0
+	+	32	14
+	+	34	0
+	+	41	0
+	+	9	0
+	+	33	0
+	+	42	0
+	+	43	0
+	+	44	0
+	+	43	9
+	+	55	0
+	+	43	9
+	+	43	32
+	+	44	0
+	+	43	0
+	+	42	34
+	+	6	29
+	+	56	0
+	+	57	0
+	+	56	9
+	+	92	0
+	+	90	0
+	+	88	0
+	+	89	0
+	+	88	2
+	+	88	32
+	+	89	0
+	+	90	0
+	+	93	0
+	+	57	0
+	+	56	9
+	+	56	35
+	+	57	0
+	+	56	0
+
+> /cygdrive/d/My Docs/Ofice/Бумаго оборот/todo/todoFFreelance.txt
+	*	1578882394	0
+	"	134	0
+
+> /cygdrive/d/My Docs/Ofice/Бумаго оборот/todo/todoInet.txt
+	*	1578210797	0
+	"	2	0
+	.	3	0
+	+	3	0
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/moneyToViplan.txt
+	*	1578188846	0
+	"	7	0
+	^	15	3
+	.	15	0
+	+	4	0
+	+	6	0
+	+	4	25
+	+	7	5
+	+	4	0
+	+	9	0
+	+	22	0
+	+	15	0
+
+> /cygdrive/d/My Docs/Ofice/Бумаго оборот/todo/todoHome.txt
+	*	1578188726	0
+	"	1	0
+
+> /cygdrive/d/shell/Far/FarMenu.Ini
+	*	1578131445	0
+	"	11	0
+
+> /cygdrive/d/scripts/CMD/Autorun/run_buyn_cmd.cmd
+	*	1578110048	0
+	"	2	37
+	^	2	38
+	.	2	37
+	+	2	37
+
+> /cygdrive/d/scripts/CMD/Autorun/run_buyn.cmd
+	*	1578108096	0
+	"	3	0
+	^	1	4
+	.	3	0
+	+	2	30
+	+	3	3
+	+	1	0
+	+	3	0
+
+> ~/.vim/vimrc
+	*	1578093453	0
+	"	361	3
+	^	346	21
+	.	345	0
+	+	3	0
+	+	347	12
+	+	349	12
+	+	348	18
+	+	340	16
+	+	340	0
+	+	346	0
+	+	345	18
+	+	346	0
+	+	345	0
+	a	340	19
+
+> /cygdrive/d/tools.win/Fast/SYS_fast/test_run.ahk
+	*	1578093415	0
+	"	15	0
+	.	1	0
+	+	16	0
+	+	1	0
+	+	1	81
+	+	1	0
+
+> /cygdrive/c/Users/BuYn/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup/log.txt
+	*	1578091616	0
+	"	31	80
+	^	31	81
+	.	31	81
+	+	1	0
+	+	1	75
+	+	1	0
+	+	32	0
+	+	1	73
+	+	2	0
+	+	1	0
+	+	31	0
+	+	31	80
+	+	32	0
+	+	31	81
+
+> /cygdrive/d/tools.win/Fast/SYS_fast/Auto_run.cmd
+	*	1578089658	0
+	"	1	0
+	^	1	7
+	.	1	0
+	+	1	112
+	+	1	0
+
+> /cygdrive/d/games/Outward Hardcore/steam_emu.ini
+	*	1577666910	0
+	"	14	70
+
+> /cygdrive/d/games/Space Run Galaxy v1.0.3/ALI213.ini
+	*	1577338023	0
+	"	21	17
+	.	21	11
+	+	21	11
+
+> /cygdrive/d/scripts/CMD/Autorun/clin.cmd
+	*	1576443683	0
+	"	6	0
+	^	6	129
+	.	6	97
+	+	2	0
+	+	4	0
+	+	6	0
+	+	2	51
+	+	4	60
+	+	6	60
+	+	2	117
+	+	4	108
+	+	6	124
+	+	4	104
+	+	6	124
+	+	2	118
+	+	2	30
+	+	1	0
+	+	2	0
+	+	4	78
+	+	6	0
+	+	6	97
+
+> /cygdrive/d/scripts/CMD/Autorun/run_adm_Dism.exe.cmd
+	*	1576443020	0
+	"	3	0
+	^	3	0
+	.	4	0
+	+	1	32
+	+	2	31
+	+	4	31
+	+	4	0
+	+	4	31
+	+	4	0
+	+	1	0
+	+	4	31
+	+	2	37
+	+	4	0
+
+> /cygdrive/d/scripts/CMD/Clean/cli_all.cmd
+	*	1576440639	0
+	"	2	28
+	^	2	29
+	.	2	28
+	+	1	43
+	+	2	28
+
+> /cygdrive/d/scripts/ahk/The_Cycle.AHK
+	*	1575584390	0
+	"	8	13
+	^	7	32
+	.	7	17
+	+	6	6
+	+	3	0
+	+	12	0
+	+	1	12
+	+	6	0
+	+	3	0
+	+	6	0
+	+	3	0
+	+	1	8
+	+	3	0
+	+	4	0
+	+	5	0
+	+	8	0
+	+	8	1
+	+	8	5
+	+	10	0
+	+	8	12
+	+	3	4
+	+	4	0
+	+	8	0
+	+	9	0
+	+	3	8
+	+	6	0
+	+	2	0
+	+	3	4
+	+	7	17
+
+> /cygdrive/d/scripts/ahk/ChetEng.AHK
+	*	1575580819	0
+	"	1	26
+	^	3	3
+	.	1	15
+	+	2	0
+	+	1	26
+	+	2	0
+	+	3	1
+	+	1	15
+
+> /cygdrive/d/tools.win/Fast/MetaGame/ChetEng_TheOne.ahk
+	*	1575580717	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/MetaGame/ChetEng_v2setlers.ahk
+	*	1575580697	0
+	"	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stm32_RAMPS_Driver/stm32_RAMPS_Driver.ino
+	*	1575448446	0
+	"	68	10
+	^	68	11
+	.	68	10
+	+	66	0
+	+	68	10
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stm32_Toch_Driver/stm32_Toch_Driver.ino
+	*	1575394089	0
+	"	320	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Al/SRC/STM32/Ten_step/Ten_step.ino
+	*	1575389357	0
+	"	66	8
+	^	59	36
+	.	59	34
+	+	59	34
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Pl/SRC/STM32/Ten_step/Ten_step.ino
+	*	1575387468	0
+	"	36	24
+	^	173	3
+	.	173	2
+	+	173	2
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/stepmotor_Driver/stepmotor_Driver.ino
+	*	1575383199	0
+	"	395	0
+
+> ~/.vim/UltiSnips/c.snippets
+	*	1574924319	0
+	"	90	3
+	.	1	0
+	+	1	14
+	+	1	27
+	+	1	66
+	+	1	68
+	+	1	73
+	+	1	83
+	+	1	85
+	+	1	96
+	+	1	109
+	+	1	123
+	+	1	138
+	+	1	140
+	+	1	145
+	+	1	155
+	+	1	157
+	+	1	168
+	+	1	171
+	+	1	193
+	+	1	198
+	+	1	209
+	+	1	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Pl/LIB/Shud_tenso/TaskScheduler.h
+	*	1574848976	0
+	"	509	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Pl/LIB/Shud_tenso/HX711.cpp
+	*	1574477543	0
+	"	62	1
+	^	63	11
+	.	64	0
+	+	68	0
+	+	63	0
+	+	67	0
+	+	63	0
+	+	68	0
+	+	64	0
+
+> ~/.vim/UltiSnips/txt.snippets
+	*	1573932623	0
+	"	76	0
+	^	78	0
+	.	78	0
+	+	72	10
+	+	73	0
+	+	73	28
+	+	74	0
+	+	73	27
+	+	74	0
+	+	72	10
+	+	75	8
+	+	76	22
+	+	78	0
+
+> /cygdrive/c/Users/BuYn/Documents/Arduino/libraries/HX711-master/HX711.cpp
+	*	1573650451	0
+	"	5	20
+	^	54	4
+	.	54	0
+	+	54	0
+
+> /cygdrive/d/Development/lisp/HOME/.gitignore
+	*	1573395356	0
+	"	10	6
+	^	10	7
+	.	10	7
+	+	14	0
+	+	8	0
+	+	14	0
+	+	11	0
+	+	13	0
+	+	12	0
+	+	10	9
+	+	6	4
+	+	10	7
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Fan_Pl/SRC/STM32/Ten_step/intermove.h
+	*	1573227148	0
+	"	2	0
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Cooking/noodles.txt
+	*	1572966562	0
+	"	10	9
+	^	10	11
+	.	10	9
+	+	1	0
+	+	12	23
+	+	32	0
+	+	38	0
+	+	31	0
+	+	13	50
+	+	15	68
+	+	16	63
+	+	18	60
+	+	19	0
+	+	24	0
+	+	23	33
+	+	22	30
+	+	29	0
+	+	28	37
+	+	4	25
+	+	5	27
+	+	8	29
+	+	10	9
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/Home/bath.txt
+	*	1572965821	0
+	"	1	0
+	^	11	10
+	.	11	9
+	+	12	0
+	+	8	0
+	+	11	9
+
+> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Cooking/GreenTea.txt
+	*	1572951219	0
+	"	5	1
+
+> /cygdrive/d/tools.win/Fast/Actual_fast/Progects/home/fin/pay_home.txt
+	*	1572862838	0
+	"	2	0
+
+> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Multi_SPI/Lib/Mult_SPI/.cproject
+	*	1571912803	0
+	"	7	0
+
+> ~/scripts/sh/vim/todo/todo5min.sh
+	*	1571853073	0
+	"	1	0
+
+> /cygdrive/c/Users/BuYn/AppData/LocalLow/Unfrozen/Iratus/irf4x3hv/PlayerSave.svf
+	*	1571396215	0
+	"	1	59806
+
+> /cygdrive/c/Users/BuYn/AppData/LocalLow/Unfrozen/Iratus/vmjaeaqu/PlayerSave.svf
+	*	1571396209	0
+	"	2	201
+	^	2	202
+	.	2	201
+	+	1	47750
+	+	1	47440
+	+	1	47441
+	+	1	47641
+	+	1	47541
+	+	1	0
+	+	1	47640
+	+	1	0
+	+	1	47440
+	+	1	0
+	+	1	47870
+	+	2	101
+	+	2	201
+	+	2	100
+	+	2	202
+	+	2	100
+	+	3	0
+	+	2	201
+
+> /cygdrive/d/Reader/cr2-00-66-eng/dict/cr2_dict0.dic
+	*	1570586339	0
+	"	1	0
+
+> /cygdrive/d/Development/version-control/GitHub/MPLife/DOC/todomplife.txt
+	*	1570569773	0
+	"	8	18
+
+> /cygdrive/d/Development/lisp/HOME/al.sh
+	*	1569535932	0
+	"	40	0
+	^	5	0
+	.	5	0
+	+	6	0
+	+	5	0
+	+	6	0
+	+	5	0
 
 > /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/ISP/RPi/Source/python/spi_con.py
 	*	1566901549	0
@@ -793,10 +1520,6 @@ $EnScaner
 > /cygdrive/d/Development/Ardunio/Sorce/Vadim/Tenso/sketch_jun20a/sketch_jun20a.ino
 	*	1564754685	0
 	"	16	0
-
-> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Cooking/GreenTea.txt
-	*	1564504797	0
-	"	1	0
 
 > ~/.bash_aliases
 	*	1564500121	0
@@ -1541,1364 +2264,3 @@ $EnScaner
 	+	101	0
 	+	102	24
 	+	4	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/stepmotor.cpp
-	*	1561243624	0
-	"	79	0
-	^	77	13
-	.	77	12
-	+	79	18
-	+	80	11
-	+	85	13
-	+	77	12
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/stepmotor.h
-	*	1561242789	0
-	"	23	2
-	^	40	39
-	.	40	38
-	+	42	0
-	+	39	22
-	+	40	12
-	+	41	18
-	+	47	33
-	+	41	18
-	+	5	13
-	+	39	30
-	+	40	21
-	+	23	11
-	+	40	38
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/shiftout.h
-	*	1561237977	0
-	"	60	15
-	^	68	16
-	.	68	15
-	+	62	0
-	+	59	0
-	+	67	0
-	+	63	0
-	+	67	0
-	+	60	13
-	+	61	14
-	+	60	13
-	+	61	13
-	+	58	11
-	+	68	15
-
-> /cygdrive/c/Users/BuYn/AppData/Local/Arduino15/packages/STM32/hardware/stm32/1.4.0/cores/arduino/wiring_constants.h
-	*	1561128978	0
-	"	88	30
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/Shiftin.cpp
-	*	1561126983	0
-	"	10	0
-	.	30	0
-	+	30	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/Toch/postepmotor.cpp
-	*	1561115269	0
-	"	45	18
-	^	45	19
-	.	45	18
-	+	45	18
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/Shiftin.cpp
-	*	1561099409	0
-	"	31	3
-	^	7	14
-	.	7	13
-	+	29	0
-	+	30	0
-	+	30	21
-	+	30	0
-	+	30	29
-	+	30	1
-	+	30	0
-	+	31	23
-	+	30	0
-	+	31	29
-	+	32	7
-	+	30	0
-	+	32	22
-	+	33	0
-	+	32	16
-	+	32	28
-	+	33	9
-	+	33	0
-	+	32	16
-	+	33	0
-	+	32	27
-	+	32	25
-	+	32	28
-	+	32	31
-	+	33	0
-	+	32	16
-	+	31	18
-	+	30	0
-	+	6	10
-	+	7	8
-	+	6	11
-	+	7	13
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/Shiftin.h
-	*	1561052008	0
-	"	45	0
-	^	80	134
-	.	80	132
-	+	48	39
-	+	49	38
-	+	50	38
-	+	48	0
-	+	47	0
-	+	48	0
-	+	46	0
-	+	48	0
-	+	52	0
-	+	48	0
-	+	53	3
-	+	54	34
-	+	55	34
-	+	56	34
-	+	57	34
-	+	54	35
-	+	55	35
-	+	56	35
-	+	57	35
-	+	54	34
-	+	55	34
-	+	56	34
-	+	57	34
-	+	72	0
-	+	71	16
-	+	74	0
-	+	75	0
-	+	74	0
-	+	75	0
-	+	75	9
-	+	75	0
-	+	74	0
-	+	75	9
-	+	75	8
-	+	76	19
-	+	74	16
-	+	73	9
-	+	80	132
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/SPI_ShiftIN.ino
-	*	1561034357	0
-	"	375	0
-	^	347	24
-	.	347	23
-	+	297	7
-	+	46	33
-	+	74	25
-	+	310	0
-	+	305	0
-	+	310	0
-	+	307	0
-	+	305	0
-	+	307	0
-	+	305	11
-	+	75	15
-	+	305	19
-	+	306	3
-	+	306	18
-	+	307	0
-	+	270	0
-	+	264	0
-	+	268	2
-	+	269	2
-	+	77	0
-	+	76	0
-	+	54	0
-	+	57	0
-	+	177	11
-	+	182	13
-	+	75	22
-	+	15	0
-	+	14	0
-	+	177	13
-	+	57	0
-	+	58	0
-	+	51	0
-	+	43	0
-	+	33	0
-	+	23	0
-	+	23	9
-	+	22	9
-	+	23	27
-	+	143	0
-	+	144	0
-	+	143	23
-	+	144	25
-	+	143	7
-	+	144	0
-	+	146	0
-	+	310	0
-	+	306	37
-	+	75	23
-	+	74	24
-	+	300	21
-	+	299	0
-	+	46	33
-	+	25	0
-	+	342	0
-	+	344	27
-	+	345	0
-	+	348	0
-	+	345	25
-	+	348	6
-	+	329	7
-	+	348	15
-	+	346	19
-	+	348	18
-	+	332	19
-	+	332	0
-	+	334	0
-	+	332	0
-	+	333	0
-	+	332	6
-	+	343	37
-	+	343	0
-	+	344	0
-	+	343	0
-	+	344	0
-	+	351	0
-	+	350	0
-	+	343	0
-	+	342	22
-	+	351	33
-	+	343	28
-	+	350	2
-	+	339	2
-	+	340	0
-	+	340	9
-	+	340	15
-	+	341	0
-	+	339	1
-	+	334	0
-	+	329	0
-	+	327	0
-	+	323	1
-	+	321	1
-	+	320	1
-	+	322	1
-	+	324	1
-	+	325	1
-	+	339	2
-	+	347	23
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/Stack.h
-	*	1561006649	0
-	"	84	0
-	.	159	0
-	+	159	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/slavespi.cpp
-	*	1561000475	0
-	"	4	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/Stack.h
-	*	1560999113	0
-	"	59	6
-	^	23	2
-	.	23	0
-	+	1	11
-	+	222	0
-	+	134	21
-	+	217	20
-	+	36	0
-	+	128	0
-	+	23	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/2sloeber-workspace/ShiftOut_exe/shiftout.h
-	*	1560993520	0
-	"	64	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/as/slavespi.h
-	*	1560986818	0
-	"	58	15
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/presenter/spicom.py
-	*	1560624291	0
-	"	35	14
-
-> /cygdrive/d/My_Docs/Ofice/Tools_docs/MagicArtifacts/Pi_Magnus.txt
-	*	1560613255	0
-	"	743	0
-	^	757	12
-	.	757	11
-	+	166	8
-	+	167	59
-	+	168	10
-	+	169	0
-	+	167	0
-	+	135	0
-	+	133	119
-	+	134	0
-	+	133	34
-	+	450	0
-	+	448	0
-	+	450	0
-	+	451	0
-	+	450	36
-	+	450	0
-	+	445	0
-	+	449	0
-	+	460	0
-	+	449	0
-	+	446	0
-	+	451	81
-	+	441	7
-	+	442	25
-	+	443	0
-	+	443	57
-	+	445	0
-	+	443	75
-	+	445	0
-	+	461	0
-	+	61	55
-	+	332	24
-	+	444	0
-	+	178	0
-	+	332	24
-	+	329	0
-	+	330	0
-	+	332	0
-	+	332	24
-	+	332	23
-	+	331	21
-	+	74	0
-	+	333	0
-	+	458	0
-	+	452	29
-	+	453	0
-	+	456	70
-	+	454	0
-	+	444	39
-	+	443	56
-	+	585	56
-	+	599	27
-	+	601	27
-	+	601	48
-	+	601	0
-	+	601	47
-	+	601	0
-	+	597	0
-	+	598	0
-	+	589	0
-	+	593	25
-	+	586	31
-	+	589	0
-	+	586	0
-	+	586	18
-	+	589	12
-	+	589	0
-	+	586	0
-	+	601	0
-	+	607	0
-	+	605	38
-	+	602	78
-	+	602	17
-	+	605	38
-	+	602	27
-	+	605	38
-	+	603	107
-	+	605	33
-	+	594	58
-	+	606	0
-	+	592	121
-	+	602	84
-	+	592	0
-	+	603	70
-	+	603	79
-	+	600	76
-	+	592	0
-	+	588	66
-	+	587	13
-	+	590	49
-	+	590	0
-	+	591	0
-	+	590	88
-	+	591	0
-	+	590	0
-	+	591	4
-	+	737	0
-	+	761	0
-	+	754	0
-	+	756	0
-	+	757	11
-
-> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/moneyToViplan.txt
-	*	1560464621	0
-	"	9	0
-	^	7	6
-	.	9	0
-	+	4	0
-	+	6	0
-	+	4	25
-	+	7	5
-	+	4	0
-	+	9	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/Python/RIZ/SRC/veiw/termenu.py
-	*	1560170304	0
-	"	20	0
-	^	117	25
-	.	117	51
-	+	25	0
-	+	24	20
-	+	33	0
-	+	32	12
-	+	36	19
-	+	47	19
-	+	62	14
-	+	74	21
-	+	83	18
-	+	90	23
-	+	122	21
-	+	175	21
-	+	180	22
-	+	190	22
-	+	90	27
-	+	83	22
-	+	74	25
-	+	34	0
-	+	40	0
-	+	41	0
-	+	42	0
-	+	43	0
-	+	177	0
-	+	27	0
-	+	177	0
-	+	52	0
-	+	56	0
-	+	60	0
-	+	126	0
-	+	130	0
-	+	134	0
-	+	138	0
-	+	142	0
-	+	146	0
-	+	150	0
-	+	154	0
-	+	164	0
-	+	167	0
-	+	177	0
-	+	90	0
-	+	90	37
-	+	90	30
-	+	90	18
-	+	90	30
-	+	90	38
-	+	90	24
-	+	90	30
-	+	90	39
-	+	90	20
-	+	90	31
-	+	90	40
-	+	90	28
-	+	90	31
-	+	90	45
-	+	90	26
-	+	90	35
-	+	90	46
-	+	90	28
-	+	90	35
-	+	90	43
-	+	90	34
-	+	90	35
-	+	90	0
-	+	90	34
-	+	90	43
-	+	90	44
-	+	90	34
-	+	90	0
-	+	21	0
-	+	90	0
-	+	90	35
-	+	90	26
-	+	90	43
-	+	90	23
-	+	90	26
-	+	90	56
-	+	90	0
-	+	115	50
-	+	116	57
-	+	117	51
-
-> /cygdrive/c/Users/BuYn/.bashrc
-	*	1559990608	0
-	"	21	0
-	^	2	9
-	.	21	0
-	+	5	7
-	+	21	16
-	+	14	17
-	+	16	18
-	+	16	0
-	+	5	7
-	+	29	0
-	+	21	33
-	+	21	0
-	+	21	33
-	+	20	21
-	+	21	0
-	+	20	21
-	+	19	0
-	+	20	0
-	+	19	25
-	+	22	0
-	+	25	0
-	+	22	37
-	+	19	0
-	+	20	0
-	+	19	8
-	+	20	6
-	+	16	6
-	+	16	19
-	+	25	0
-	+	22	55
-	+	5	0
-	+	1	28
-	+	14	21
-	+	8	35
-	+	9	28
-	+	8	8
-	+	9	8
-	+	10	55
-	+	10	31
-	+	14	0
-	+	10	34
-	+	14	0
-	+	9	32
-	+	8	38
-	+	10	35
-	+	9	31
-	+	8	37
-	+	16	0
-	+	11	11
-	+	11	12
-	+	11	11
-	+	11	34
-	+	14	0
-	+	11	38
-	+	13	31
-	+	16	20
-	+	25	20
-	+	12	0
-	+	11	9
-	+	5	0
-	+	3	7
-	+	4	7
-	+	15	11
-	+	15	40
-	+	15	39
-	+	16	0
-	+	15	39
-	+	18	22
-	+	1	32
-	+	22	54
-	+	25	20
-	+	23	8
-	+	21	8
-	+	24	0
-	+	23	9
-	+	24	11
-	+	22	0
-	+	21	29
-	+	26	10
-	+	27	10
-	+	28	13
-	+	17	9
-	+	6	11
-	+	7	21
-	+	2	29
-	+	21	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/ToWaveStepmotor/towavestepmotor.cpp
-	*	1559923452	0
-	"	120	14
-	.	110	1
-	+	115	1
-	+	104	1
-	+	110	1
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/stm32/ToWaveStepmotor/ToWaveStepmotor.ino
-	*	1559922051	0
-	"	13	0
-	^	13	23
-	.	14	25
-	+	16	18
-	+	17	24
-	+	15	23
-	+	13	0
-	+	12	22
-	+	14	25
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/towavestepmotor.h
-	*	1559920791	0
-	"	20	23
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/Arduino/ToWaveStepmotor/ToWaveStepmotor.ino
-	*	1559824850	0
-	"	28	21
-	^	28	22
-	.	28	21
-	+	10	0
-	+	28	21
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/stepmotor_driver/Source/Arduino/ToWaveStepmotor/SPI_ShiftIN.ino
-	*	1559824474	0
-	"	10	0
-	^	22	0
-	.	10	0
-	+	1	0
-	+	9	0
-	+	23	0
-	+	9	0
-	+	7	0
-	+	10	0
-	+	23	0
-	+	23	23
-	+	23	0
-	+	11	0
-	+	23	6
-	+	23	0
-	+	20	0
-	+	23	0
-	+	10	0
-	+	23	0
-	+	8	0
-	+	9	0
-	+	10	0
-	+	24	0
-	+	23	5
-	+	31	5
-	+	30	0
-	+	22	0
-	+	10	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/blink.h
-	*	1559824007	0
-	"	1	0
-	^	26	46
-	.	26	45
-	+	21	0
-	+	26	0
-	+	21	0
-	+	21	18
-	+	26	18
-	+	21	1
-	+	21	0
-	+	14	21
-	+	14	24
-	+	15	17
-	+	16	26
-	+	21	0
-	+	13	0
-	+	20	0
-	+	13	13
-	+	21	0
-	+	25	0
-	+	26	0
-	+	25	0
-	+	27	0
-	+	26	0
-	+	21	0
-	+	27	0
-	+	26	0
-	+	18	0
-	+	20	0
-	+	19	22
-	+	26	17
-	+	26	11
-	+	17	25
-	+	26	45
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/blink.cpp
-	*	1559824005	0
-	"	1	0
-	^	18	28
-	.	16	0
-	+	10	5
-	+	10	0
-	+	10	5
-	+	11	2
-	+	10	13
-	+	10	0
-	+	10	16
-	+	10	0
-	+	10	14
-	+	10	2
-	+	10	1
-	+	10	0
-	+	14	0
-	+	15	0
-	+	14	1
-	+	15	1
-	+	10	0
-	+	12	0
-	+	13	16
-	+	14	1
-	+	15	1
-	+	14	24
-	+	15	27
-	+	21	31
-	+	23	30
-	+	22	20
-	+	20	0
-	+	20	21
-	+	20	29
-	+	21	0
-	+	25	0
-	+	19	10
-	+	24	24
-	+	20	12
-	+	25	0
-	+	19	13
-	+	22	5
-	+	26	0
-	+	18	27
-	+	16	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/gtest.cpp
-	*	1559823161	0
-	"	20	1
-	.	14	0
-	+	8	0
-	+	14	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/towavestepmotor.cpp
-	*	1559822659	0
-	"	49	11
-	^	52	10
-	.	52	9
-	+	1	0
-	+	3	0
-	+	4	0
-	+	119	14
-	+	126	14
-	+	75	12
-	+	85	12
-	+	87	0
-	+	86	6
-	+	85	41
-	+	8	6
-	+	9	16
-	+	11	25
-	+	85	10
-	+	83	0
-	+	92	6
-	+	93	25
-	+	79	15
-	+	80	7
-	+	27	32
-	+	28	38
-	+	29	11
-	+	44	30
-	+	45	30
-	+	46	5
-	+	120	8
-	+	121	0
-	+	77	0
-	+	78	0
-	+	76	7
-	+	76	0
-	+	93	0
-	+	49	0
-	+	19	0
-	+	11	1
-	+	32	0
-	+	33	15
-	+	32	0
-	+	34	13
-	+	40	0
-	+	41	24
-	+	40	15
-	+	42	14
-	+	33	14
-	+	41	14
-	+	44	0
-	+	41	0
-	+	40	0
-	+	36	0
-	+	37	14
-	+	36	0
-	+	38	12
-	+	40	0
-	+	37	14
-	+	38	12
-	+	51	7
-	+	52	9
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/towavestepmotor.h
-	*	1559821374	0
-	"	22	26
-	^	33	31
-	.	33	30
-	+	9	0
-	+	10	0
-	+	23	0
-	+	25	0
-	+	26	0
-	+	50	21
-	+	48	51
-	+	49	0
-	+	48	65
-	+	29	0
-	+	32	0
-	+	29	16
-	+	32	14
-	+	35	0
-	+	31	0
-	+	30	0
-	+	31	8
-	+	32	16
-	+	31	24
-	+	31	0
-	+	32	13
-	+	31	13
-	+	22	3
-	+	34	0
-	+	33	0
-	+	34	0
-	+	33	0
-	+	34	0
-	+	33	30
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/ToWaveStepMotor/defcfg.h
-	*	1559802645	0
-	"	5	26
-	^	5	27
-	.	5	26
-	+	3	0
-	+	2	6
-	+	2	2
-	+	4	2
-	+	2	6
-	+	4	6
-	+	2	0
-	+	3	0
-	+	2	23
-	+	4	21
-	+	3	28
-	+	5	26
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/blink.h
-	*	1559802453	0
-	"	12	15
-	^	12	16
-	.	12	15
-	+	13	0
-	+	1	0
-	+	21	0
-	+	21	13
-	+	8	0
-	+	35	19
-	+	17	0
-	+	16	14
-	+	13	0
-	+	11	0
-	+	34	0
-	+	21	0
-	+	23	0
-	+	21	6
-	+	26	0
-	+	26	10
-	+	31	0
-	+	21	17
-	+	35	0
-	+	36	0
-	+	37	11
-	+	21	0
-	+	21	1
-	+	22	2
-	+	23	1
-	+	24	0
-	+	29	1
-	+	19	1
-	+	20	0
-	+	12	15
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/blink.cpp
-	*	1559802267	0
-	"	10	5
-	^	10	12
-	.	10	0
-	+	10	9
-	+	14	9
-	+	1	0
-	+	7	15
-	+	10	0
-	+	14	0
-	+	19	0
-	+	16	0
-	+	19	0
-	+	14	11
-	+	10	11
-	+	9	0
-	+	10	5
-	+	10	0
-
-> /cygdrive/d/scripts/ahk/Magic_Carpet.ahk
-	*	1559770696	0
-	"	1	0
-
-> /cygdrive/d/scripts/ahk/kingdomNL.ahk
-	*	1559769291	0
-	"	11	0
-	^	11	8
-	.	11	0
-	+	11	7
-	+	8	0
-	+	1	0
-	+	5	0
-	+	3	0
-	+	2	0
-	+	3	0
-	+	2	9
-	+	3	14
-	+	11	0
-
-> /cygdrive/c/Users/BuYn/AppData/Local/DOSBox/dosbox-0.74.conf
-	*	1559668230	0
-	"	15	15
-	^	29	1
-	.	29	0
-	+	34	0
-	+	35	0
-	+	34	0
-	+	36	0
-	+	14	0
-	+	30	7
-	+	29	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/stepmotor.h
-	*	1559662608	0
-	"	20	24
-	^	20	25
-	.	20	24
-	+	19	28
-	+	20	29
-	+	19	28
-	+	20	26
-	+	19	26
-	+	20	25
-	+	19	26
-	+	20	24
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Toch/Source/STM32/SPI_ShiftIN/stepmotor.cpp
-	*	1559662594	0
-	"	77	0
-	^	79	2
-	.	80	0
-	+	81	0
-	+	80	1
-	+	82	1
-	+	80	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA_STM32/LA_STM32.ino
-	*	1559661352	0
-	"	23	19
-	^	11	22
-	.	11	21
-	+	11	21
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA_STM32/la.h
-	*	1559659220	0
-	"	14	6
-	^	16	21
-	.	16	20
-	+	16	20
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA_STM32/la.cpp
-	*	1559659214	0
-	"	37	19
-	^	58	42
-	.	58	17
-	+	52	0
-	+	54	0
-	+	51	18
-	+	51	0
-	+	52	13
-	+	53	34
-	+	54	13
-	+	58	17
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA/LA.ino
-	*	1559656030	0
-	"	28	0
-	^	33	37
-	.	33	36
-	+	8	11
-	+	12	0
-	+	14	1
-	+	18	15
-	+	26	0
-	+	27	0
-	+	28	0
-	+	23	0
-	+	27	2
-	+	23	0
-	+	33	40
-	+	40	0
-	+	37	12
-	+	33	54
-	+	28	0
-	+	33	36
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA/la.cpp
-	*	1559644411	0
-	"	63	2
-	^	48	1
-	.	49	0
-	+	42	39
-	+	40	1
-	+	44	0
-	+	49	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/Logic_analyzer/Source/LA/la.h
-	*	1559639265	0
-	"	16	19
-	.	16	19
-	+	16	19
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/LA/la.h
-	*	1559638794	0
-	"	24	6
-	.	33	0
-	+	21	0
-	+	23	0
-	+	6	0
-	+	7	0
-	+	26	14
-	+	28	0
-	+	27	12
-	+	26	6
-	+	5	0
-	+	35	0
-	+	34	44
-	+	34	58
-	+	39	8
-	+	40	0
-	+	39	8
-	+	35	0
-	+	34	39
-	+	35	18
-	+	16	0
-	+	19	0
-	+	17	16
-	+	17	8
-	+	19	0
-	+	17	21
-	+	23	9
-	+	25	0
-	+	37	0
-	+	37	26
-	+	37	20
-	+	35	34
-	+	18	18
-	+	17	18
-	+	18	20
-	+	16	15
-	+	23	24
-	+	37	0
-	+	25	23
-	+	36	0
-	+	35	21
-	+	36	14
-	+	23	10
-	+	28	7
-	+	29	0
-	+	33	0
-	+	29	0
-	+	32	1
-	+	29	0
-	+	20	16
-	+	29	17
-	+	29	9
-	+	29	0
-	+	29	9
-	+	29	20
-	+	33	0
-	+	34	0
-	+	33	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/LA/la.cpp
-	*	1559638790	0
-	"	9	5
-	^	42	2
-	.	42	1
-	+	23	2
-	+	66	0
-	+	47	2
-	+	48	30
-	+	56	13
-	+	48	0
-	+	56	0
-	+	57	0
-	+	58	3
-	+	60	3
-	+	57	0
-	+	58	0
-	+	56	0
-	+	59	0
-	+	48	49
-	+	66	14
-	+	66	0
-	+	66	47
-	+	64	43
-	+	66	31
-	+	64	39
-	+	66	27
-	+	54	32
-	+	64	38
-	+	39	1
-	+	48	48
-	+	55	0
-	+	54	0
-	+	57	0
-	+	58	0
-	+	60	2
-	+	56	0
-	+	40	0
-	+	47	0
-	+	46	14
-	+	54	0
-	+	66	0
-	+	53	0
-	+	66	0
-	+	49	0
-	+	54	0
-	+	49	63
-	+	65	0
-	+	49	61
-	+	48	41
-	+	56	24
-	+	48	42
-	+	56	0
-	+	23	1
-	+	26	31
-	+	27	6
-	+	26	53
-	+	26	30
-	+	26	53
-	+	27	6
-	+	27	29
-	+	28	0
-	+	49	49
-	+	31	0
-	+	4	17
-	+	37	9
-	+	47	54
-	+	54	55
-	+	50	0
-	+	49	3
-	+	50	13
-	+	51	0
-	+	50	17
-	+	52	0
-	+	51	26
-	+	53	0
-	+	52	13
-	+	53	0
-	+	41	0
-	+	40	2
-	+	43	0
-	+	41	36
-	+	46	0
-	+	43	17
-	+	45	0
-	+	46	0
-	+	45	12
-	+	43	38
-	+	4	15
-	+	6	24
-	+	44	12
-	+	43	15
-	+	42	0
-	+	41	15
-	+	42	9
-	+	8	16
-	+	9	1
-	+	49	0
-	+	42	0
-	+	41	0
-	+	42	0
-	+	41	9
-	+	42	1
-
-> /cygdrive/e/del/LA/logic_analyzer-master/logic_analyzer/logic_analyzer.ino
-	*	1559582709	0
-	"	123	1
-	^	125	2
-	.	125	1
-	+	125	1
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/LA/simplencoder.cpp
-	*	1559520855	0
-	"	1	0
-
-> /cygdrive/d/tools.win/Fast/TehnoMage_fast/ActionDeck/Repiters/Home/bath.txt
-	*	1559340258	0
-	"	8	0
-
-> /cygdrive/d/tools.win/Fast/TehnoMage_fast/starttodo.cmd
-	*	1559340244	0
-	"	11	0
-	.	11	0
-	+	11	0
-	e	5	13
-
-> /cygdrive/d/tools.win/Fast/Actual_fast/StartAll.cmd
-	*	1559340030	0
-	"	1	0
-	^	1	97
-	.	1	0
-	+	1	36
-	+	1	5
-	+	1	36
-	+	2	0
-	+	1	97
-	+	1	0
-
-> /cygdrive/d/tools.win/Fast/Evol_fast/vadim/tradomat/RAMPS_driver/Source/stm32_Toch_Driver/stm32_Toch_Driver.ino
-	*	1559311438	0
-	"	23	24
-	^	15	30
-	.	15	29
-	+	12	27
-	+	13	29
-	+	14	28
-	+	15	29
-
-> /cygdrive/d/Virtual/Dos.Box/DOSBox-0.74/cofig.cmd
-	*	1559230267	0
-	"	2	4
-	^	2	5
-	.	2	4
-	+	1	0
-	+	3	2
-	+	2	4
-
-> ~/scripts/sh/vim/todo/todo5min.sh
-	*	1559225303	0
-	"	1	18
-
-> /cygdrive/d/shell/Far/FarMenu.Ini
-	*	1559225037	0
-	"	96	1
-
-> ~/.bashrc
-	*	1559224519	0
-	"	1	0
-
-> /cygdrive/d/Development/Ardunio/Eclipse/Home/sloeber-workspace/StepMotor/stepmotor.cpp
-	*	1559151340	0
-	"	79	5
-	^	81	37
-	.	81	36
-	+	49	0
-	+	58	0
-	+	59	0
-	+	64	0
-	+	65	0
-	+	73	0
-	+	74	0
-	+	84	0
-	+	6	7
-	+	6	10
-	+	6	8
-	+	7	12
-	+	5	7
-	+	30	7
-	+	7	8
-	+	30	19
-	+	30	5
-	+	39	16
-	+	40	16
-	+	39	16
-	+	40	16
-	+	6	0
-	+	9	0
-	+	8	0
-	+	15	0
-	+	16	0
-	+	62	0
-	+	14	0
-	+	30	0
-	+	61	15
-	+	73	19
-	+	74	19
-	+	77	1
-	+	66	16
-	+	41	0
-	+	42	0
-	+	41	18
-	+	42	11
-	+	45	0
-	+	46	0
-	+	44	0
-	+	45	0
-	+	44	0
-	+	42	15
-	+	79	0
-	+	76	22
-	+	78	0
-	+	79	0
-	+	78	20
-	+	48	0
-	+	51	0
-	+	50	21
-	+	92	0
-	+	30	7
-	+	61	4
-	+	58	0
-	+	53	0
-	+	53	16
-	+	54	0
-	+	55	0
-	+	54	16
-	+	55	0
-	+	53	0
-	+	57	0
-	+	30	24
-	+	30	0
-	+	30	19
-	+	31	19
-	+	32	7
-	+	34	0
-	+	35	24
-	+	36	9
-	+	9	0
-	+	7	26
-	+	16	24
-	+	21	0
-	+	23	12
-	+	67	30
-	+	72	12
-	+	67	26
-	+	72	16
-	+	67	20
-	+	68	0
-	+	71	4
-	+	72	0
-	+	71	6
-	+	72	0
-	+	70	0
-	+	28	16
-	+	83	0
-	+	81	18
-	+	80	0
-	+	82	0
-	+	81	0
-	+	80	4
-	+	81	36
-	m	60	15
-	n	60	15
-
-> scp://R_Pi_Magus//etc/dhcpcd.conf
-	*	1559137155	0
-	"	57	0

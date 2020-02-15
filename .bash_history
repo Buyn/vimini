@@ -413,3 +413,14 @@ exit
 vim
 st
 exit
+ls
+exit
+exit
+exit
+st
+st
+st
+st
+st
+git status
+git reflog

@@ -343,10 +343,10 @@ inoremap <M-d> <ESC>cW
 noremap mp :t.<CR>
 noremap mP :t-.<CR>
 noremap <c-s-up> j:-1m 'a-1<CR><c-i>
-noremap <c-up> :m .-2<CR>==
-noremap mk :m .-2<CR>
-noremap <c-down> :m .+1<CR>==
-noremap mj :m .+1<CR>
+noremap <c-up> vv:m .-2<CR>==
+noremap mk vv:m .-2<CR>
+noremap <c-down> vv:m .+1<CR>==
+noremap mj vv:m .+1<CR>
 """""""""""""""""""""""""""""}}}
 " change setings keys{{{
 """"""""""""""""""""""""""""
